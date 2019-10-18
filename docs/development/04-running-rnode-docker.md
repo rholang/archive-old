@@ -13,7 +13,7 @@ These are the run commands to start RNode (non-Docker)
 ```bash
 docker run -it --rm --network rnode-net --name rnode1 -v $HOME/var/rnode1:/var/lib/rnode rchain/rnode:latest run  --bootstrap "<bootstrap node address>" --map-size 1099511627776
 ```
->Note
+> **Note**
 >
 >Docker for Mac will only work with static NAT and port forwarding.  network=host does not work on Mac. See RNode supported network configuration for more information on static NAT and port forwarding.
 

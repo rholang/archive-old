@@ -8,11 +8,11 @@ next: create-a-new-react-app.html
 
 We deliver RNode software in a variety of installation packages.  Installation packages are available at both [RChain](https://developer.rchain.coop) and [Github](https://github.com/rchain/rchain/releases). We recommend using the latest release.
 
-> Note
+> **Note**
 >
 > In the command examples below, you must update based on the version number of RNode you want by replacing "x" with the numbers in your installation version.
 
-> Note
+> **Note**
 >
 > Should there be errors, when you install RNode for the first time, please make shure that you have the newest Java version installed.
 

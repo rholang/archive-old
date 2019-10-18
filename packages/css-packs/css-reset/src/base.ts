@@ -40,9 +40,12 @@ export default evaluateInner`
   blockquote,
   pre,
   form,
-  table {
+  {
     margin: ${gridSize() * 1.5}px 0 0 0;
   }
+
+
+
 
   /* Links */
   a {
@@ -138,8 +141,9 @@ export default evaluateInner`
     padding: 20px 45px 20px 26px;
     margin-bottom: 30px;
     margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+
   }
 
   /* Other typographical elements */

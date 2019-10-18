@@ -11,7 +11,7 @@ These are the run commands to start RNode (non-Docker)
 
 ## To connect to an existing network
 
->Note
+> **Note**
 >
 > Please fill in the ``<network ID>``. The current network ID is posted on [RChain public testnet information](https://rchain.atlassian.net/wiki/spaces/CORE/pages/678756429/RChain+public+testnet+information)
 ```bash
