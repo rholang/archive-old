@@ -1,0 +1,15 @@
+{
+  "name": "@atlaskit/pipelines-docker-image",
+  "version": "1.0.16",
+  "private": true,
+  "description": "Docker image used to set up the Atlaskit repo in pipelines",
+  "scripts": {
+    "build-image": "docker build -t atlassianlabs/atlaskit-mk-2:$npm_package_version -t atlassianlabs/atlaskit-mk-2:latest .",
+    "build-vr-image": "docker build -t atlassianlabs/atlaskit-mk-2-vr:$npm_package_version -t atlassianlabs/atlaskit-mk-2-vr:latest -f ./visual-regression-image/Dockerfile .",
+    "push-images": "docker push atlassianlabs/atlaskit-mk-2:$npm_package_version && docker push atlassianlabs/atlaskit-mk-2:latest",
+    "push-vr-images": "docker push atlassianlabs/atlaskit-mk-2-vr:$npm_package_version && docker push atlassianlabs/atlaskit-mk-2-vr:latest"
+  },
+  "author": "Luke Batchelor",
+  "maintainers": ["Raja B, Chethana K"],
+  "license": "Apache-2.0"
+}

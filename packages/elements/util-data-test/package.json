@@ -1,0 +1,50 @@
+{
+  "name": "@atlaskit/util-data-test",
+  "description": "Shared test and story data",
+  "version": "13.0.0",
+  "config": {
+    "access": "public"
+  },
+  "atlaskit:src": "src/index.ts",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "scripts": {
+    "ak-postbuild": "mkdir -p dist/esm dist/cjs && cp -r src/json-data dist/esm/json-data && cp -r src/json-data dist/cjs/json-data"
+  },
+  "dependencies": {
+    "@atlaskit/analytics-next": "^6.3.1",
+    "@atlaskit/emoji": "^62.5.4",
+    "@atlaskit/mention": "^18.15.5",
+    "@atlaskit/task-decision": "^16.0.0",
+    "@atlaskit/util-service-support": "^4.1.0",
+    "date-fns": "^1.30.1",
+    "lodash.sample": "^4.2.1",
+    "tslib": "^1.9.3",
+    "uuid": "^3.1.0"
+  },
+  "peerDependencies": {
+    "js-search": "^1.3.7",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@atlaskit/docs": "^8.1.8"
+  },
+  "author": "Atlassian Pty. Ltd",
+  "maintainers": [],
+  "atlaskit": {
+    "internal": true,
+    "name": "Util Data Test",
+    "team": "teams"
+  },
+  "license": "Apache-2.0",
+  "repository": "bitbucket:atlaskit/atlaskit-mk-2",
+  "keywords": [
+    "fabric",
+    "ui",
+    "test",
+    "data",
+    "sample"
+  ]
+}

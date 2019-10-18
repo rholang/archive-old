@@ -1,0 +1,39 @@
+# Follows https://git-scm.com/docs/gitignore#_pattern_format
+# In particular, if the pattern has a slash that isn't trailing, it becomes relative to the current file
+# So use ** in those cases
+node_modules
+coverage
+dist
+flow-typed
+.yarn
+
+# the docs template
+docs/templates/**
+
+# the core icon package
+packages/core/icon/glyph/**
+packages/core/icon/cjs/**
+packages/core/icon/utils/**
+
+# the icon icon-file-type package
+packages/core/icon-file-type/glyph/**
+packages/core/icon-file-type/cjs/**
+packages/core/icon-file-type/utils/**
+
+# the icon icon-object package
+packages/core/icon-object/glyph/**
+packages/core/icon-object/cjs/**
+packages/core/icon-object/utils/**
+packages/bitbucket/codemod-util-shared-styles-to-theme/__fixtures__
+
+# the icon icon-priority package
+packages/core/icon-priority/glyph/**
+packages/core/icon-priority/cjs/**
+packages/core/icon-priority/utils/**
+
+# flow tests
+packages/**/__tests__/flow/
+
+# tmp
+build
+website

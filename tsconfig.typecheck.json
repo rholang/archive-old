@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig",
+  "include": [
+    "./build/**/*",
+    "./packages/**/*",
+    "./website/**/*",
+  ],
+  "exclude": [
+    "./packages/**/**/dist",
+    "**/node_modules",
+    "node_modules",
+    "./website/node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./"
+  }
+}

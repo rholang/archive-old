@@ -1,0 +1,74 @@
+{
+  "name": "@atlaskit/modal-dialog",
+  "version": "10.3.4",
+  "description": "A React component that displays content in a layer blocking the interaction with the page.",
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "license": "Apache-2.0",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "atlaskit:src": "src/index.ts",
+  "atlaskit:designLink": "https://atlassian.design/guidelines/product/components/modal-dialog",
+  "sideEffects": false,
+  "author": "Atlassian Pty Ltd",
+  "maintainers": [
+    "Sean C",
+    "Daniel DC",
+    "Harsha I",
+    "Alex R"
+  ],
+  "atlaskit": {
+    "name": "Modal Dialog",
+    "team": "core"
+  },
+  "dependencies": {
+    "@atlaskit/analytics-next": "^6.3.1",
+    "@atlaskit/blanket": "^10.0.14",
+    "@atlaskit/button": "^13.3.3",
+    "@atlaskit/icon": "^19.0.6",
+    "@atlaskit/portal": "^3.1.2",
+    "@atlaskit/theme": "^9.2.4",
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.7",
+    "exenv": "^1.2.2",
+    "raf-schd": "^2.1.0",
+    "react-focus-lock": "^1.19.1",
+    "react-scrolllock": "^3.0.2",
+    "react-transition-group": "^2.2.1",
+    "tiny-invariant": "^0.0.3",
+    "tslib": "^1.9.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "scripts": {
+    "watch": "tsc --watch --noEmit --project './tsconfig.json'"
+  },
+  "devDependencies": {
+    "@atlaskit/avatar": "^17.1.3",
+    "@atlaskit/build-utils": "^2.2.7",
+    "@atlaskit/checkbox": "^10.1.2",
+    "@atlaskit/docs": "^8.1.8",
+    "@atlaskit/field-radio-group": "^6.0.14",
+    "@atlaskit/field-text": "^9.0.13",
+    "@atlaskit/form": "^6.3.1",
+    "@atlaskit/inline-dialog": "^12.1.3",
+    "@atlaskit/select": "^10.1.3",
+    "@atlaskit/ssr": "^0.1.1",
+    "@atlaskit/textfield": "^3.1.2",
+    "@atlaskit/visual-regression": "^0.1.3",
+    "@atlaskit/webdriver-runner": "^0.1.5",
+    "@testing-library/react": "^8.0.1",
+    "@types/react-beautiful-dnd": "^11.0.1",
+    "enzyme": "^3.7.0",
+    "react-beautiful-dnd": "^10.0.2",
+    "react-dom": "^16.8.0",
+    "react-lorem-component": "^0.12.2",
+    "wait-for-expect": "^1.2.0"
+  },
+  "keywords": [
+    "atlaskit",
+    "react",
+    "ui"
+  ]
+}

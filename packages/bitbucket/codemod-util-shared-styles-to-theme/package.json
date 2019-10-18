@@ -1,0 +1,29 @@
+{
+  "name": "@atlaskit/codemod-util-shared-styles-to-theme",
+  "version": "2.0.3",
+  "private": true,
+  "description": "Converts @atlaskit/util-shared-styles to @atlaskit/theme",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "atlaskit:src": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Atlassian Pty Ltd",
+  "maintainers": [
+    "Ben G"
+  ],
+  "atlaskit": {
+    "internal": true,
+    "name": "Codemod-util-shared-styles-to-theme",
+    "team": "bitbucket"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "jscodeshift": "^0.5.1",
+    "jscodeshift-helper": "^1.1.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0"
+  }
+}

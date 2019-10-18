@@ -1,0 +1,12 @@
+node_modules
+coverage
+dist
+.yarn
+flow-typed
+packages/core/icon/glyph/**
+packages/core/icon/cjs/**
+packages/core/icon/utils/**
+
+
+# tmp
+build

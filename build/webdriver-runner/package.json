@@ -1,0 +1,22 @@
+{
+  "name": "@atlaskit/webdriver-runner",
+  "version": "0.1.5",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "private": true,
+  "dependencies": {
+    "@atlaskit/analytics-reporting": "0.1.1",
+    "@atlaskit/webpack-config": "^2.0.15",
+    "bolt-query": "^1.1.4",
+    "browserstack-local": "^1.4.0",
+    "loader-utils": "^1.1.0",
+    "lodash.get": "^4.4.2",
+    "meow": "^5.0.0",
+    "node-fetch": "^2.2.0",
+    "webdriverio": "^5.7.14"
+  },
+  "devDependencies": {
+    "chromedriver": "^77.0.0",
+    "wdio-chromedriver-service": "^5.0.0"
+  }
+}
