@@ -125,44 +125,21 @@ export default evaluateInner`
   }
 
   /* Quotes */
-  blockquote,
+
   q {
     color: inherit;
   }
+
   blockquote {
-    border: none;
-    padding-left: ${gridSize() * 5}px;
-  }
-  [dir='rtl'] blockquote {
-    padding-left: 0;
-    padding-right: ${gridSize() * 5}px;
-  }
-
-  blockquote::before,
-  q::before {
-    content: '\\201C';
-  }
-
-  blockquote::after,
-  q::after {
-    content: '\\201D';
-  }
-
-  blockquote::before {
-    float: left;
-    /* to keep the quotes left of any child elements like blockquote > p */
-    margin-left: -1em;
-    text-align: right;
-    width: 1em;
-  }
-  [dir='rtl'] blockquote::before {
-    float: right;
-    margin-right: -1em;
-    text-align: left;
-  }
-
-  blockquote > :last-child {
-    display: inline-block; /* so the quotes added via pseudos follow it immediately. */
+    background-color: #fff5c5;
+    border-left-color: #ffe564;
+    border-left-width: 9px;
+    border-left-style: solid;
+    padding: 20px 45px 20px 26px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   /* Other typographical elements */
