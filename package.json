@@ -581,12 +581,7 @@
   "engines": {
     "node": "^10.13.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "./prepush $HUSKY_GIT_PARAMS <<< $HUSKY_GIT_STDIN"
-    }
-  },
+
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "prettier --no-editorconfig --write",
