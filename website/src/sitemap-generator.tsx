@@ -1,26 +1,45 @@
-/*import * as router from './sitemap-routes';
-import Sitemap from 'react-router-sitemap';
-
-new Sitemap(router).build('https://rholang.netlify.com/').save('./sitemap.xml');
-console.log('The sitemap was built.');*/
-
-
-import React from 'react';
 import PageIcon from '@atlaskit/icon/glyph/page';
-import { Directory } from './types';
-import buildNavGroups from './containers/DesktopNav/utils/buildNavGroups';
+import buildNavGroups from './sitemap-routes';
 import { externalPackages as packages, docs, patterns} from './site';
 
-export type DocsNavProps = {
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-  pathname: string;
-  docs: Directory;
-};
+//const { createSitemapsAndIndex } = require('sitemap')
+
+const flattenDeep = require('lodash.flattendeep');
 
 
 const Test = () => {
   const groups = buildNavGroups('docs', PageIcon, "test", docs);
   console.log(groups)
+
+const postsUrls = groups
+  .map(test =>
+    test.items.map(item =>
+      item.to
+    ))
+
+const flat : string[] = flattenDeep(postsUrls)
+
+console.log(flat)
+
+
+const listUrls = flat
+  .map(category => ({
+    url: `${category}`,
+    changefreq: 'weekly',
+    priority: 0.8,
+  }))
+console.log(listUrls,packages,patterns,listUrls)
+/*const smi = createSitemapsAndIndex({
+  hostname: 'http://rholang',
+  sitemapName: 'sm-test',
+  sitemapSize: 1,
+  targetFolder: require('os').tmpdir(),
+  urls: listUrls
+})*/
+
+
+
+//console.log(`Sitemap written at ${OUTPUT_FILE}`)
 };
 
 export default Test;
