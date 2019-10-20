@@ -5,9 +5,9 @@ const loaderUtils = require('loader-utils');
 const globby = require('globby');
 const bolt = require('bolt');
 const { dir, buildFs, isDirHasFiles } = require('./buildFs');
-const { printDir ,getSitemap} = require('./printFs');
+const { printDir, getSitemap, getAlgolia} = require('./printFs');
 const { createSitemapsAndIndex } = require('sitemap');
-
+const fs = require('fs');
 /*::
 import type { Directory, File, LoaderOptions } from './types';
 */
@@ -30,6 +30,9 @@ function createLoaderOutput(
   `;
   let sitemapList = getSitemap(dir)
   sitemapCreator(sitemapList);
+
+  let algoliaList = getAlgolia(sitemapList)
+  algoliaCreator(algoliaList)
 
   if (debug) {
     const groupName = 'Bolt FS Loader Debug Info';
@@ -67,13 +70,23 @@ function addWebpackDependencies(
 function sitemapCreator (sitemapList) {
 
   createSitemapsAndIndex({
-    hostname: 'http://rholang.netlify.com/',
+    hostname: 'https://rholang.netlify.com/',
     sitemapName: 'sitemap',
     sitemapSize: 10000,
     targetFolder: process.cwd()+"/public/",
     urls: sitemapList,
     gzip: false
-  })
+  });
+
+
+};
+
+function algoliaCreator (algoliaList) {
+  fs.writeFile(process.cwd() + "/public/algolia.xml", algoliaList, function(err) {
+    if(err) {
+        console.log(err);
+    }
+  });
 }
 
 module.exports = async function boltFsLoader() {

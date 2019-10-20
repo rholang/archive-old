@@ -4,6 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "bolt": "^0.24.3",
+    "fs": "^0.0.1-security",
     "globby": "^6.1.0",
     "loader-utils": "^1.1.0",
     "sitemap": "^5.0.0"
