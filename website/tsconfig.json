@@ -1,17 +1,8 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-<<<<<<< HEAD
     "baseUrl": "./"
 
-=======
-    "baseUrl": "./",
-    "noImplicitAny": false,
-    "module": "commonjs",
-    "target": "es6",
-    "jsx": "react",
-    "esModuleInterop": true
->>>>>>> 19c6347ec899aa68977356aabbf597fd57ba2e80
   },
   "include": [
     "scripts/**/*.ts",

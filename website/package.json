@@ -18,24 +18,13 @@
     "build:report": "yarn build --report",
     "build:no-minimize": "yarn build:home --no-minimize",
     "build:copy": "cp dist/index.html dist/404.html && cp -R public/* dist/",
-<<<<<<< HEAD
     "sitemap": "tsc ./src/sitemap-generator.tsx",
-=======
-    "sitemap": "ts-node ./src/sitemap-routes.tsx",
->>>>>>> 19c6347ec899aa68977356aabbf597fd57ba2e80
     "deploy:staging": "STAGING=true node ./scripts/retry.publishing.website.js",
     "depl:netlify": "env-cmd node ./scripts/retry.publishing.website.js",
     "depl:gh-pages": "env-cmd  yarn build:copy && gh-pages -b master -d dist"
   },
   "repository": "atlaskit/fabric",
   "devDependencies": {
-<<<<<<< HEAD
-=======
-    "ts-node": "^6.1.1",
-    "gh-pages": "^2.1.1",
-    "env-cmd": "^10.0.1",
-    "react-quicklink-component": "^0.0.5",
->>>>>>> 19c6347ec899aa68977356aabbf597fd57ba2e80
     "@atlaskit/visual-regression": "^0.1.3",
     "@atlaskit/webdriver-runner": "^0.1.5",
     "@types/react-router": "^4.4.1",
