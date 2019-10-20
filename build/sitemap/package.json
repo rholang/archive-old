@@ -1,12 +1,14 @@
 {
-  "name": "@atlaskit/local-linking",
+  "name": "@atlaskit/sitemap",
   "private": true,
   "version": "0.1.0",
   "description": "Link atlaskit components into other repos",
   "author": "Atlassian Pty Ltd",
   "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "link-pkg": "ts-node link-pkg.ts"
+    "build":"tsc"
   },
   "dependencies": {
     "@atlaskit/build-utils": "^2.3.0",

@@ -46,4 +46,30 @@ function printDir(dir /*: Directory */, depth /*: number */ = 0) {
   ].join('\n');
 }
 
-module.exports = { printDir, printFile, pad };
+function printFile2(file /*: File */, depth /*: number */) {
+  return file.uid
+
+}
+
+function printDir2(dir /*: Directory */, depth /*: number */ = 0) {
+  let uriList =
+    dir.children
+      .map(child =>
+        child.type === 'dir'
+          ? printDir2(child, depth + 1)
+          : printFile2(child, depth + 1),
+      ).join(',').split(',')
+
+  let matchList =
+    uriList.map(
+      text => text.replace(/(^[^\d]*)[\d|\-]*([^\d]*)\..*/, (matchedString, first, second) => {
+        return first + second
+    }))
+
+  return matchList
+
+
+
+}
+
+module.exports = { printDir,printDir2, printFile, pad };

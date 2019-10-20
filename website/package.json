@@ -14,11 +14,11 @@
     "TODO": "FIX THE BINARY FILES",
     "start": "node ./node_modules/@atlaskit/webpack-config/bin/dev.js '**/packages/home/**'",
     "build": "rm -rf dist && node --max-old-space-size=8192 ./node_modules/@atlaskit/webpack-config/bin/build.js",
-    "build:home": "rm -rf dist && node --max-old-space-size=8192 ./node_modules/@atlaskit/webpack-config/bin/build.js **/packages/home/**",
+    "build:home": "rm -rf dist && node --max-old-space-size=6192 ./node_modules/@atlaskit/webpack-config/bin/build.js **/packages/home/**",
     "build:report": "yarn build --report",
     "build:no-minimize": "yarn build:home --no-minimize",
     "build:copy": "cp dist/index.html dist/404.html && cp -R public/* dist/",
-    "sitemap": "ts-node ./src/sitemap-generator.tsx",
+    "sitemap": "tsc ./src/sitemap-generator.tsx",
     "deploy:staging": "STAGING=true node ./scripts/retry.publishing.website.js",
     "depl:netlify": "env-cmd node ./scripts/retry.publishing.website.js",
     "depl:gh-pages": "env-cmd  yarn build:copy && gh-pages -b master -d dist"

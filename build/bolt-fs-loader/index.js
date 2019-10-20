@@ -5,7 +5,7 @@ const loaderUtils = require('loader-utils');
 const globby = require('globby');
 const bolt = require('bolt');
 const { dir, buildFs, isDirHasFiles } = require('./buildFs');
-const { printDir } = require('./printFs');
+const { printDir ,printDir2} = require('./printFs');
 
 /*::
 import type { Directory, File, LoaderOptions } from './types';
@@ -27,7 +27,7 @@ function createLoaderOutput(
 
     export default ${printDir(dir)};
   `;
-
+  console.log(printDir2(dir))
   if (debug) {
     const groupName = 'Bolt FS Loader Debug Info';
     return `${output}

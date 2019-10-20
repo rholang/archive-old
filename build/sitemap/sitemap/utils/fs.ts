@@ -1,6 +1,6 @@
 import sentenceCase from 'sentence-case';
-import { Directory, File } from './types';
-export { Directory, File } from './types';
+import { Directory, File } from '../types';
+export { Directory, File } from '../types';
 
 export function getDirectories(
   items: Array<Directory | File>,
@@ -130,5 +130,5 @@ export function isFile(file: File | undefined): boolean {
 }
 
 export function isChildren(file: File | Directory | undefined): boolean {
-  return !!(file );
+  return !!(file && (<Directory>file).children);
 }

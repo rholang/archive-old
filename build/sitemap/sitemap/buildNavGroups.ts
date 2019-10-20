@@ -1,6 +1,6 @@
-import React from 'react';
-import { Directory, NavGroupItem, File } from './types';
-import * as fs from './sitemap-routes2';
+
+import { Directory, NavGroupItem, File } from '../../../website/src/types';
+import * as fs from './utils/fs';
 
 export type groupType = {
   title?: string;
@@ -9,7 +9,7 @@ export type groupType = {
 export default function buildNavGroups(
   prefix: string,
   // TODO: [strictFunctionTypes] Fix any
-  Icon: React.ComponentType<any>,
+
   pathname: string,
   dir: Directory,
 ) {
