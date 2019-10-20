@@ -1,10 +1,10 @@
 By default RNode continuously attempts to connect to other peers. Successful connection to other nodes on the RChain network requires connectivity support from your network. 
 
-> Note
+> **Note**
 >
 > Please ensure, that your internet service provider or web-hoster has assigned you an IPV4 address. If your ISP is using dual stack or IPV6 (dual stack assignes you an IPV6 address), there is currently no bootstrap node, which you can connect to.
 
->Note
+> **Note**
 >
 >Normally the RNode Application is doing everything for you automatically, so you can go directly to [Installing RNode](/docs/installing-rnode.html). Only in cases, where RNode is waiting for it's first connection for a longer time, you have to read the following instructions.
 
@@ -24,14 +24,14 @@ The RNode server needs to be directly connected to the router.  The router needs
 
 RNode supports the UPnP protocol, commonly available on retail routers today. When RNode detects a UPnP gateway device, such as your wireless router, the node software will configure the router's firewall rules automatically. In many small business and home networks, this allows the user to run RNode as a validator without having to reconfigure their network.
 
-> Note
+> **Note**
 >
 >Node operators running Docker on Mac OS X will not be successful running RNode with UPnP. If you want to run with Docker on Mac OS X, you must configure static NAT and port forwarding manually. See "Routers without UPnP Support" below.
 
 
 ## Test your network
 
-* Go to http://canyouseeme.org
+* Go to [http://canyouseeme.org](http://canyouseeme.org)
 * Enter '40400' for the port
 A success message means your configuration should be successful connecting to the RChain network.
 
@@ -65,7 +65,7 @@ Example run command:
 docker run -it -p 40400:40400 --name my_rnode_server -v "$HOME/var":/var rchain/rnode:latest run --default-timeout 6000 --no-upnp -b rnode://address_of_bootstrap_node
 ```
 
->Note
+> **Note**
 >
 >Node operators running Docker on Mac OS X will not be successful running RNode with UPnP. If you want to run with Docker on Mac OS X, you must configure static NAT and port forwarding manually. See "Routers without UPnP Support" below.
 

@@ -17,24 +17,20 @@ export default evaluateInner`
 
   td,
   th {
-    border: none;
-    padding: ${gridSize() / 2}px ${gridSize()}px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
     text-align: left;
+    padding: ${gridSize()}px ${gridSize()}px;
+    text-align: left;
+
   }
 
   th {
     vertical-align: top;
   }
 
-  td:first-child,
-  th:first-child {
-    padding-left: 0;
-  }
 
-  td:last-child,
-  th:last-child {
-    padding-right: 0;
-  }
+
 
   caption {
     ${typography.h600()}

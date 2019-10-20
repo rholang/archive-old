@@ -583,6 +583,10 @@
   "engines": {
     "node": "^10.13.0"
   },
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19c6347ec899aa68977356aabbf597fd57ba2e80
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "prettier --no-editorconfig --write",
