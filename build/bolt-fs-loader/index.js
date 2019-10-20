@@ -5,7 +5,8 @@ const loaderUtils = require('loader-utils');
 const globby = require('globby');
 const bolt = require('bolt');
 const { dir, buildFs, isDirHasFiles } = require('./buildFs');
-const { printDir ,printDir2} = require('./printFs');
+const { printDir ,getSitemap} = require('./printFs');
+const { createSitemapsAndIndex } = require('sitemap');
 
 /*::
 import type { Directory, File, LoaderOptions } from './types';
@@ -27,7 +28,9 @@ function createLoaderOutput(
 
     export default ${printDir(dir)};
   `;
-  console.log(printDir2(dir))
+  let sitemapList = getSitemap(dir)
+  sitemapCreator(sitemapList);
+
   if (debug) {
     const groupName = 'Bolt FS Loader Debug Info';
     return `${output}
@@ -59,6 +62,18 @@ function addWebpackDependencies(
       child.type === 'dir' &&
       addWebpackDependencies(child, addContextDependency),
   );
+}
+
+function sitemapCreator (sitemapList) {
+
+  createSitemapsAndIndex({
+    hostname: 'http://rholang.netlify.com/',
+    sitemapName: 'sitemap',
+    sitemapSize: 10000,
+    targetFolder: process.cwd()+"/public/",
+    urls: sitemapList,
+    gzip: false
+  })
 }
 
 module.exports = async function boltFsLoader() {

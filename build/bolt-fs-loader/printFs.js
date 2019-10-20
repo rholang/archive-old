@@ -46,18 +46,18 @@ function printDir(dir /*: Directory */, depth /*: number */ = 0) {
   ].join('\n');
 }
 
-function printFile2(file /*: File */, depth /*: number */) {
+function getSitemapFile(file /*: File */, depth /*: number */) {
   return file.uid
 
 }
 
-function printDir2(dir /*: Directory */, depth /*: number */ = 0) {
+function getSitemap(dir /*: Directory */, depth /*: number */ = 0) {
   let uriList =
     dir.children
       .map(child =>
         child.type === 'dir'
-          ? printDir2(child, depth + 1)
-          : printFile2(child, depth + 1),
+          ? getSitemap(child, depth + 1)
+          : getSitemapFile(child, depth + 1),
       ).join(',').split(',')
 
   let matchList =
@@ -72,4 +72,4 @@ function printDir2(dir /*: Directory */, depth /*: number */ = 0) {
 
 }
 
-module.exports = { printDir,printDir2, printFile, pad };
+module.exports = { printDir,getSitemap, printFile, pad };
