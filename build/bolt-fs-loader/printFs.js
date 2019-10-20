@@ -73,14 +73,6 @@ function getSitemap(dir /*: Directory */, depth /*: number */ = 0) {
 }
 
 
-function getAlgolia(matchList) {
-  let algoliaList =
-    matchList.map(
-      item => `https://rholang.netlify.com/'${item}'`)
-        .join('')
-          .replace(/'/g, '')
 
-  return algoliaList;
-}
 
-module.exports = { printDir,getSitemap, getAlgolia, printFile, pad };
+module.exports = { printDir,getSitemap, printFile, pad };

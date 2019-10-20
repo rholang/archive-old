@@ -19,8 +19,8 @@
     "build:no-minimize": "yarn build:home --no-minimize",
     "build:copy": "cp dist/index.html dist/404.html && cp -R public/* dist/",
     "deploy:staging": "STAGING=true node ./scripts/retry.publishing.website.js",
-    "depl:netlify": "env-cmd  node ./scripts/retry.publishing.website.js",
-    "depl:gh-pages": "env-cmd  gh-pages -b master -d dist"
+    "depl:netlify": "env-cmd node ./scripts/retry.publishing.website.js",
+    "depl:gh-pages": "env-cmd yarn build:home && yarn build:copy && gh-pages -b master -d dist"
   },
   "repository": "atlaskit/fabric",
   "devDependencies": {

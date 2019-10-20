@@ -5,8 +5,8 @@ const loaderUtils = require('loader-utils');
 const globby = require('globby');
 const bolt = require('bolt');
 const { dir, buildFs, isDirHasFiles } = require('./buildFs');
-const { printDir, getSitemap, getAlgolia} = require('./printFs');
-const { createSitemapsAndIndex } = require('sitemap');
+const { printDir, getSitemap} = require('./printFs');
+const { createSitemapsAndIndex ,buildSitemapIndex, SitemapStream, streamToPromise } = require('sitemap');
 const fs = require('fs');
 /*::
 import type { Directory, File, LoaderOptions } from './types';
@@ -69,25 +69,28 @@ function addWebpackDependencies(
 
 function sitemapCreator (sitemapList) {
 
-  createSitemapsAndIndex({
-    hostname: 'https://rholang.netlify.com/',
-    sitemapName: 'sitemap',
-    sitemapSize: 10000,
-    targetFolder: process.cwd()+"/public/",
-    urls: sitemapList,
-    gzip: false
-  });
+  const sitemap = new SitemapStream({ hostname: 'https://rholang.netlify.com/' });
+
+  sitemapList.map(item =>
+    sitemap.write({ url: `${item}`, changefreq: 'daily', priority: 0.3 ,links: [{lang: 'en', url:`https://rholang.netlify.com/${item}` 	}]}
+    ))
+  sitemap.end()
+
+  streamToPromise(sitemap)
+    .then(sm =>
+      fs.writeFile(process.cwd() + "/public/sitemap.xml", sm, function(err) {
+        if(err) {
+            console.log(err);
+        }
+      }))
+    .catch(console.error);
+
+
 
 
 };
 
-function algoliaCreator (algoliaList) {
-  fs.writeFile(process.cwd() + "/public/algolia.xml", algoliaList, function(err) {
-    if(err) {
-        console.log(err);
-    }
-  });
-}
+
 
 module.exports = async function boltFsLoader() {
   const opts /*: LoaderOptions */ = Object.assign(
