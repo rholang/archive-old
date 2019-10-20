@@ -13,7 +13,7 @@
     "bolt": "^0.24.3",
     "fs-extra": "^4.0.2",
     "meow": "^5.0.0",
-    "ts-node": "^6.1.1",
+    "ts-node": "^8.4.1",
     "yalc": "Blasz/yalc#copy-dir-fix-0.4"
   },
   "devDependencies": {
