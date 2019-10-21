@@ -8,7 +8,7 @@
   "author": "Atlassian Pty Ltd",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "                               cd build/ci-scripts && yarn build @atlaskit/local-linking2",
+    "build": "                               cd build/ci-scripts && yarn build ",
     "build:clean": "                         yarn delete:build:artifacts && yarn build",
     "build:editor-mobile-bridge": "          cd packages/editor/editor-mobile-bridge && yarn build",
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",

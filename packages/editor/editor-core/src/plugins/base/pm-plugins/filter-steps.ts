@@ -1,6 +1,6 @@
 import { Step } from 'prosemirror-transform';
 import { Plugin, Transaction } from 'prosemirror-state';
-import { sendLogs } from '../../../utils/sendLogs';
+
 
 const hasInvalidSteps = (tr: Transaction) =>
   ((tr.steps || []) as (Step & { from: number; to: number })[]).some(
@@ -17,20 +17,7 @@ export default () => {
           tr.steps,
         );
 
-        sendLogs({
-          events: [
-            {
-              name: 'atlaskit.fabric.editor.invalidstep',
-              product: 'atlaskit',
-              properties: {
-                message: 'Blocked transaction with invalid steps',
-              },
-              serverTime: new Date().getTime(),
-              server: 'local',
-              user: '-',
-            },
-          ],
-        });
+
         return false;
       }
 

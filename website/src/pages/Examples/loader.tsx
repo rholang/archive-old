@@ -11,11 +11,6 @@ import packageResolver from '../../utils/packageResolver';
 import * as fs from '../../utils/fs';
 import { File } from '../../types';
 import Loading from '../../components/Loading';
-import {
-  sendInitialApdex,
-  initializeGA,
-  observePerformanceMetrics,
-} from '../../components/Analytics/GoogleAnalyticsListener';
 
 const ErrorMessage = styled.div`
   background-color: ${colors.R400};
@@ -115,21 +110,7 @@ ${error}`);
     }
   }
 
-  componentDidMount() {
-    if (window.self === window.top) {
-      const location = window.location.pathname + window.location.search;
-      window.addEventListener(
-        'load',
-        () => {
-          sendInitialApdex(location);
-        },
-        { once: true },
-      );
-      observePerformanceMetrics(location);
-    }
 
-    initializeGA();
-  }
 
   render() {
     const { example, packageId, exampleId } = packageResolver(

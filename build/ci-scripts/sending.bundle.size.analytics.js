@@ -4,16 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
 
-function sendToRedash(body) {
-  return fetch('https://analytics.atlassian.com/analytics/events', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json, */*',
-      'Content-Type': 'application/json',
-    },
-    body,
-  });
-}
 
 const buildEventPayload = (properties, eventName) => {
   return {
@@ -64,13 +54,5 @@ const prepareData = pathToFolder => {
       buildEventPayload(pkgData, 'atlaskit.computed.bundle.size.per.package'),
     ),
   });
-  sendToRedash(bundleSizeDataEvents)
-    .then(res => {
-      console.log(`Sent bundle size data to Redash`);
-    })
-    .catch(err => {
-      console.log(`Something went wrong while sending data: ${err}`);
-      // Doing so, we don't fail the script in pipelines if an error occurs.
-      process.exit(0);
-    });
+
 })();

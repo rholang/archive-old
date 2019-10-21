@@ -8,9 +8,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { DESKTOP_BREAKPOINT_MIN } from '../constants';
 import FullscreenExamples from '../pages/Examples';
 import { modalRoutes, pageRoutes } from '../routes';
-import ScrollHandler from '../components/ScrollToTop';
 import ErrorBoundary from '../components/ErrorBoundary';
-import AnalyticsListeners from '../components/Analytics/AnalyticsListeners';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
 
@@ -20,39 +18,36 @@ export default () => {
       <BrowserRouter>
         <Media query={`(min-width: ${DESKTOP_BREAKPOINT_MIN}px)`}>
           {(isDesktop: boolean) => (
-            <AnalyticsListeners>
-              <ScrollHandler />
-              <Switch>
-                <Route
-                  path="/examples/:groupId?/:pkgId?/:exampleId*"
-                  component={FullscreenExamples}
-                />
-                <Route
-                  render={appRouteDetails => (
-                    <Page
-                      navigation={
-                        isDesktop ? <DesktopNav {...appRouteDetails} /> : false
-                      }
-                    >
-                      {!isDesktop && (
-                        <MobileNav appRouteDetails={appRouteDetails} />
-                      )}
-                      <ErrorBoundary>
-                        <Switch>
-                          {pageRoutes.map((routeProps: RouteProps, index) => (
-                            <Route {...routeProps} key={index} />
-                          ))}
-                        </Switch>
-
-                        {modalRoutes.map((modal, index) => (
-                          <Route {...modal} key={index} />
+            <Switch>
+              <Route
+                path="/examples/:groupId?/:pkgId?/:exampleId*"
+                component={FullscreenExamples}
+              />
+              <Route
+                render={appRouteDetails => (
+                  <Page
+                    navigation={
+                      isDesktop ? <DesktopNav {...appRouteDetails} /> : false
+                    }
+                  >
+                    {!isDesktop && (
+                      <MobileNav appRouteDetails={appRouteDetails} />
+                    )}
+                    <ErrorBoundary>
+                      <Switch>
+                        {pageRoutes.map((routeProps: RouteProps, index) => (
+                          <Route {...routeProps} key={index} />
                         ))}
-                      </ErrorBoundary>
-                    </Page>
-                  )}
-                />
-              </Switch>
-            </AnalyticsListeners>
+                      </Switch>
+
+                      {modalRoutes.map((modal, index) => (
+                        <Route {...modal} key={index} />
+                      ))}
+                    </ErrorBoundary>
+                  </Page>
+                )}
+              />
+            </Switch>
           )}
         </Media>
       </BrowserRouter>

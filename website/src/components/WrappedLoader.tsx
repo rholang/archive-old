@@ -1,6 +1,5 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-import { sendApdex } from './Analytics/GoogleAnalyticsListener';
 
 function checkMarkAndSendAnalytics() {
   if (!performance.mark) {
@@ -18,13 +17,6 @@ function checkMarkAndSendAnalytics() {
   if (navigate && loaded) {
     performance.measure('analytics-measure', navigate.name, 'loaded');
 
-    let entries = performance.getEntriesByName('analytics-measure', 'measure');
-    if (entries.length === 1 && entries[0].duration) {
-      sendApdex(
-        navigate.name.replace('navigate-', ''),
-        Math.round(entries[0].duration),
-      );
-    }
   }
 
   performance.clearMarks('loaded');

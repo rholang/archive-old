@@ -27,30 +27,3 @@ const events = knownSplitsAssets.map(asset => ({
   },
 }));
 
-sendAnalyticsEvents(events)
-  .then(() => console.log('Success!'))
-  .catch(err => {
-    console.log(err);
-    process.exit(1);
-  });
-
-function sendAnalyticsEvents(events) {
-  return fetchUrl('https://analytics.atlassian.com/analytics/events', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json, */*',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      events: events.map(event => ({
-        name: event.name,
-        properties: event.properties,
-        server: 'dev',
-        product: 'atlaskit',
-        subproduct: 'website-bundle-splits',
-        user: '-',
-        serverTime: Date.now(),
-      })),
-    }),
-  });
-}

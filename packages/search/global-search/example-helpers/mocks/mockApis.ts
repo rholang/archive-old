@@ -150,10 +150,6 @@ function mockJiraApi(delayMs: number, canSearchUsers: boolean) {
   );
 }
 
-function mockAnalyticsApi() {
-  fetchMock.mock('https://analytics.atlassian.com/analytics/events', 200);
-}
-
 function mockAutocompleteApi(delayMs: number, autocomplete: string[]) {
   fetchMock.get(
     new RegExp('gateway/api/ccsearch-autocomplete'),
@@ -194,7 +190,7 @@ export function setupMocks(configOverrides: Partial<MocksConfig> = {}) {
   );
   const queryPeopleSearch = makePeopleSearchData();
 
-  mockAnalyticsApi();
+
   mockCrossProductSearchApi(config.crossProductSearchDelay, queryMockSearch);
   mockCrossProductExperimentApi(
     config.crossProductSearchDelay,
