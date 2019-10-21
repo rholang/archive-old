@@ -31,8 +31,7 @@ function createLoaderOutput(
   let sitemapList = getSitemap(dir)
   sitemapCreator(sitemapList);
 
-  let algoliaList = getAlgolia(sitemapList)
-  algoliaCreator(algoliaList)
+
 
   if (debug) {
     const groupName = 'Bolt FS Loader Debug Info';
