@@ -5,7 +5,7 @@ import {
   AkSearchDrawer,
   AkNavigationItem,
 } from '@atlaskit/navigation';
-import BasicQuickSearch from './BasicQuickSearch';
+import BasicQuickSearch from '../../components/Search/BasicQuickSearch';
 
 import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
 

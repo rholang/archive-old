@@ -141,7 +141,7 @@ export default class BasicQuickSearch extends React.Component<Props, State> {
               resultId: element.objectID,
               type: 'object',
               name: element.hierarchy.lvl0,
-              containerName: "this.random(1)",
+              containerName: element.hierarchy.lvl4,
               avatarUrl: "iconUrl",
               href: element.url,
               objectKey: element.objectID,
