@@ -57,6 +57,7 @@
     "start": "                               yarn run website:start",
     "start:bitbucket": "                     yarn run website:start **/packages/bitbucket/**",
     "start:core": "                          yarn run website:start **/packages/core/**",
+    "start:help": "                          yarn run website:start **/packages/help/**",
     "start:css-packs": "                     yarn run website:start **/packages/css-packs/**",
     "start:editor": "                        yarn run website:start **/packages/editor/**",
     "start:elements": "                      yarn run website:start **/packages/elements/**",
