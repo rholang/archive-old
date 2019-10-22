@@ -49,7 +49,8 @@ type ResultShape = {
     lvl4: string,
     lvl5: string,
   }
-  url: string
+  url: string,
+  objectID: string
 };
 
 var client = algoliasearch('NSSP00E9NN', '865b2e3bf9dc5bc41e5456eb49b9a471');
@@ -112,7 +113,7 @@ export default class BasicQuickSearch extends React.Component<Props, State> {
 
 
   searchData(query: string) {
-    index.search({ query: 'query string' }, (err,  {hits}) => {
+    index.search({ query: query }, (err,  {hits}) => {
       if (err) {
         console.log(err);
         return;
@@ -128,23 +129,27 @@ export default class BasicQuickSearch extends React.Component<Props, State> {
     });
   };
 
+  random(number:number){
+    return `${Math.random()}`
+  }
+
   resultShapeTransformer(resultData:ResultShape[]): DataShape[]  {
     const objects: ObjectResultProps[] = [];
 
     resultData.map(element => {
       return objects.push({
-              resultId: "uuid()",
+              resultId: element.objectID,
               type: 'object',
-              name: "getMockCatchPhrase()",
-              containerName: "getMockCompanyName()",
+              name: element.hierarchy.lvl0,
+              containerName: "this.random(1)",
               avatarUrl: "iconUrl",
-              href: "getMockUrl()",
-              objectKey: "randomIssueKey()",
+              href: element.url,
+              objectKey: element.objectID,
             })
     ;})
 
     const dataShape:DataShape[] = [{
-      title : "test",
+      title :'Results',
       items: objects
     }]
 
