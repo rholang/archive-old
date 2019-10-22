@@ -50,7 +50,7 @@ export default class Search extends React.PureComponent<Props> {
   static defaultProps: Partial<Props> = {
     isLoading: false,
     onBlur: () => {},
-    placeholder: 'Search',
+    placeholder: 'AlgoliaSearch',
   };
 
   onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {

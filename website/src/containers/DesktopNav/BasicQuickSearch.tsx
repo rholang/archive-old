@@ -15,11 +15,8 @@ import {
   ObjectResult,
   ObjectResultProps,
 } from '@atlaskit/quick-search';
+import algoliasearch from 'algoliasearch';
 
-type DataShape = {
-  title: string;
-  items: (ContainerResultProps | PersonResultProps | ObjectResultProps)[];
-};
 
 const data: DataShape[] = [
   {
@@ -35,6 +32,28 @@ const data: DataShape[] = [
     items: containerData(5),
   },
 ];
+
+type DataShape = {
+  title: string;
+  items: (ContainerResultProps | PersonResultProps | ObjectResultProps)[];
+};
+
+type ResultShape = {
+  anchor: string,
+  content: string,
+  hierarchy: {
+    lvl0: string,
+    lvl1: string,
+    lvl2: string,
+    lvl3: string,
+    lvl4: string,
+    lvl5: string,
+  }
+  url: string
+};
+
+var client = algoliasearch('NSSP00E9NN', '865b2e3bf9dc5bc41e5456eb49b9a471');
+var index = client.initIndex('rholang-website');
 
 const availableResultTypes: { [key: string]: React.ComponentClass<any> } = {
   person: PersonResult,
@@ -56,24 +75,7 @@ const mapResultsDataToComponents = (resultData: DataShape[]) => {
     </ResultItemGroup>
   ));
 };
-
 const mockAutocompleteData = makeAutocompleteData();
-
-function contains(string: string, query: string) {
-  return string.toLowerCase().indexOf(query.toLowerCase()) > -1;
-}
-
-function searchData(query: string): DataShape[] {
-  const results = data
-    .map(({ title, items }) => {
-      const filteredItems = items.filter(item =>
-        contains(item.name as string, query),
-      );
-      return { title, items: filteredItems };
-    })
-    .filter(group => group.items.length);
-  return results;
-}
 
 // a little fake store for holding the query after a component unmounts
 type Store = {
@@ -101,12 +103,54 @@ export default class BasicQuickSearch extends React.Component<Props, State> {
 
   state = {
     query: store.query || '',
-    results: searchData(''),
+    results: data,
     isLoading: false,
     autocompleteText: '',
   };
 
   searchTimeoutId: any;
+
+
+  searchData(query: string) {
+    index.search({ query: 'query string' }, (err,  {hits}) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log(hits);
+
+
+      const algoliaData = hits as ResultShape[]
+      const results = this.resultShapeTransformer(algoliaData)
+      this.setState({
+        results
+      });
+    });
+  };
+
+  resultShapeTransformer(resultData:ResultShape[]): DataShape[]  {
+    const objects: ObjectResultProps[] = [];
+
+    resultData.map(element => {
+      return objects.push({
+              resultId: "uuid()",
+              type: 'object',
+              name: "getMockCatchPhrase()",
+              containerName: "getMockCompanyName()",
+              avatarUrl: "iconUrl",
+              href: "getMockUrl()",
+              objectKey: "randomIssueKey()",
+            })
+    ;})
+
+    const dataShape:DataShape[] = [{
+      title : "test",
+      items: objects
+    }]
+
+    return dataShape;
+  }
+
 
   setQuery(query: string) {
     store.query = query;
@@ -123,10 +167,9 @@ export default class BasicQuickSearch extends React.Component<Props, State> {
       isLoading: true,
     });
     this.setQuery(query);
-    const results = searchData(query);
+    this.searchData(query);
     this.searchTimeoutId = window.setTimeout(() => {
       this.setState({
-        results,
         isLoading: false,
       });
     }, this.props.fakeNetworkLatency);

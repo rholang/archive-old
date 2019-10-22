@@ -1,0 +1,110 @@
+- title: Basic Tutorial
+  items:
+    - id: developer-environment
+      title: Developer Environment
+      href: tutorial/joshy/developer-environment.html#h1
+      forceInternal: true
+    - id: sending
+      title: Sending and Standard Out
+      href: tutorial/joshy/sending.html#introduction
+      forceInternal: true
+    - id: receiving
+      title: Receiving
+      href: tutorial/joshy/receiving.html
+      forceInternal: true
+    - id: names-and-processes
+      title: Names and Processes
+      href: tutorial/joshy/names-and-processes.html
+      forceInternal: true
+      subitems:
+    - id: send-and-peek
+      title: Persistent Sends and Peek
+      href: tutorial/joshy/send-and-peek.html
+      forceInternal: true
+      subitems:
+    - id: join
+      title: Join Operator
+      href: tutorial/joshy/join.html
+      forceInternal: true
+    - id: unforgable-names
+      title: Unforgeable Names and Acks
+      href: tutorial/joshy/unforgable-names.html
+      forceInternal: true
+    - id: bundles
+      title: Bundles
+      href: tutorial/joshy/bundles.html
+      forceInternal: true
+      subitems:
+    - id: state-channels
+      title: State Channels
+      href: tutorial/joshy/state-channels.html
+      forceInternal: true
+      subitems:
+    - id: object
+      title: Object Capabilities
+      href: tutorial/joshy/object.html
+      forceInternal: true
+      subitems:
+    - id: additional-syntax
+      title: Additional Syntax
+      href: tutorial/joshy/additional-syntax.html
+      forceInternal: true
+    - id: pattern-matching
+      title: Pattern Matching
+      href: tutorial/joshy/pattern-matching.html
+      forceInternal: true
+    - id: data-structures
+      title: Data Structures
+      href: tutorial/joshy/data-structures.html
+      forceInternal: true
+      subitems:
+    - id: recursion
+      title: Iteration and Recursion
+      href: tutorial/joshy/recursion.html
+      forceInternal: true
+      subitems:
+    - id: games
+      title: Games
+      href: tutorial/joshy/games.html
+      forceInternal: true
+    - id: off-chain
+      title: Off Chain
+      href: tutorial/joshy/off-chain.html
+      forceInternal: true
+    - id: cheat-sheet
+      title: Rholang Cheat Sheet
+      href: tutorial/joshy/cheat-sheet.html
+      forceInternal: true
+      subitems:
+   
+- title: Church numerals in Rho
+  items:
+    - id: introduction
+      title: Introduction
+      href: tutorial/rho-lambda/introduction.html
+      section:
+      forceInternal: true
+    - id: notation
+      title: Notational Conventions
+      href: tutorial/rho-lambda/notation.html
+      forceInternal: true
+    - id: church
+      title: Church numerals
+      href: tutorial/rho-lambda/church.html
+      forceInternal: true
+    - id: boolean
+      title: Booleans
+      href: tutorial/rho-lambda/boolean.html
+      forceInternal: true
+    - id: linked
+      title: Linked List
+      href: tutorial/rho-lambda/linked.html
+      forceInternal: true
+    - id: conway
+      title: Conway games
+      href: tutorial/rho-lambda/conway.html
+      forceInternal: true
+        
+        
+        
+

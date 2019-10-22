@@ -132,7 +132,7 @@ export class QuickSearch extends React.Component<Props, State> {
     onSearchBlur: (_: any) => {},
     onSearchKeyDown: (_: any) => {},
     onSearchSubmit: (_: any) => {},
-    placeholder: 'Search',
+    placeholder: 'AlgoliaSearch',
     value: '',
   };
 

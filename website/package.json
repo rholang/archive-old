@@ -37,7 +37,6 @@
     "react-quicklink-component": "^0.0.5",
     "ts-node": "^6.1.1",
     "tty-table": "^2.6.8"
-
   },
   "dependencies": {
     "@atlaskit/analytics-listeners": "^6.2.1",
@@ -77,6 +76,8 @@
     "@types/react-helmet": "^5.0.8",
     "@types/react-router": "^4.4.1",
     "@types/recompose": "^0.30.3",
+    "@types/algoliasearch": "^3.34.5",
+    "algoliasearch": "^3.35.1",
     "codesandboxer": "^1.0.3",
     "commonmark": "^0.27.0",
     "commonmark-react-renderer": "^4.3.3",

@@ -49,7 +49,7 @@
     "@atlaskit/page": "^11.0.9",
     "@atlaskit/section-message": "^4.1.1",
     "@atlaskit/right-side-panel": "^0.3.0",
-    "algoliasearch": "^3.33.0",
+    "algoliasearch": "^3.35.1",
     "enzyme": "^3.7.0",
     "react-test-renderer": "^16.8.0"
   },
