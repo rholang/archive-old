@@ -58,3 +58,6 @@ dists/
 # allow using .envrc to automate local environment, exclude from CVS
 .envrc
 .env
+
+#
+website/public/

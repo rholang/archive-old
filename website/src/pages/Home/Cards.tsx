@@ -67,7 +67,7 @@ export const CardColumn = styled.div`
 const BaseCardStyles = css`
   display: inline-block;
   width: 300px;
-  border-radius: 3px;
+  border-radius: 0px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
