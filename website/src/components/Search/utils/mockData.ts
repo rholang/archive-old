@@ -109,7 +109,7 @@ function randomIssueKey() {
 export function objectData(n: number): ObjectResultProps[] {
   const items: ObjectResultProps[] = [];
 
-  for (let i = 0; i < n; i++) {
+  /*for (let i = 0; i < n; i++) {
     const provider = randomProduct();
 
     const iconUrl =
@@ -124,7 +124,7 @@ export function objectData(n: number): ObjectResultProps[] {
       href: getMockUrl(),
       objectKey: randomIssueKey(),
     });
-  }
+  }*/
 
   return items;
 }

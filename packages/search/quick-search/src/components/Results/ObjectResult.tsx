@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Avatar from '@atlaskit/avatar';
 import ResultBase from './ResultBase';
 import { CommonResultProps } from './types';
+import Page24Icon from '@atlaskit/icon-object/glyph/page/24';
 
 export type Props = CommonResultProps & {
   /** Name of the container. Provides the main text to be displayed as the item. */
@@ -26,27 +26,21 @@ export default class ObjectResult extends React.PureComponent<Props> {
     }
 
     return (
-      <Avatar
-        borderColor="transparent"
-        src={this.props.avatarUrl}
-        appearance="square"
-        size="small"
-        status={this.props.isPrivate ? 'locked' : null}
-      />
+      <Page24Icon label="Search"/>
     );
   };
 
   getSubtext() {
-    const { objectKey, containerName } = this.props;
-    if (objectKey && containerName) {
+    const { containerName } = this.props;
+    if (containerName) {
       return (
         <span>
-          {objectKey} · {containerName}
+          {containerName}
         </span>
       );
     }
 
-    return containerName || objectKey;
+    return containerName ;
   }
 
   render() {

@@ -16,21 +16,14 @@ import {
   ObjectResultProps,
 } from '@atlaskit/quick-search';
 import algoliasearch from 'algoliasearch';
+import Page24Icon from '@atlaskit/icon';
 
 
 const data: DataShape[] = [
   {
-    title: 'Objects',
-    items: objectData(5),
-  },
-  {
-    title: 'People',
-    items: personData(5),
-  },
-  {
-    title: 'Containers',
-    items: containerData(5),
-  },
+    title: '',
+    items: objectData(5)
+  }
 ];
 
 type DataShape = {
@@ -97,6 +90,7 @@ type State = {
 };
 
 export default class BasicQuickSearch extends React.Component<Props, State> {
+
   static defaultProps = {
     fakeNetworkLatency: 0,
     isAutocompleteEnabled: false,
@@ -110,7 +104,6 @@ export default class BasicQuickSearch extends React.Component<Props, State> {
   };
 
   searchTimeoutId: any;
-
 
   searchData(query: string) {
     index.search({ query: query }, (err,  {hits}) => {
@@ -129,24 +122,22 @@ export default class BasicQuickSearch extends React.Component<Props, State> {
     });
   };
 
-  random(number:number){
-    return `${Math.random()}`
-  }
-
   resultShapeTransformer(resultData:ResultShape[]): DataShape[]  {
     const objects: ObjectResultProps[] = [];
 
     resultData.map(element => {
-      return objects.push({
-              resultId: element.objectID,
-              type: 'object',
-              name: element.hierarchy.lvl0,
-              containerName: element.hierarchy.lvl4,
-              avatarUrl: "iconUrl",
-              href: element.url,
-              objectKey: element.objectID,
-            })
-    ;})
+      if (element.hierarchy.lvl0 && element.hierarchy.lvl4 != ''){
+        return objects.push({
+          resultId: element.objectID,
+          type: 'object',
+          name: element.hierarchy.lvl0,
+          containerName: element.hierarchy.lvl4,
+          avatarUrl: "iconUrl",
+          href: element.url,
+          objectKey: element.objectID
+        })
+      }
+    })
 
     const dataShape:DataShape[] = [{
       title :'Results',
