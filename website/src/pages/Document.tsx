@@ -26,10 +26,15 @@ export default function Document({
     params: { docId },
   },
 }: DocProps) {
+  console.log(docId)
   if (!docId) {
-    const found = fs.getFiles(docs.children)[0];
+    const dir = docs.children[0];
+    const file = docs.children[0].children;
+    const found = fs.getFiles(file)[0];
+    console.log(found)
+    console.log(dir)
     if (!found) return <FourOhFour />;
-    return <Redirect to={`/docs/${fs.normalize(found.id)}`} />;
+    return <Redirect to={`/docs/${dir.id}/${fs.normalize(found.id)}`} />;
   }
 
   const filePath = `docs/${docId}`;

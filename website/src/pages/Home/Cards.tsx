@@ -168,12 +168,7 @@ const cards = [
     to: '/docs/getting-started',
     icon: () => (
       <CardIcon color={colors.R400}>
-        <MediaDocIcon
-          label="Get started with Atlaskit!"
-          primaryColor={colors.N0}
-          secondaryColor={colors.R400}
-          size="small"
-        />
+
       </CardIcon>
     ),
     image: rocket,
