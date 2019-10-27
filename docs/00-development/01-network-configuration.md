@@ -8,7 +8,7 @@ By default RNode continuously attempts to connect to other peers. Successful con
 
 > **Note**
 >
->Normally the RNode Application is doing everything for you automatically, so you can go directly to [Installing RNode](/docs/development/installing-rnode). Only in cases, where RNode is waiting for it's first connection for a longer time, you have to read the following instructions.
+>Normally the RNode Application is doing everything for you automatically, so you can go directly to [Installing RNode](./installing-rnode). Only in cases, where RNode is waiting for it's first connection for a longer time, you have to read the following instructions.
 
 ## Background
 

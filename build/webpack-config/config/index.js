@@ -248,7 +248,7 @@ function getPlugins(
     websiteDir,
     `public/favicon${!isProduction ? '-dev' : ''}.ico`,
   );
-  const HTMLPageTitle = `Atlaskit by Atlassian${!isProduction ? ' - DEV' : ''}`;
+  const HTMLPageTitle = `Rholang a massive scalable language${!isProduction ? ' - DEV' : ''}`;
   const plugins = [
     new HtmlWebpackPlugin({
       template: path.join(websiteDir, 'public/index.html.ejs'),
@@ -268,8 +268,8 @@ function getPlugins(
     new webpack.DefinePlugin({
       ENABLE_ANALYTICS_GASV3: `${String(isAnalyticsGASv3Enabled)}`,
       WEBSITE_ENV: `"${websiteEnv}"`,
-      BASE_TITLE: `"Atlaskit by Atlassian ${!isProduction ? '- DEV' : ''}"`,
-      DEFAULT_META_DESCRIPTION: `"Atlaskit is the official component library for Atlassian's Design System."`,
+      BASE_TITLE: `"Rholang a massive scalable language ${!isProduction ? '- DEV' : ''}"`,
+      DEFAULT_META_DESCRIPTION: `"Rholang a massive scalable language for the next generation blockchain"`,
     }),
   ];
 
