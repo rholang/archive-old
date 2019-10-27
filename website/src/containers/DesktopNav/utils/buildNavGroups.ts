@@ -16,6 +16,7 @@ export default function buildNavGroups(
   return dir.children.map(
     (group: File | Directory): groupType => {
       if (group.type === 'file') {
+
         return {
           items: [
             {
@@ -30,10 +31,10 @@ export default function buildNavGroups(
 
       const children = fs.getFiles(group.children);
       return {
-        title: group.id,
+        title: fs.normalize(group.id),
         items: children.map(doc => {
           return {
-            to: `/${prefix}/${group.id}/${fs.normalize(doc.id)}`,
+            to: `/${prefix}/${fs.normalize(group.id)}/${fs.normalize(doc.id)}`,
             isSelected: (pathname: string, to: string) =>
               pathname.startsWith(to),
             title: fs.titleize(doc.id),

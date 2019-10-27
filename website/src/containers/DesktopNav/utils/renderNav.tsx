@@ -12,6 +12,7 @@ export default function renderNav(
   groups: Array<NavGroup>,
   { onClick, pathname }: Props,
 ) {
+  console.log(groups)
   return groups.map((group, index) => (
     <AkNavigationItemGroup
       title={group.title}
