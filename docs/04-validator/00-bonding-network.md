@@ -1,13 +1,4 @@
----
-id: bonding-network
-title: Bonding to a network
-permalink: docs/bonding-network.html
-redirect_from:
-
-prev: getting-started.html
-next: create-a-new-react-app.html
----
-
+# Bonding to a network
 To participate in the RChain proof-of-stake consensus protocol, you must stake bond on the network to become a bonded validator. Information about this process is not yet available.
 
 

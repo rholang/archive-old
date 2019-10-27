@@ -1,10 +1,4 @@
----
-id: send-receive
-title: Sending and Receiving
-permalink: docs/send-receive.html
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Sending and Receiving
 Sending and receiving is one of the most important things to understand in Rholang. 
 
 >Note
@@ -15,7 +9,7 @@ Sending and receiving is one of the most important things to understand in Rhola
 >
 >Because of the asynchrony you don't know when the function you called via HelloWorld!(args) is sending the processed data back over some other channel, Rholang has the for(args<-channels) syntax for waiting until all the needed arguments are received over the channels.
 
-#### Example
+## Example
 ```javascript{numberLines: true}
 new HelloWorld, stdout(`rho:io:stdout`) in {
   HelloWorld!("Hello, world!") |

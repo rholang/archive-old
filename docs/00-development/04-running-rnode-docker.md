@@ -1,12 +1,4 @@
----
-id: running-rnode-docker
-title: Running RNode (non-Docker)
-permalink: docs/running-rnode-docker.html
-redirect_from:
-
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Running RNode (non-Docker)
 These are the run commands to start RNode (non-Docker)
 
 ## To connect to an existing network

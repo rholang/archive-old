@@ -1,9 +1,4 @@
----
-id: expressions
-title: Expressions
-permalink: docs/expressions.html
-next: add-react-to-a-website.html
----
+# Expressions
 An Expression or mathematical expression is a finite combination of symbols that is well-formed according to rules that depend on the context. 
 Expressions are special because they are evaluated before sending the result to a channel. 
 

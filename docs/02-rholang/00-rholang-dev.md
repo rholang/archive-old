@@ -1,9 +1,4 @@
----
-id: rholang-dev
-title: Rholang
-permalink: docs/rholang-dev.html
-next: add-react-to-a-website.html
----
+# Rholang
 Rholang is a new programming language designed for use in distributed systems.  Like all newborn things, it is growing and changing rapidly. This document describes the syntax in Rholang.
 
 Rholang is "process-oriented": all computation is done by means of message passing.  Messages are passed on "channels", which are rather like message queues; however, the channels behave more like bags (multisets) rather than queues, since there is no implicit ordering on messages.  
@@ -18,6 +13,6 @@ Get started with Rholang by selecting one of the options below.
 * __Run Rholang using Cryptofex IDE__ - This closed source [IDE](http://cryptofex.io/download) was created by Pyrofex.
 * __Write Rholang using an IntelliJ plugin__ - This [Rholang IntelliJ plugin](https://github.com/tgrospic/rholang-idea) was created by a RChain community member.
 
-##Rholang language specification
+## Rholang language specification
 [Language specification](https://developer.rchain.coop/assets/rholang-spec-0.2.pdf)
 

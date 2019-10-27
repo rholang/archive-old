@@ -1,11 +1,4 @@
----
-id: installing-rnode
-title: Installing RNode
-permalink: docs/installing-rnode.html
-prev: getting-started.html
-next: create-a-new-react-app.html
----
-
+# Installing RNode
 We deliver RNode software in a variety of installation packages.  Installation packages are available at both [RChain](https://developer.rchain.coop) and [Github](https://github.com/rchain/rchain/releases). We recommend using the latest release.
 
 > **Note**
@@ -16,7 +9,7 @@ We deliver RNode software in a variety of installation packages.  Installation p
 >
 > Should there be errors, when you install RNode for the first time, please make shure that you have the newest Java version installed.
 
-## Linux
+## Linux 
 <br/>
 <table >
     <colgroup>
@@ -49,7 +42,7 @@ We deliver RNode software in a variety of installation packages.  Installation p
             <td class="confluenceTd">Debian Package (.deb)</td>
             <td class="confluenceTd">
                 <div class="content-wrapper">
-                    <p class="auto-cursor-target">First time installation:</p>
+                    <p class="auto-cursor-target"><strong>First time installation:</strong></p>
                     <div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code" data-macro-id="466939d5-efde-4033-bacb-42599dd2c8a3">
                         <div class="codeContent panelContent pdl">
                             <div>
@@ -103,7 +96,7 @@ We deliver RNode software in a variety of installation packages.  Installation p
             </td>
             <td class="confluenceTd">RPM Package (.rpm)</td>
             <td class="confluenceTd">
-                <p>First time installation:
+                <p><strong>First time installation:</strong>
                 </p>
                 <div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code" data-macro-id="22e126a2-e60a-4d1f-a4a1-ac054f4022a6">
                     <div class="codeContent panelContent pdl">
@@ -161,7 +154,7 @@ We deliver RNode software in a variety of installation packages.  Installation p
                     </ul>
                     <p>
                     </p>
-                    <p>First time installation:</p>
+                    <p><strong>First time installation:</strong></p>
                     <div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code" data-macro-id="b47bb8da-61b8-4f4e-ab15-6d6f5d2c3f9c">
                         <div class="codeContent panelContent pdl">
                             <div>
@@ -215,12 +208,12 @@ We deliver RNode software in a variety of installation packages.  Installation p
             <td class="confluenceTd">Tarball (.tgz)</td>
             <td class="confluenceTd">
                 <div class="content-wrapper">
-                    <p>Prerequisites&nbsp;</p>
+                    <p><strong>Prerequisites</strong></p>
                     <ul>
                         <li>Java - We recommend Open JDK 10,&nbsp;<a href="https://openjdk.java.net/projects/jdk/10/" class="external-link" rel="nofollow">https://openjdk.java.net/projects/jdk/10/</a></li>
                         <li>Libsodium -&nbsp;<a href="https://download.libsodium.org/doc/" class="external-link" rel="nofollow">https://download.libsodium.org/doc/</a>&nbsp;installed in a standard prefix (/user or /user/local)</li>
                     </ul>
-                    <p class="auto-cursor-target">First time installation:</p>
+                    <p class="auto-cursor-target"><strong>First time installation:</strong></p>
                     <div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code" data-macro-id="3f1198a3-cfb4-4891-8936-770ead296049">
                         <div class="codeContent panelContent pdl">
                             <div>
@@ -252,8 +245,6 @@ We deliver RNode software in a variety of installation packages.  Installation p
 </table>
 
 ## Windows
-<br/>
-
 Please install the Docker version for Windows.
 
 ## Docker

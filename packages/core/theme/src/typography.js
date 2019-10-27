@@ -24,7 +24,7 @@ export const headingSizes = {
     lineHeight: 28,
   },
   h600: {
-    size: 20,
+    size: 17,
     lineHeight: 24,
   },
   h500: {

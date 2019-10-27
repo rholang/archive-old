@@ -64,6 +64,10 @@ export default evaluateInner`
     outline-offset: 2px;
   }
 
+  p {
+    margin-top:5px;
+  }
+
   /* Headings */
   h1 {
     ${typography.h800()}

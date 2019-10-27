@@ -3,7 +3,6 @@ import css from './utils/evaluate-inner';
 export default css`
   html,
   body,
-  p,
   div,
   h1,
   h2,

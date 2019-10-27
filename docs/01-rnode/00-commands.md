@@ -1,25 +1,19 @@
----
-id: commands
-title: Commands for RNode
-permalink: docs/commands.html
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Commands for RNode
+Commands for calling rnode
 
-##Available shell commands
+## Available shell commands
 With RNode running, use `--help` to see available commands and subcommands.
 
-##Calling the API
+## Calling the API
 The RNode API is a server side API. To access the local RNode server once you have RNode running, open a new window and invoke the RNode api with:
 
 ```bash
 rnode <API call>
 ```
 
-####Calling the API from a remote server
+### Calling the API from a remote server
 You can call the API of a remote RNode server by specifying the host server and host server port.
 
-<br/>
 <table class="wrapped confluenceTable tablesorter tablesorter-default" resolved="" role="grid">
     <colgroup>
         <col>
@@ -64,7 +58,7 @@ This is an example of an API call to a remote server
 ./bin/rnode --grpc-host IP.Address.of.server --grpc-port 40401 repl
 ```
 
-##Find your node address, version, and peer count
+## Find your node address, version, and peer count
 You can ask RNode to provide its status to report the RNode address, version, and peer count.
 
 ```bash
@@ -80,7 +74,7 @@ Example of a status request response
 ```
 RNode offers two types of counts of peers. peers are the number of nodes you are connected to via the Kademlia protocol and the ones that are able to pass messages such as blocks. nodes are the number of nodes found as part of node discovery.
 
-##Get a count of blocks in the DAG
+## Get a count of blocks in the DAG
 Use this command to show the number of blocks in the DAG according to your node. 
 
 
@@ -95,7 +89,7 @@ Report status in Docker
 docker run -it --rm --network rnode-net --name rnode -v $HOME/var/rholang:/var/ rchain/rnode:latest --grpc-host rnode2 show-blocks
 ```
 
-##Generate a public/private key set
+## Generate a public/private key set
 You can use the RNode software to generate either a secp256k1 public/private key set to use when deploying Rholang or in other scenarios where providing keys is a requirement. With the release of RNode v0.9.7 the platform uses the secp256k1 algorithm. 
 
 ```bash

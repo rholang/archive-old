@@ -1,13 +1,7 @@
----
-id: deploy-contract
-title: Deploy a Rholang contract
-permalink: docs/deploy-contract.html
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Deploy a Rholang contract
 Deploy a Rholang source file to Casper on an existing running node. The deploy will be packaged and sent as a block to the network depending on the configuration of the Casper instance.
 
-##Deploy commands
+## Deploy commands
 The deploy command requires the following specifications in addition to the Rholang file:
 * `--phlo-limit  <arg>`             The amount of phlo to use for the
                                     transaction (unused phlo is refunded).
@@ -24,11 +18,11 @@ Unless you are a validator in the RChain network or a private network, you will 
 ```bash
 rnode --grpc-host <address of known validator> deploy --phlo-limit <value> --phlo-price <value> --private-key-path <path to encrypted private ke> <path to .rho file>
 ```
-##Deploy a Rholang contract to a known validator in Docker
+## Deploy a Rholang contract to a known validator in Docker
 ```bash
 docker run -it --rm --network rnode-net --name rnode-deploy1 -v $HOME/var/rholang:/var/ rchain/rnode:latest --grpc-host <address of known validator> deploy --from "0x1" --phlo-limit <value> --phlo-price <value> --private-key-path <path to encrypted private key> <path to Rholang file>
 ```
-##Deploy returns a DeployID
+## Deploy returns a DeployID
 A successful deploy returns a DeployID. You can use this ID to locate your deploy in a proposed block.
 
 For example:

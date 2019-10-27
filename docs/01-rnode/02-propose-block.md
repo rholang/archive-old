@@ -1,15 +1,7 @@
----
-id: propose-block
-title: Propose a block to the blockchain
-permalink: docs/propose-block.html
-redirect_from:
-
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Propose a block to the blockchain
 Propose triggers a block proposal to the network. This is a function only available to validating nodes. With a deploy you send your package to a validator and with a propose you request the validator to process your package. Validator try to bundle many deploys for best performance before sending them to the network for consensus. 
 
-##Propose a new block (non-Docker)
+## Propose a new block (non-Docker)
 Example of the propose command on the server side:
 ```bash
 root@salt:~# rnode propose
@@ -26,7 +18,7 @@ Here is an example of the console output following the propose. The log shows th
 21:52:08.844 [repl-io-141] INFO  c.rchain.casper.MultiParentCasper$ - CASPER: New fork-choice tip is block c0b68d2520....
 ```
 
-##Propose a new block (Docker)
+## Propose a new block (Docker)
 ```bash
 docker run -it --rm --network rnode-net --name rnode-propose1 -v $HOME/var/rholang:/var/ rchain/rnode:latest --grpc-host rnode1 propose
 ```

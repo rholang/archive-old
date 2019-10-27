@@ -1,10 +1,4 @@
----
-id: casper-cbc
-title: Casper CBC
-permalink: docs/casper-cbc.html
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Casper CBC
 
 In the context of blockchain technologies, the consensus algorithm is what allows everyone on the network to confidently know the current state of things and that when they engage in transactions which change the state others will recognize the change too. 
 

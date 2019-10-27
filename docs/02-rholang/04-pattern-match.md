@@ -1,10 +1,4 @@
----
-id: pattern-match
-title: Pattern matching
-permalink: docs/pattern-match.html
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Pattern matching
 There are two kinds of value in Rholang, names and processes.  Patterns are names or processes with free variables and logical connectives, which appear to the left of an arrow in a `for` or a `match`:
 
 ```javascript
@@ -86,7 +80,7 @@ for(@{ @"grade"!(10 \/ 11) } <- StudentGradeLevel){ ... }
 ```
 This will match with whichever of `StudentGradeLevel!(@"grade"!(10))` and `StudentGradeLevel!(@"grade"!(11))` runs first. The same precedence rules from before apply.
 
-### Patterns in a `for`
+## Patterns in a `for`
 
 The term
 
@@ -140,7 +134,7 @@ in either order.
 10) As noted above, this line updates the sequence number so that rows are not read twice.  If we have multiple readers of the database, each will be assigned a sequence number.  As soon as a row is read, it is put back into the database for the next reader; any processing is done in parallel with the write, so even though this pattern sequentializes the readers, the access is still very fast.
 
 
-### Patterns in a `match`
+## Patterns in a `match`
 
 Patterns can also be used in a `match` production.
 
@@ -220,14 +214,14 @@ This example shows how to implement a fold over a list, then uses it to compute 
 
 42.) Invoke the main contract on an example list.
 
-### Patterns With Wildcards
+## Patterns With Wildcards
 
 We can also include wildcards in patterns. The intuition for these is that they throw away whatever they match to in the pattern. This can be useful, for example, to synchronize processes by listening on a channel `ack` for an acknowledgment that one process has completed and that the body of this `for` is supposed to execute.
 ```javascript
 for( _ <- ack ){ ... }
 ```
 
-### Patterns with simple types
+## Patterns with simple types
 
 It's possible to match simple types: `Int`, `Bool`, `String`, `Uri`, and `ByteArray`
 ```javascript
@@ -238,5 +232,5 @@ If you want to capture the value you matched, you can use the and logcial connec
 for( @{x /\ Int} <- ack) { ... }
 ```
 
-##Aditional Docs
+## Aditional Docs
 [clarification on pattern matching](https://developer.rchain.coop/assets/illegal%20moves.pdf)

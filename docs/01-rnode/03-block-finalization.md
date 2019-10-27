@@ -1,15 +1,7 @@
----
-id: block-finalization
-title: Check block finalization
-permalink: docs/block-finalization.html
-redirect_from:
-
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Check block finalization
 When the network has accepted your block and reached a consensus on it, the block is finalized
 
-##Check if a block is finalized
+## Check if a block is finalized
 Use this command to check if a block with the given blockhash is finalized
 ```bash
 rnode is-finalized <blockhash>

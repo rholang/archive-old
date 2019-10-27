@@ -1,10 +1,4 @@
----
-id: iteration
-title: Iteration
-permalink: docs/iteration.html
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Iteration
 In the code below, we show an example of iterating through a list.
 
 ```javascript{numberLines: true}

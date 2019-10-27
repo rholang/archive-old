@@ -1,12 +1,7 @@
----
-id: names-processes
-title: Names and Processes
-permalink: docs/names-processes.html
-next: add-react-to-a-website.html
----
+# Names and Processes
 Rholang has two kinds of values: processes and names.
 
-## Names {#getting-started2}
+## Names 
 A name represents a communication channel. You can send messages to a name or you can receive a message from a name.
 
 The names are created with the construct
@@ -40,5 +35,5 @@ someName ! ("hello")
 for( x <- someChannel) { ... }
 p | q
 ```
-#### Primitive values
+### Primitive values
 Rholang currently supports integers, strings, booleans, tuples, lists, sets and maps.

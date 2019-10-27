@@ -1,10 +1,4 @@
----
-id: design-patterns
-title: Design patterns
-permalink: docs/design-patterns.html
-prev: getting-started.html
-next: create-a-new-react-app.html
----
+# Design patterns
 Here you find some patterns you will often use to solve same Tasks.
 
 ## Mutable state
@@ -173,7 +167,7 @@ Here's how to solve the problem:
 
 ## Crypto channels
 
-#### Hashing
+### Hashing
 
 There are three hashing functions available:
 
@@ -187,7 +181,7 @@ Hashing functions are exposed as channels which expect two arguments:
 - return channel for sending back the hash represented as byte array
 
 
-##### Example usage:
+### Example usage:
 ```javascript
 new x, y, stdout(`rho:io:stdout`) in {
     x!(@"name"!("Joe") | @"age"!(40)) |  // (1)
@@ -281,7 +275,7 @@ new x, stdout(`rho:io:stdout`) in {
 
 In this section we describe several design patterns.  These patterns are adapted from Marc Stiegler's [_A PictureBook of Secure Cooperation_](http://erights.org/talks/efun/SecurityPictureBook.pdf).
 
-#### Facets
+### Facets
 
 In the MakeCell contract, the client provides two channels, one for getting the value and one for setting it.  If the client then passes only the `get` channel to another process, that process effectively has a read-only view of the cell.  
 
@@ -297,7 +291,7 @@ This term has two processes listening on the channel `get` and a single message 
 
 By receiving channels from the client for getting and setting, the MakeCell contract is leaving the decisions about how public those channels are to the client.  The MakeCoatCheck contract, on the other hand, constructs its own channels and exposes methods the client, so it is in a position to enforce privacy guarantees.
 
-#### Attenuating forwarders
+### Attenuating forwarders
 
 In the MakeCoatCheck contract, there's only one channel and messages are dispatched internally.  To get the same effect as a read-only facet, we can create a forwarder process that simply ignores any messages it doesn't want to forward.  The contract below only forwards the "get" method.
 ```javascript
@@ -312,7 +306,7 @@ new MakeGetForwarder in {
   }
 }
 ```
-#### Revocation
+### Revocation
 
 We can implement revocation by creating a forwarder with a kill switch.
 ```javascript{numberLines: true}
@@ -344,7 +338,7 @@ We can implement revocation by creating a forwarder with a kill switch.
 
 12-14) If a message is ever sent on the `kill` channel, we set `forwardFlag` to false.  The forwarder process then stops forwarding messages.
 
-#### Composition
+### Composition
 
 By combining an attenuating forwarder with a revokable forwarder, we get both features:
 ```javascript
@@ -363,7 +357,7 @@ new ret in {
   }
 }
 ```
-#### Logging forwarder
+### Logging forwarder
 
 A logging forwarder can record all messages sent on a channel by echoing them to a second channel.
 ```javascript
@@ -377,11 +371,11 @@ contract MakeLoggingForwarder(target, logger, ret) = {
   }
 }
 ```
-#### Accountability
+### Accountability
 
 Suppose Alice has a channel and would like to log Bob's access to it.  Bob would like to delegate the use of that channel to Carol and log her access.  Each party is free to construct their own logging forwarder around the channel they have received.  Alice will hold Bob responsible for whatever Carol does.
 
-#### Sealing and unsealing
+### Sealing and unsealing
 ```javascript
 contract MakeSealerUnsealer(ret) =  {
   new sealer, unsealer, ccRet in {
@@ -401,7 +395,7 @@ contract MakeSealerUnsealer(ret) =  {
 
 A sealer/unsealer pair gives the same functionality as public keys, but without cryptography. It's merely an attenuation of the coat check described above.  This design pattern can be used to sign something on a user's behalf.  In the Rholang blockchain tutorial, we'll see that a sealer/unsealer pair even works as a signing/verification pair of keys on the blockchain because there are no secrets to store, only unforgeable names to be kept inaccessible.
 
-#### Beware of sending attenuators
+### Beware of sending attenuators
 
 A basic principle to keep in mind with RChain processes is one that is similar to more traditional web applications: whatever code you send to another party can be disassembled.  Ever since the late 1990s when buying things over the web became possible, [there have been e-commerce platforms](https://blog.detectify.com/2016/11/17/7-most-common-e-commerce-security-mistakes/) where the platform relied on the users' browsers to send the correct price of the item back to it.  The authors didn't think about the user opening the developer tools and changing the price before it got sent back.  The right way to build an e-commerce platform is to store the prices on the server and check them there.
 

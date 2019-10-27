@@ -1,3 +1,5 @@
+# Network Configuration
+
 By default RNode continuously attempts to connect to other peers. Successful connection to other nodes on the RChain network requires connectivity support from your network. 
 
 > **Note**
@@ -6,7 +8,7 @@ By default RNode continuously attempts to connect to other peers. Successful con
 
 > **Note**
 >
->Normally the RNode Application is doing everything for you automatically, so you can go directly to [Installing RNode](/docs/installing-rnode.html). Only in cases, where RNode is waiting for it's first connection for a longer time, you have to read the following instructions.
+>Normally the RNode Application is doing everything for you automatically, so you can go directly to [Installing RNode](/docs/development/installing-rnode). Only in cases, where RNode is waiting for it's first connection for a longer time, you have to read the following instructions.
 
 ## Background
 
@@ -51,11 +53,21 @@ At a high level, you should:
 3. Configure port forwarding for ports 40400 - 40430
 When configuration is complete, it should look something like this: 
  <br><br/>
-  
 
-| Device | Allowed Applications | Protocol | Port Number |
-| -------| -------------------- | -------- | ----------- |
-| MyRNodeServer  | RChain | tcp | 40400-40430 |
+<table>
+  <tr>
+    <th>Device</th>
+    <th>Allowed Applications </th>
+    <th>Protocol</th>
+    <th>Port Number</th>
+  </tr>
+  <tr>
+    <td>MyRNodeServer</td>
+    <td>RChain</td>
+    <td>tcp</td>
+    <td>40400-40430</td>
+  </tr>
+ 
 
 ## Running Docker
 Running RNode in Docker has additional network configuration requirements. You must. include explicit port mapping options in your run command with the --p option..  
