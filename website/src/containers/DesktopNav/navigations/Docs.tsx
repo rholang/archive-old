@@ -7,10 +7,12 @@ import buildNavGroups from '../utils/buildNavGroups';
 export type DocsNavProps = {
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   pathname: string;
-  docs: Directory;
+  content: Directory;
+  prefix: string;
 };
 
-export default function DocsNav({ pathname, docs, onClick }: DocsNavProps) {
-  const groups = buildNavGroups('docs', PageIcon, pathname, docs);
+export default function DocsNav({ pathname, content, prefix, onClick }: DocsNavProps) {
+  const groups = buildNavGroups(prefix, PageIcon, pathname, content);
   return <div>{renderNav(groups, { pathname, onClick })}</div>;
 }
+

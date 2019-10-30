@@ -8,10 +8,11 @@ import Page from '../components/Page';
 import Markdown from '../components/Markdown';
 import FourOhFour from './FourOhFour';
 import Loading from '../components/Loading';
-import { docs } from '../site';
+import { content } from '../site';
 
 export type DocProps = {
-  match: match<Record<string, string>>; // TODO: replace with react router
+  match: match<Record<string, string>>;
+   // TODO: replace with react router
 };
 
 export type ResolvedMD = {
@@ -21,23 +22,31 @@ export type ResolvedMD = {
   };
 };
 
+
+
+
 export default function Document({
   match: {
-    params: { docId },
+    params: { rootId, docId }
   },
+
 }: DocProps) {
+
+
   if (!docId) {
-    const dir = docs.children[0];
+    const dir = content.children[0]
+    const file = dir.children[0];
     console.log(dir)
-    const file = docs.children[0].children;
-    const found = fs.getFiles(file)[0];
+    const found = fs.getFiles(file.children)[0];
     if (!found) return <FourOhFour />;
-    return <Redirect to={`/docs/${fs.normalize(dir.id)}/${fs.normalize(found.id)}`} />;
+    return <Redirect to={`/docs/${fs.normalize(dir.id)}/${fs.normalize(file.id)}/${fs.normalize(found.id)}`} />;
   }
 
-  const filePath = `docs/${docId}`;
-  const found = fs.findNormalized(docs, filePath);
-
+  const filePath = `content/getting-started`;
+  const found = fs.findNormalized(content, filePath);
+  console.log("content")
+  console.log(content)
+  console.log(found)
   const Content = Loadable<{}, ResolvedMD>({
     loader: async () =>
       fs.isFile(found as File) ? await (found as File).exports() : {},
@@ -45,6 +54,8 @@ export default function Document({
     render(md) {
       const docDetails = md.default || {};
       const { content, data = {} } = docDetails;
+      console.log("con2")
+      console.log(md)
       if (content) {
         return <Markdown {...data}>{content}</Markdown>;
       }

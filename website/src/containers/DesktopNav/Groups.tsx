@@ -11,8 +11,9 @@ import PatternsNav from './navigations/Patterns';
 
 import { Directory } from '../../types';
 
+
 export type GroupsProps = {
-  docs: Directory;
+  content: Directory;
   patterns: Directory;
   packages: Directory;
   onClick?: (e: Event) => void | undefined;
@@ -49,24 +50,44 @@ export default class Groups extends React.Component<GroupsProps, GroupsState> {
   }
 
   resolveRoutes(pathname: string) {
-    const { docs, packages, patterns } = this.props;
+    const { content, packages, patterns } = this.props;
 
-    const menus = [
+    const menuBuilder = content.children.map(item => {
+      console.log("group")
+      console.log(item)
+      return (
+        <Route path= {`docs/${item.id}`}>
+          <DocsNav pathname={pathname} prefix={`docs/${item.id}`} content={content} />
+        </Route>
+      )
+    })
+
+    const menuRoot = [
       <Route path="/">
         <DefaultNav pathname={pathname} />
-      </Route>,
-      <Route path="/docs">
-        <DocsNav pathname={pathname} docs={docs} />
-      </Route>,
+      </Route>
+    ]
+
+    const menuPackages = [
       <Route path="/packages">
         <PackagesNav pathname={pathname} packages={packages} />
       </Route>,
       <Route path="/packages">
         <PackagesNav pathname={pathname} packages={packages} />
-      </Route>,
+      </Route>
+    ]
+
+    const menuPatterns = [
       <Route path="/patterns">
         <PatternsNav pathname={pathname} patterns={patterns} />
-      </Route>,
+      </Route>
+    ]
+
+    const menus = [
+      ...menuRoot,
+      ...menuBuilder,
+      ...menuPackages,
+      ...menuPatterns
     ];
 
     const stack = menus

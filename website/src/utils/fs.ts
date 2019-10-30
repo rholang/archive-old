@@ -38,7 +38,6 @@ export function getById<T extends { id: string }>(
   id: string,
 ): T {
   const match = maybeGetById(items, id);
-
   if (!match) {
     throw new Error(`Missing ${id} in file system`);
   }

@@ -18,6 +18,11 @@ export const CONTAINER_HEADERS_CONFIG: { [key: string]: HeaderIconProps } = {
     color: colors.P300,
     label: 'Documentation',
   },
+  tuts: {
+    icon: DocumentationIcon as React.ComponentType<IconProps>,
+    color: colors.P300,
+    label: 'Documentation',
+  },
   packages: {
     icon: PackagesIcon as React.ComponentType<IconProps>,
     color: colors.R300,

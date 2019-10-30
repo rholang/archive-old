@@ -16,7 +16,7 @@ import HeaderIcon from '../../components/HeaderIcon';
 import { CONTAINER_HEADERS_CONFIG } from './constants';
 import { AtlaskitIcon } from '../../components/AtlaskitIcon';
 import SearchDrawer, { LinkComponentProps } from './SearchDrawer';
-import { externalPackages as packages, docs, patterns } from '../../site';
+import { externalPackages as packages, content, patterns } from '../../site';
 
 export default function Nav({ location }: RouteComponentProps) {
   const [groupDrawerOpen, setGroupDrawerOpen] = React.useState<boolean>(false);
@@ -30,7 +30,7 @@ export default function Nav({ location }: RouteComponentProps) {
   const headerKey = location.pathname.split('/').filter(p => p)[0];
 
   const header = CONTAINER_HEADERS_CONFIG[headerKey];
-  const groups = <Groups docs={docs} packages={packages} patterns={patterns} />;
+  const groups = <Groups content={content} packages={packages} patterns={patterns} />;
 
   return (
     <Navigation

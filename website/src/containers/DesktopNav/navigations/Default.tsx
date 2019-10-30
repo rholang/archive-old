@@ -25,10 +25,16 @@ const defaultNavGroups = [
         icon: <OverviewIcon label="Documentation" />,
       },
       {
+        to: '/tutorials',
+        title: 'Tutorials',
+        icon: <OverviewIcon label="Tutorials" />,
+      },
+      {
         to: '/packages',
         title: 'Packages',
         icon: <ComponentIcon label="Packages icon" />,
       },
+
       // {
       //   to: '/patterns',
       //   title: 'Patterns',

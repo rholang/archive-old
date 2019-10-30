@@ -78,7 +78,7 @@ module.exports = async function createWebpackConfig(
           test: /SITE_DATA$/,
           loader: require.resolve('bolt-fs-loader'),
           options: {
-            include: [...globs, 'docs/**/*.md'].filter(Boolean),
+            include: [...globs, 'content/**/*.md'].filter(Boolean),
             exclude: ['**/node_modules/**', 'packages/build/docs/**'],
           },
         },

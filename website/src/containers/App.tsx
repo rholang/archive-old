@@ -13,6 +13,7 @@ import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
 
 export default () => {
+  console.log(pageRoutes)
   return (
     <GlobalTheme.Provider value={() => ({ mode: 'light' })}>
       <BrowserRouter>

@@ -16,6 +16,7 @@ export default siteData;
 
 const dirs = fs.getDirectories(data.children);
 
+
 function isInternal(groupId: string, pkgId: string) {
   const pkgInfo = NAV_DATA[groupId].find(
     (a: { name: string }) => a.name === pkgId,
@@ -58,7 +59,12 @@ export const getConfig = (groupId: string, pkgId: string) => {
     NAV_DATA[groupId].find((pkg: { name: string }) => pkg.name === pkgId)
   );
 };
-export const docs: Directory = fs.getById(dirs, 'docs');
+
+//export const docs: Directory = fs.getById(dirs, 'docs');
+export const content: Directory = fs.getById(dirs, 'content');
+console.log(content)
+//export const docs: Directory = fs.getById(dirs, 'docs');
+//export const tuts: Directory = fs.getById(dirs, 'tutorials');
 export const packages: Directory = fs.getById(dirs, 'packages');
 export const externalPackages: Directory = publicPackages;
 export const pkgData = NAV_DATA;
@@ -67,3 +73,5 @@ export const patterns: Directory = fs.maybeGetById(dirs, 'patterns') || {
   id: 'patterns',
   children: [],
 };
+
+

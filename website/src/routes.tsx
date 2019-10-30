@@ -18,6 +18,8 @@ import ExamplesModal, {
   Props as ExamplesModalProps,
 } from './pages/Package/ExamplesModal';
 
+
+
 const home = [
   {
     exact: true,
@@ -26,13 +28,17 @@ const home = [
   },
 ];
 
+
+//const staticDocs = [...routesBuilderDocs]
 const staticDocs = [
   {
-    path: '/docs/:docId*',
+    path: '/docs/:rootId/:docId*',
     component: Document,
   },
-];
-
+  {
+    path: '/docs/',
+    component: Document,
+  }]
 /**
  * We do not support patterns on the current website
  * This exist as part of the migration from old build
