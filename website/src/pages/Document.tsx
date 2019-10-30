@@ -32,7 +32,7 @@ export default function Document({
 
 }: DocProps) {
 
-
+  console.log("documents")
   if (!docId) {
     const dir = content.children[0]
     const file = dir.children[0];
@@ -42,7 +42,7 @@ export default function Document({
     return <Redirect to={`/docs/${fs.normalize(dir.id)}/${fs.normalize(file.id)}/${fs.normalize(found.id)}`} />;
   }
 
-  const filePath = `content/getting-started`;
+  const filePath = `docs/getting-started`;
   const found = fs.findNormalized(content, filePath);
   console.log("content")
   console.log(content)
