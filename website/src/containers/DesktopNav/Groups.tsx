@@ -50,7 +50,7 @@ export default class Groups extends React.Component<GroupsProps, GroupsState> {
 
   resolveRoutes(pathname: string) {
     const { content, packages, patterns } = this.props;
-
+    console.log(content)
     const menus = [
       <Route path="/">
         <DefaultNav pathname={pathname} />

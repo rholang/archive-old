@@ -78,7 +78,7 @@ module.exports = async function createWebpackConfig(
           test: /SITE_DATA$/,
           loader: require.resolve('bolt-fs-loader'),
           options: {
-            include: [...globs, 'docs/**/*.md'].filter(Boolean),
+            include: [...globs, 'content/**/*.md'].filter(Boolean),
             exclude: ['**/node_modules/**', 'packages/build/docs/**'],
           },
         },
@@ -110,12 +110,12 @@ module.exports = async function createWebpackConfig(
         },
         {
           test: /\.md$/,
-          exclude: /node_modules|docs/,
+          exclude: /node_modules|content/,
           loader: require.resolve('raw-loader'),
         },
         {
           test: /\.md$/,
-          include: /docs/,
+          include: /content/,
           exclude: /node_modules/,
           loader: require.resolve('gray-matter-loader'),
         },

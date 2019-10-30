@@ -32,7 +32,7 @@ const home = [
 //const staticDocs = [...routesBuilderDocs]
 const staticDocs = [
   {
-    path: '/docs/:rootId/:docId*',
+    path: '/docs/:docId*',
     component: Document,
   },
   {
