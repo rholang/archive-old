@@ -10,6 +10,7 @@ import DocsNav from './navigations/Docs';
 import PatternsNav from './navigations/Patterns';
 
 import { Directory } from '../../types';
+import * as fs from '../../utils/fs';
 
 
 export type GroupsProps = {
@@ -51,13 +52,12 @@ export default class Groups extends React.Component<GroupsProps, GroupsState> {
 
   resolveRoutes(pathname: string) {
     const { content, packages, patterns } = this.props;
+    const contentDir = fs.getDirectories(content.children)
+    const menuBuilder = contentDir.map(item => {
 
-    const menuBuilder = content.children.map(item => {
-      console.log("group")
-      console.log(item)
       return (
-        <Route path= {`docs/${item.id}`}>
-          <DocsNav pathname={pathname} prefix={`docs/${item.id}`} content={content} />
+        <Route path= {`/docs/${item.id}`}>
+          <DocsNav pathname={pathname} prefix={`${item.id}`} content={content} />
         </Route>
       )
     })

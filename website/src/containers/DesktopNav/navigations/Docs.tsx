@@ -12,6 +12,7 @@ export type DocsNavProps = {
 };
 
 export default function DocsNav({ pathname, content, prefix, onClick }: DocsNavProps) {
+
   const groups = buildNavGroups(prefix, PageIcon, pathname, content);
   return <div>{renderNav(groups, { pathname, onClick })}</div>;
 }

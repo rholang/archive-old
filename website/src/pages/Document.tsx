@@ -32,23 +32,17 @@ export default function Document({
 
 }: DocProps) {
 
-  console.log(docId)
   if (!docId) {
     const contentDir = fs.getDirectories(content.children)[0]
     const docsDir = fs.getDirectories(contentDir.children)[0]
     const found = fs.getFiles(docsDir.children)[0];
-    console.log("error")
-    console.log(docsDir.id)
-    console.log(found.id)
     if (!found) return <FourOhFour />;
     return <Redirect to={`/docs/${fs.normalize(contentDir.id)}/${fs.normalize(docsDir.id)}/${fs.normalize(found.id)}`} />;
   }
 
   const filePath = `content/${rootId}/${docId}`;
   const found = fs.findNormalized(content, filePath);
-  console.log("content")
-  console.log(content)
-  console.log(found)
+
   const Content = Loadable<{}, ResolvedMD>({
     loader: async () =>
       fs.isFile(found as File) ? await (found as File).exports() : {},
@@ -56,8 +50,6 @@ export default function Document({
     render(md) {
       const docDetails = md.default || {};
       const { content, data = {} } = docDetails;
-      console.log("con2")
-      console.log(md)
       if (content) {
         return <Markdown {...data}>{content}</Markdown>;
       }

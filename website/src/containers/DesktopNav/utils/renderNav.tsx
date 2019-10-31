@@ -12,6 +12,7 @@ export default function renderNav(
   groups: Array<NavGroup>,
   { onClick, pathname }: Props,
 ) {
+
   return groups.map((group, index) => (
     <AkNavigationItemGroup
       title={group.title}
@@ -23,6 +24,7 @@ export default function renderNav(
           typeof item.to === 'string' &&
           pathname.includes(item.to) &&
           pathname !== item.to;
+
         const isSelected = pathname === item.to;
         const icon =
           isSelected || isAncestor ? item.iconSelected || item.icon : item.icon;
