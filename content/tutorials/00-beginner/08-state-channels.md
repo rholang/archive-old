@@ -6,7 +6,7 @@ By now you're good at sending data to the tuplespace, and receiving data from th
 
 ## Holding on to data
 
-![Variables are so 2015. It's all about state channels now.](../../images/tutorial/joshy/state-channels-variables.png)
+![Variables are so 2015. It's all about state channels now.](./images/state-channels-variables.png)
 
 
 
@@ -111,7 +111,7 @@ How does the above code avoid the problem of each block getting called once?
 - [ ] Because state channel make things sequential
 
 ## Objects and Methods
-![This click-counter can be incremented and reset](../../images/tutorial/joshy/state-channels-clickCounter.png)
+![This click-counter can be incremented and reset](./images/state-channels-clickCounter.png)
 
 In "Object Oriented Programming" languages such as java, we can model real-world objects by encapsulating some data along with methods that use or change the data. The same thing is possible in rholang.
 

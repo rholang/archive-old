@@ -238,7 +238,7 @@ Like before, this code requires the game host to pay for everyone who get's the 
 
 ## Public Key Crypto
 
-![This bundle is sealed within the blockchain world, but totally openable to anyone outside. Remember that just because data is off limits within the blockchain, doesn't mean it's truly private.](./images/bundles-privateNames.png)
+remind here
 
 In some ways, read-only bundles duplicate the signing features of [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography). The jackpot catchers here are sure that the balls came from the thrower because only he can send on the throw channel, which is a lot like cryptographic signing.
 

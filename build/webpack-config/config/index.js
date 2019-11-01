@@ -3,6 +3,7 @@ const os = require('os');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
@@ -271,6 +272,15 @@ function getPlugins(
       BASE_TITLE: `"Rholang a massive scalable language ${!isProduction ? '- DEV' : ''}"`,
       DEFAULT_META_DESCRIPTION: `"Rholang a massive scalable language for the next generation blockchain"`,
     }),
+    new CopyPlugin([
+      {
+        from: '../content',
+        to: '[2]/[3]/[4].[ext]',
+        test: /([^/]+)\/(content.*)\/[\d]+-(.+)\/(.*)\.png$/,
+        toType: 'template'
+      },
+    ]
+   ),
   ];
 
   if (report) {

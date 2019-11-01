@@ -25,7 +25,7 @@ export default function buildNavGroups(
         return {
           items: [
             {
-              to: `docs/${prefix}/${fs.normalize(group.id)}`,
+              to: `/content/${prefix}/${fs.normalize(group.id)}`,
               isSelected: (pathname, to) => pathname.startsWith(to),
               title: fs.titleize(group.id),
               // icon: <Icon label={`${fs.titleize(group.id)} icon`} />,

@@ -13,7 +13,10 @@ export default css`
   ul,
   ol,
   dl,
-  img,
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
   pre,
   form,
   fieldset {

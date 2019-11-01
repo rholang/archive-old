@@ -5,7 +5,7 @@ description: Everything you need to know to get up and running with Atlaskit
 There is a long-standing tradition in programming that your first program should say "Hello World". Here's the simplest rholang code to put that text on the screen.
 
 ## Say Hello
-!["test"](./bundles-Alice.png)
+
 !["Person waiving hello"](./images/sending-helloWorld.png)
 
 ```javascript

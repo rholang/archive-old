@@ -4,7 +4,7 @@ description: Everything you need to know to get up and running with Atlaskit
 ---
 
 
-Download as [pdf](../../pdfs/RholangCheetSheet_10.04.18.pdf) ![png](../../images/tutorial/joshy/cheat-sheet.png) 
+Download as [pdf](./images/pdfs/RholangCheetSheet_10.04.18.pdf) ![png](./images/cheat-sheet.png) 
 
 
 # Errata

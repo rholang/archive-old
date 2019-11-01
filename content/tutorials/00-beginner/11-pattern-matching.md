@@ -37,7 +37,7 @@ new patternMatcher, stdout(`rho:io:stdout`) in {
 
 In this code any massage `x` that is received on the `patternMatcher` channel represents a quoted process. We compare that process (unquoted) to several patterns below and report back what pattern matches. The underscore is just a fill-in-the-blank and matches any pattern at all. It is called a "wildcard", and you'll often see it as the final pattern in a `match` construct to ensure that there is a default case if nothing else matches.
 
-<!--![Receives that use pattern matching are much pickier than the ones we have used before.]-->(../../images/tutorial/joshy/patternmatching-lookingForMessages.png)
+<!--![Receives that use pattern matching are much pickier than the ones we have used before.]-->(./images/patternmatching-lookingForMessages.png)
 
 Pattern matching can also be used when receiving messages with `for` or `contract`. In order for a message to be received, the message that was sent, must match the pattern that is to be received. We'll see an example of this usage shortly.
 
@@ -59,7 +59,7 @@ What would the variable `p` be bound to in `x!("hello" | 4) | for(@{"hello" | p}
 - [x] `4`
 
 ## Syntactic sugar
-![Yummy, syntactic sugar. Now with extra curly braces.](../../images/tutorial/joshy/patternmatching-sugar.png)
+![Yummy, syntactic sugar. Now with extra curly braces.](./images/patternmatching-sugar.png)
 It turns out that pattern matching can be used to totally replace the `if`/`else` construct we learned previously. In fact, that is exactly what `if`/`else` means under the hood. Because it is just shorthand for other syntax, `if`/`else` is said to be syntactic sugar. The following code snippets are exactly equivalent
 
 ```javascript

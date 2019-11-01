@@ -56,7 +56,7 @@ export default class Groups extends React.Component<GroupsProps, GroupsState> {
     const menuBuilder = contentDir.map(item => {
 
       return (
-        <Route path= {`/docs/${item.id}`}>
+        <Route path= {`/content/${item.id}`}>
           <DocsNav pathname={pathname} prefix={`${item.id}`} content={content} />
         </Route>
       )

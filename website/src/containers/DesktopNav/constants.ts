@@ -13,7 +13,7 @@ export type HeaderIconProps = {
 };
 
 export const CONTAINER_HEADERS_CONFIG: { [key: string]: HeaderIconProps } = {
-  docs: {
+  content: {
     icon: DocumentationIcon as React.ComponentType<IconProps>,
     color: colors.P300,
     label: 'Documentation',

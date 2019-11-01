@@ -20,12 +20,12 @@ const defaultNavGroups = [
     title: 'Get Started',
     items: [
       {
-        to: '/docs/guide',
+        to: '/content/guide',
         title: 'Documentation',
         icon: <OverviewIcon label="Documentation" />,
       },
       {
-        to: '/docs/tutorials',
+        to: '/content/tutorials',
         title: 'Tutorials',
         icon: <OverviewIcon label="Tutorials" />,
       },

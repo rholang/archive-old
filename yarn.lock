@@ -12676,6 +12676,11 @@ markdown-escapes@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.1.tgz#1994df2d3af4811de59a6714934c2b2292734518"
 
+markdown-image-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-image-loader/-/markdown-image-loader-2.0.0.tgz#2182e8b4351143a6dfa977e38d9ab17dad807be0"
+  integrity sha512-osIW6Iww9CXPMuHTIwy30ZO/eSqDrOT80KADupmB+EUDc8xuQMo65Ob/h5SyFts6r2+cl1krzGN5vTED7uhmwQ==
+
 markdown-it-table@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/markdown-it-table/-/markdown-it-table-2.0.4.tgz#ca0b2482bfe7015ace6fbe73eb49ef8e0f59615d"

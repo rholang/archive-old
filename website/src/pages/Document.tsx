@@ -40,7 +40,7 @@ export default function Document({
     console.log(contentDir)
     console.log(rootId)
     if (!found) return <FourOhFour />;
-    return <Redirect to={`/docs/${fs.normalize(contentDir.id)}/${fs.normalize(docsDir.id)}/${fs.normalize(found.id)}`} />;
+    return <Redirect to={`/content/${fs.normalize(contentDir.id)}/${fs.normalize(docsDir.id)}/${fs.normalize(found.id)}`} />;
   }
 
   const filePath = `content/${rootId}/${docId}`;

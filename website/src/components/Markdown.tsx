@@ -36,6 +36,7 @@ export default function Markdown({
   children: React.ReactChild;
   description?: string;
 }) {
+  console.log(parser.parse(children as string))
   return (
     <div>
       <Helmet>

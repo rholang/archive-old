@@ -145,7 +145,7 @@ What is `@@Nil`?
 
 ### Exercise
 
-![This telephone game has a fork](telephoneFork.png)
+remind
 
 Instead of a linear telephone game where each player passes the message to the next, let's add a branch in the game. So now Bob will send to Charlie like before, but Bob will also send to Dawn.
 

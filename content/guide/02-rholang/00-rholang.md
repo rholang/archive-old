@@ -3,7 +3,7 @@ title: Rholang
 description: Everything you need to know to get up and running with Atlaskit
 ---
 # Rholang
-Rholang is a new programming language designed for use in distributed systems.  Like all newborn things, it is growing and changing rapidly. This document describes the syntax in Rholang.
+Rholang is a new programming language designed for use in distributed systems. This document describes the syntax in Rholang.
 
 Rholang is "process-oriented": all computation is done by means of message passing.  Messages are passed on "channels", which are rather like message queues; however, the channels behave more like bags (multisets) rather than queues, since there is no implicit ordering on messages.  
 
