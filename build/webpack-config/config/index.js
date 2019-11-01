@@ -276,8 +276,9 @@ function getPlugins(
       {
         from: '../content',
         to: '[2]/[3]/[4].[ext]',
-        test: /([^/]+)\/(content.*)\/[\d]+-(.+)\/(.*)\.png$/,
-        toType: 'template'
+        test: /([^/]+)\/(content.*)\/[\d]+-(.+)\/(.*)\.(png|jpg|pdf|gif)$/,
+        toType: 'template',
+        ignore: ['*.js','*.md','*.yml','*.svg'],
       },
     ]
    ),
