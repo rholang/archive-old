@@ -5,7 +5,7 @@ description: Everything you need to know to get up and running with Atlaskit
 
 ## Multiple data sources
 
-![In general, the winner of this pushup competition can't be determined until both participants are finished.](../../images/tutorial/joshy/join-pushups.png)
+![In general, the winner of this pushup competition can't be determined until both participants are finished.](./images/join-pushups.png)
 
 Occasionally a computation can only be made once data is retrieved (messages are received) from two or more different data sources. For example, you can't tell whether you won the lottery until you've got your ticket number and the winning number. You can't make change for a purchase until you know the price and the amount tendered. You can't tell who wins a pushup contest until you know how many pushups each competitor completed.
 
@@ -57,7 +57,7 @@ The problem here is when Alice okay's the launch, but Bob hasn't yet. Alice shou
 
 When using a join, she can still change her mind because the `for` won't consume her launch message until Bob's message also appears and is ready to be consumed.
 
-![No use in grabbing just one set of mail. Might as well wait until the second set](../../images/tutorial/joshy/join.png)
+![No use in grabbing just one set of mail. Might as well wait until the second set](./images/join.png)
 
 ## Launch Solution
 

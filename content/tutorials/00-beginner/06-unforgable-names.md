@@ -92,7 +92,7 @@ In rholang channels created with `new` don't give access to the underlying proce
 
 ## Private vs Unforgeable
 
-![Although the messages can no longer be stolen, they can still be eavesdropped on. You've been warned.](../../images/tutorial/joshy/unforgable-eavesdropping.png)
+![Although the messages can no longer be stolen, they can still be eavesdropped on. You've been warned.](./images/unforgable-eavesdropping.png)
 
 `new` is known as the restriction operator because it restricts use of the bound names that it creates to within its curly braces or "lexical scope". Within the world of the rholang these new names really are only visible within the correct scope, but remember that human programmers can look in to that world from the outside. That is especially true when working in a blockchain context.
 
@@ -100,7 +100,7 @@ So while a competing pizza shops (from outside the curly braces) can not _consum
 
 ## Acknowledgement Channels
 
-![We acknowledge communications all the time in conversations](../../images/tutorial/joshy/unforgable-roger.png)
+![We acknowledge communications all the time in conversations](./images/unforgable-roger.png)
 
 One common use of unforgeable names is "acknowledgement channels", usually called "ack" channels for short. Instead of confirming orders by printing to the screen and disturbing _everyone_, the pizza shop should really just let the _customer_ know that the order has been placed.
 

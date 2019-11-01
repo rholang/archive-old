@@ -8,7 +8,7 @@ We've previously learned how to send a message to grandma or a pizza shop. But s
 
 Now let's make them do something more interesting by passing the message along like in a child's telephone game
 
-![The game of telephone is perfect to simulate message forwarding in rholang.](../../images/tutorial/joshy/names-telephone.png)
+![The game of telephone is perfect to simulate message forwarding in rholang.](./images/names-telephone.png)
 
 
 ```javascript
@@ -41,7 +41,7 @@ That telephone game was fun, but it's always better the have more players. Go ah
 
 
 
-![The message never seems to get there correctly. I blame Bob.](../../images/tutorial/joshy/names-telephoneChangedMessage.png)
+![The message never seems to get there correctly. I blame Bob.](./images/names-telephoneChangedMessage.png)
 
 
 
@@ -51,7 +51,7 @@ If you've ever actually played telephone, you know that the message rarely arriv
 
 ## WTH is That `*`?
 
-![Opposites attract](../../images/tutorial/joshy/names-inverse.png)
+![Opposites attract](./images/names-inverse.png)
 
 Did you notice the `*` in `bob!(*message)`? In rholang there are two kinds of things, "channels" and "processes". There are also ways to convert between the two.
 
@@ -73,7 +73,7 @@ A channel (also frequently called a "name") is something that can be to send mes
 
 ## So What is `*` all about?
 
-![What kind of name is that!? Did your parents just name you after some computer code?](../../images/tutorial/joshy/names-myNameIs.png)
+![What kind of name is that!? Did your parents just name you after some computer code?](./images/names-myNameIs.png)
 
 We can package processes up to make names by quoting them with the `@` symbol. We can also turn names back into processes by "unquoting" them with the `*` symbol.
 

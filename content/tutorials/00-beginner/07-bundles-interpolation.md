@@ -1,10 +1,10 @@
 ---
-title: Getting Started
+title: Bundles
 description: Everything you need to know to get up and running with Atlaskit
 ---
 ## Stolen Messages
 
-![Alice's fans love her and want to send her lots of mail .](../../images/tutorial/joshy/bundles-Alice.png)
+![Alice's fans love her and want to send her lots of mail .](./images/bundles-Alice.png)
 
 Alice is a rising celebrity who receives mail from her fans. They used to send mail directly to her.
 
@@ -67,7 +67,7 @@ The `bundle+ {*aliceFanMail}` is a channel just like `aliceFanMail` except it ca
 ## Subscriptions
 The bundle solution above does prevent Eve from stealing mail, which is good. But in the blockchain context it also has the unfortunate side effect that Alice has to pay to send her fanmail address. Blockchain fees work a little like postage.
 
-![The sender includes a return envelope already posted to himself](../../images/tutorial/joshy/bundles-returnEnvelope.png)
+![The sender includes a return envelope already posted to himself](./images/bundles-returnEnvelope.png)
 
 ### Exercise
 
@@ -127,7 +127,7 @@ Our pizza shop back in lesson 2 had a similar problem to Alice. Rework that code
 
 ## Jackpot
 
-![A single "thrower" throws a ball for one of many catchers to catch](../../images/tutorial/joshy/bundles-jackpot.png)
+![A single "thrower" throws a ball for one of many catchers to catch](./images/bundles-jackpot.png)
 
 I used to play a game called jackpot as a kid. One player would throw the ball and yell a number. The other players would all try to catch the ball and whoever caught it would receive that number of points.
 
@@ -238,7 +238,7 @@ Like before, this code requires the game host to pay for everyone who get's the 
 
 ## Public Key Crypto
 
-![This bundle is sealed within the blockchain world, but totally openable to anyone outside. Remember that just because data is off limits within the blockchain, doesn't mean it's truly private.](../../images/tutorial/joshy/bundles-privateNames.png)
+![This bundle is sealed within the blockchain world, but totally openable to anyone outside. Remember that just because data is off limits within the blockchain, doesn't mean it's truly private.](./images/bundles-privateNames.png)
 
 In some ways, read-only bundles duplicate the signing features of [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography). The jackpot catchers here are sure that the balls came from the thrower because only he can send on the throw channel, which is a lot like cryptographic signing.
 

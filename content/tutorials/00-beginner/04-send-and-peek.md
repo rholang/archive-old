@@ -5,7 +5,7 @@ description: Everything you need to know to get up and running with Atlaskit
 
 ## Why send repeatedly?
  
-![This radio navigation aid helps airplanes navigate by broadcasting the same message over and over](../../images/tutorial/joshy/send-peek-broadcasting.png)
+![This radio navigation aid helps airplanes navigate by broadcasting the same message over and over](./images/send-peek-broadcasting.png)
 
 Our pizza and coffee shops were both interested in receiving many messages on the same reusable channel. We accomplished that with a persistent for `for (msg <= chan){...}` or a contract `contract chan(msg){...}`.
 
@@ -84,7 +84,7 @@ How many comms happen in `for (x <= y) {Nil} | y!!(Nil)`
 ## Peek Syntax
 One problem with the code above is that a forgetful pilot may not actually put the information back on the `airportInfo` channel causing problems for other pilots who need it. A better solution would be to not actually _receive_ the message off of the channel in the first place.
 
-![Peeking at a message allows you to read it without consuming it.](../../images/tutorial/joshy/send-peek-letterPeek.png)
+![Peeking at a message allows you to read it without consuming it.](./images/send-peek-letterPeek.png)
 
 To "peek" at what's on a channel without consuming it, use the `<<-` operator.
 

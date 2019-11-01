@@ -6,7 +6,7 @@ description: Everything you need to know to get up and running with Atlaskit
 We learned last time how to send a message. Now it's time to learn how to receive a message.
 ## Check for Messages
 
-![// Dear future self, keys in freezer because...](../../images/tutorial/joshy/receiving-Keys.png)
+![// Dear future self, keys in freezer because...](./images/receiving-Keys.png)
 
 The general syntax is:
 
@@ -23,7 +23,7 @@ BTW, lines that start with `//` are called comments. They're just there for huma
 
 ## Comm Events
 
-![Pizza shop can receive messages on its channel.](../../images/tutorial/joshy/receiving-pizza.png)
+![Pizza shop can receive messages on its channel.](./images/receiving-pizza.png)
 
 The following code sends a message on a channel for a pizza shop and the pizza shop receives it. The pizza shop acknowledges receiving the message by printing to `stdout`.
 
@@ -39,7 +39,7 @@ new pizzaShop, stdout(`rho:io:stdout`) in {
 ### Exercise
 Send that message to a different channel like `coffeShop`. Did the acknowledgement print? Is anything left in the tuplespace?
 
-![Let's hit up the coffee shop.](../../images/tutorial/joshy/receiving-coffee.png)
+![Let's hit up the coffee shop.](./images/receiving-coffee.png)
 
 ### Exercise
 Remember, in rholang things don't happen in any particular order, they happen concurrently. The pizza shop code will work just as well if we put the receive first. Give it a try!
@@ -47,7 +47,7 @@ Remember, in rholang things don't happen in any particular order, they happen co
 
 ## Receiving Before Sending
 
-![Rather than the message appearing first, then someone receiving it, Bob is trying to receive first. Hopefully someone will send him a message so he can have a comm event.](../../images/tutorial/joshy/receiving-lookingForMessages.png)
+![Rather than the message appearing first, then someone receiving it, Bob is trying to receive first. Hopefully someone will send him a message so he can have a comm event.](./images/receiving-lookingForMessages.png)
 
 When a send and a receive come together on a channel, it is called a communication event, or "comm event" for short.
 
@@ -56,7 +56,7 @@ Unlike normal mail where a message must be sent _then_ received, the two can hap
 
 ## Contracts
 
-![The poor chef is too busy making sure he can receive orders to take care of his pizza.](../../images/tutorial/joshy/receiving-pizzaBurning.png)
+![The poor chef is too busy making sure he can receive orders to take care of his pizza.](./images/receiving-pizzaBurning.png)
 
 Our pizza shop example illustrates comm events nicely, but it isn't very realistic to expect the pizza shop to manually issue a new receive every time an incoming order consumes theirs from the tuplespace.
 

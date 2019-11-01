@@ -5,8 +5,8 @@ description: Everything you need to know to get up and running with Atlaskit
 There is a long-standing tradition in programming that your first program should say "Hello World". Here's the simplest rholang code to put that text on the screen.
 
 ## Say Hello
-
-!["Person waiving hello"](../../images/tutorial/joshy/sending-helloWorld.png)
+!["test"](./bundles-Alice.png)
+!["Person waiving hello"](./images/sending-helloWorld.png)
 
 ```javascript
 new stdout(`rho:io:stdout`) in {
@@ -19,18 +19,18 @@ Make the program print "Rholang rocks!" instead of "Hello World".
 
 ## WTH is stdout?
 
-![Channels are like mailboxes for sending messages](../../images/tutorial/joshy/sending-mailbox.png)
+![Channels are like mailboxes for sending messages](./images/sending-mailbox.png)
 
 The heart of rholang is communicating on channels. Channels are communication lines that you use to send and receive messages. To send a message on a channel, you use the `!` character.
 
-![Redo this diagram!](../../images/tutorial/joshy/sending-sendSyntax.png)
+![Redo this diagram!](./images/sending-sendSyntax.png)
 
 We created the channel `stdout` on the first line of the program with `new stdout`. You'll create lots of channels as you learn rholang. We also gave our channel a special power by including `(rho:io:stdout)`. More on that later, but for now just know that you need that part in parentheses to make text actually appear on the screen.
 
 
 ## Using other channels
 
-![Sent messages wait to be received here in "message purgatory"... JK, it's called the "tuplespace"](../../images/tutorial/joshy/sending-mailboxes.png)
+![Sent messages wait to be received here in "message purgatory"... JK, it's called the "tuplespace"](./images/sending-mailboxes.png)
 
 You can actually send messages on lots of channels, not just `stdout`. But unlike `stdout` they won't display on the screen because we won't add any special powers to them.
 
@@ -52,7 +52,7 @@ Storage Contents:
 
 
 ## Doing two things at once
-![Rather than following an ordered list, all ingredients are added concurrently.  Looks delicions](../../images/tutorial/joshy/sending-cooking.png)
+![Rather than following an ordered list, all ingredients are added concurrently.  Looks delicions](./images/sending-cooking.png)
 
 In rholang we don't tell the computer to do one thing, then another, then a third. Rather we tell it all the things to do, and it does them "concurrently," or all at once.
 
