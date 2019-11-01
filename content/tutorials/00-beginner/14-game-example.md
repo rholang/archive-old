@@ -7,22 +7,9 @@ Smart contracts have a lot in common with games. They have clearly defined rules
 
 Because so many real-world interactions can be modeled as games, we will take a look at a few more here. After this unit, the tutorial continues primarily as example programs with exercises commented in. The majority of those exercises are games of one variety or another.
 
-## Coordination game
-
-## High Card
-
 ## Randomness
-
-randomFromRange
-
-
 
 Although this technique for generating randomness will often work in practice remembe that in a blockchain context the "random" result is entirely up to the network validators. If the validators have a stake in your game, they can influence the result from outside the obvious rules of the game. How to get true randomness into blockchains is an open question.
 
 
 
-## Rock Paper Scissors
-This is a big exercise?
-
-## More to look forward to
-* tic tac toe

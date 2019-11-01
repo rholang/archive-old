@@ -317,24 +317,119 @@ Map's `diff` method takes another map as an argument. What happens if the diff m
 
 ## Method Summary Table
 
-That was a lot of info about data structures in one go. So here is a handy table to remind you what methods exist. This info is also on the [cheat sheet](../cheatSheet).
+That was a lot of info about data structures in one go. So here is a handy table to remind you what methods exist. This info is also on the [cheat sheet](./cheat-sheet).
 
-Method       | Tuple |  List |  Map  |  Set
----          | ----- | ----- | ----- | -----
-nth          |   x   |   x   |       |
-toByteArray  |   x   |   x   |   x   |   x
-union        |       |       |   x   |   x
-diff         |       |       |   x   |   x
-add          |       |       |       |   x
-delete       |       |       |   x   |   x
-contains     |       |       |   x   |   x
-get          |       |       |   x   |
-getOrElse    |       |       |   x   |
-set          |       |       |   x   |
-keys         |       |       |   x   |
-size         |       |       |   x   |   x
-length       |       |   x   |       |
-slice        |       |   x   |       |
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Tuple</th>
+<th>List</th>
+<th>Map</th>
+<th>Set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nth</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>toByteArray</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>union</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>diff</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td>delete</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>contains</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>get</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>getOrElse</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>set</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>keys</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>length</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>slice</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ## Sending and Receiving on Compound Names
 We've learned about several interesting data structures in this lesson. Data structures are processes just like integers, booleans, and `Nil`. So they can be quoted and turned into names like all those other processes. We can build contracts on those names just like we can any other names. Names that are built on data structures such as tuples are often called compound names.

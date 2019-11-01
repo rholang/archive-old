@@ -8,7 +8,7 @@ Patterns occur all over in daily life. If you saw a new model of car that you ha
 ## About Patterns
 Similarly, we can match sentence patterns. The sentences "I like cheese" and "I like pandas" both match the pattern "I like ____". But "I have a dog" does not match that pattern. Rholang allows programmers to use pattern matching to control program execution. That is, different code can run depending whether a process matches a certain pattern.
 
-## The `match` construct
+## The **match** construct
 The most obvious place that rholang uses pattern matching is in its `match` construct which works as shown here.
 
 ```javascript
@@ -38,7 +38,7 @@ new patternMatcher, stdout(`rho:io:stdout`) in {
 
 In this code any massage `x` that is received on the `patternMatcher` channel represents a quoted process. We compare that process (unquoted) to several patterns below and report back what pattern matches. The underscore is just a fill-in-the-blank and matches any pattern at all. It is called a "wildcard", and you'll often see it as the final pattern in a `match` construct to ensure that there is a default case if nothing else matches.
 
-<!--![Receives that use pattern matching are much pickier than the ones we have used before.]-->(./images/patternmatching-lookingForMessages.png)
+<!--![Receives that use pattern matching are much pickier than the ones we have used before.]-->![patternmatching](./images/patternmatching-lookingForMessages.png)
 
 Pattern matching can also be used when receiving messages with `for` or `contract`. In order for a message to be received, the message that was sent, must match the pattern that is to be received. We'll see an example of this usage shortly.
 
