@@ -13,9 +13,9 @@ export default function buildNavGroups(
   pathname: string,
   dir: Directory,
 ) {
-  console.log("docsnav")
 
 
+  console.log(dir)
   const directories = fs.getDirectories(dir.children)
   const directorySelected = directories.filter(item => item.id === prefix)[0]
 

@@ -60,11 +60,7 @@ export const getConfig = (groupId: string, pkgId: string) => {
   );
 };
 
-//export const docs: Directory = fs.getById(dirs, 'docs');
 export const content: Directory = fs.getById(dirs, 'content');
-console.log(content)
-//export const docs: Directory = fs.getById(dirs, 'docs');
-//export const tuts: Directory = fs.getById(dirs, 'tutorials');
 export const packages: Directory = fs.getById(dirs, 'packages');
 export const externalPackages: Directory = publicPackages;
 export const pkgData = NAV_DATA;
