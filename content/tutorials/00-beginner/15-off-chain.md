@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Off Chain
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Off Chain
 So far all of our exercises have existed entirely inside the world of rholang. While rholang is meant to be a general-purpose programming language, it's current role is as a blockchain language. Many wonderful smart contracts are being written in rholang . But people don't live their whole lives on-chain. They also go outside and ply, eat dinner, and go to concerts. And while they're away doing those real-world things, they need a place to store their unforgeable names. Because unforgeable names can only exist on the blockchain.
 
 <!-- Julie drawing of unforgeable name not allowed to cross some line. -->

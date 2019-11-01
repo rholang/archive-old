@@ -1,10 +1,13 @@
 ---
-title: Getting Started
+title: Unforgable Names
 description: Everything you need to know to get up and running with Atlaskit
 ---
-## Bound and Free Variables
+
+# Unforgable Names
 
 We've learned how to receive messages with `for` and `contract`. Both of these constructs "bind" variables. A variable is considered bound if has an actual value (a channel or a process) attached to it.
+
+## Bound and Free Variables
 
 Consider this real-world example. My sister's name is Sarah. When I speak to my family members about "Sarah" they know who I am talking to because they also know my sister. So "Sarah" is a bound variable. It is bound to the person who is my sister. But if I walk up to a random person on the street and talk about "Sarah" they may understand the general point of the story, but they do not know who it is about. Because for them "Sarah" is not bound to any person. For the random stranger, "Sarah" is a "free variable."
 

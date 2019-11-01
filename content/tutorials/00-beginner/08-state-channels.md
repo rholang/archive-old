@@ -1,7 +1,10 @@
 ---
-title: Getting Started
+title: State Channels
 description: Everything you need to know to get up and running with Atlaskit
 ---
+
+# State Channels 
+
 By now you're good at sending data to the tuplespace, and receiving data from the tuplespace. But whenever you're computing, you occasionally need to set data aside to be used later. Almost every programming language has a concept of variables.
 
 ## Holding on to data

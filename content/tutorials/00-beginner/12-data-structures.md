@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Data Structures
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Data Structures
 It is common for programs to process and store real world data. And whenever you have lots of data it is important to keep it organized so you can find the information you need quickly. In the analog world, paper files are kept organized by stacking them, putting them in folders, and file cabinets. The same concept applies in programming, and rholang is no exception (for once!).
 
 ## String Methods

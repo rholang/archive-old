@@ -1,10 +1,10 @@
 ---
-title: Getting Started
+title: Cheat Sheet
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Cheat Sheet
 
-
-Download as [pdf](./images/pdfs/RholangCheetSheet_10.04.18.pdf) ![png](./images/cheat-sheet.png) 
+Download as [pdf](./pdfs/RholangCheetSheet_10.04.18.pdf) ![png](./images/cheat-sheet.png) 
 
 
 # Errata

@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Rholang and Lambda Calculus
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Rholang and Lambda Calculus
 Written by Lucius Gregory Meredith and Alex Bulkin
 
 How to represent data as computational behavior

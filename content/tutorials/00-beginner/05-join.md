@@ -1,15 +1,18 @@
 ---
-title: Getting Started
+title: Join
 description: Everything you need to know to get up and running with Atlaskit
 ---
-
-## Multiple data sources
-
-![In general, the winner of this pushup competition can't be determined until both participants are finished.](./images/join-pushups.png)
+# Join
 
 Occasionally a computation can only be made once data is retrieved (messages are received) from two or more different data sources. For example, you can't tell whether you won the lottery until you've got your ticket number and the winning number. You can't make change for a purchase until you know the price and the amount tendered. You can't tell who wins a pushup contest until you know how many pushups each competitor completed.
 
+## Multiple data sources
+
 Rholang has the join operator for exactly this situation. To perform a join, just use the `;` character.
+
+![In general, the winner of this pushup competition can't be determined until both participants are finished.](./images/join-pushups.png)
+
+
 
 ```javascript
 for (p1Pushups <- player1; p2Pushups <- player2) {

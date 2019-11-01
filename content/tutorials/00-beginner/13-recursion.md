@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Recursion
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Recursion
 Let's start with some exercises to review old topics and motivate the problem we're solving in this lesson.
 
 ### Exercise

@@ -1,7 +1,9 @@
 ---
-title: Getting Started
+title: Additional Syntax 
 description: Everything you need to know to get up and running with Atlaskit
 ---
+
+# Additional Syntax 
 By now you can already build some actual projects. And you should do it! Before we dive into the next unit, let's learn some more practical syntax so you have the real-world tools you need need to build that next killer dapp.
 
 ## Binary Operators

@@ -32,13 +32,11 @@ export default function Document({
 
 }: DocProps) {
 
-  console.log(rootId)
+
   if (!docId) {
     const contentDir = fs.getDirectories(content.children).filter(item => item.id === rootId)[0]
     const docsDir = fs.getDirectories(contentDir.children)[0]
     const found = fs.getFiles(docsDir.children)[0];
-    console.log(contentDir)
-    console.log(rootId)
     if (!found) return <FourOhFour />;
     return <Redirect to={`/content/${fs.normalize(contentDir.id)}/${fs.normalize(docsDir.id)}/${fs.normalize(found.id)}`} />;
   }

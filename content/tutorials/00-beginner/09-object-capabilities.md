@@ -1,10 +1,11 @@
 ---
-title: Getting Started
+title: Object Capabilities
 description: Everything you need to know to get up and running with Atlaskit
 ---
-Recently we learned how unforgeable names can restrict the use of a channel to those who know the name. We've also see how state channels can be used to store data and methods can be used to modify encapsulated data. In this lesson we'll see how methods that are placed on unforgeable names lead to a tremendously useful design pattern known as "object capabilities".
 
-## Object Capabilities
+# Object Capabilities
+
+Recently we learned how unforgeable names can restrict the use of a channel to those who know the name. We've also see how state channels can be used to store data and methods can be used to modify encapsulated data. In this lesson we'll see how methods that are placed on unforgeable names lead to a tremendously useful design pattern known as "object capabilities".
 
 An everyday example of an object capability is the key to your home or car. Possessing the object gives you the capability to enter the home or start the car. With object you also have the ability to delegate by giving to key or a copy of the key to someone else.
 

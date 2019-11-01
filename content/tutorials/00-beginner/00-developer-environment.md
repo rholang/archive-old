@@ -1,8 +1,8 @@
 ---
-title: Getting Started
+title: Development Environment
 description: Everything you need to know to get up and running with Atlaskit
 ---
-
+# Beginners Tutorial
 Written by Joshy Orndorff
 
 In order to run the rholang snippets in this tutorial, you will need some kind of development environment. This is not an exhaustive guide to rholang development tools or stacks. Rather, it shows a few common basic development environments to get you started. 

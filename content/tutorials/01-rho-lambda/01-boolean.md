@@ -1,8 +1,8 @@
 ---
-title: Getting Started
+title: Rholang and Lambda Calculus
 description: Everything you need to know to get up and running with Atlaskit
 ---
-
+# Booleans
 
 We can emulate this approach to arrive at the booleans with
 ```javascript

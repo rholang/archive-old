@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Receiving 
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Receiving 
 
 We learned last time how to send a message. Now it's time to learn how to receive a message.
 ## Check for Messages

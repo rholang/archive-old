@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Send and Peek
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Send and Peek
 
 ## Why send repeatedly?
  

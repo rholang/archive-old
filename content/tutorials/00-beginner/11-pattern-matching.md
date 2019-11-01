@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Pattern Matching
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Pattern Matching
 Patterns occur all over in daily life. If you saw a new model of car that you had never seem before you would still know it is a car because it matches a mental pattern you have for cars that probably involves four wheels, two or four doors, and a windshield to see out of.
 
 ## About Patterns

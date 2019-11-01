@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Conway
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Conway
 
 To illustrate the potential for infinite precision arithmetic in rholang here is a toy interpretation of Conway’s surreal numbers (https://en.wikipedia.org/wiki/Surreal_number) in rholang.
 

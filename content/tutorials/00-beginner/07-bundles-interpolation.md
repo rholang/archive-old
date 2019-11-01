@@ -1,7 +1,9 @@
 ---
-title: Bundles
+title: Bundles Interpolation
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Bundles Interpolation
+
 ## Stolen Messages
 
 ![Alice's fans love her and want to send her lots of mail .](./images/bundles-Alice.png)
@@ -238,7 +240,8 @@ Like before, this code requires the game host to pay for everyone who get's the 
 
 ## Public Key Crypto
 
-remind here
+![private names](./images/bundles-privateNames.png)
+
 
 In some ways, read-only bundles duplicate the signing features of [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography). The jackpot catchers here are sure that the balls came from the thrower because only he can send on the throw channel, which is a lot like cryptographic signing.
 

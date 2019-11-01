@@ -1,8 +1,8 @@
 ---
-title: Getting Started
+title: Church Numerals
 description: Everything you need to know to get up and running with Atlaskit
 ---
-
+# Church Numerals
 
 In this implementation the natural numbers are represented by nested outputs.
 ```javascript

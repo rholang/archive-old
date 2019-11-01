@@ -1,7 +1,9 @@
 ---
-title: Getting Started
+title: Names and Processes
 description: Everything you need to know to get up and running with Atlaskit
 ---
+# Names and Processes
+
 We've previously learned how to send a message to grandma or a pizza shop. But so far all those recipients have done is acknowledge the message by printing to standard output.
 
 ## Message Relaying
@@ -145,7 +147,8 @@ What is `@@Nil`?
 
 ### Exercise
 
-remind
+![telefone](./images/names-telephoneFork.png)
+
 
 Instead of a linear telephone game where each player passes the message to the next, let's add a branch in the game. So now Bob will send to Charlie like before, but Bob will also send to Dawn.
 
