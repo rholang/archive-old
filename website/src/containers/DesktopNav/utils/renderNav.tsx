@@ -28,6 +28,11 @@ export default function renderNav(
         const isSelected = pathname === item.to;
         const icon =
           isSelected || isAncestor ? item.iconSelected || item.icon : item.icon;
+          console.log("console")
+          console.log(isSelected)
+          console.log(pathname)
+          console.log(item.to)
+
         return item.external ? (
           <ExternalNavigationItem
             key={item.title}

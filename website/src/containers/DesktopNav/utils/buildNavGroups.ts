@@ -40,7 +40,7 @@ export default function buildNavGroups(
         title: fs.titleize(group.id),
         items: group.children.map(doc => {
           return {
-            to: `../${fs.normalize(group.id)}/${fs.normalize(doc.id)}`,
+            to: `/content/${prefix}/${fs.normalize(group.id)}/${fs.normalize(doc.id)}`,
             isSelected: (pathname: string, to: string) =>
               pathname.startsWith(to),
             title: fs.titleize(doc.id),
