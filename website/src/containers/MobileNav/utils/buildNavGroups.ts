@@ -13,13 +13,17 @@ export default function buildNavGroups(
   pathname: string,
   dir: Directory,
 ) {
-  return dir.children.map(
+
+  const directories = fs.getDirectories(dir.children)
+  const directorySelected = directories.filter(item => item.id === prefix)[0]
+
+  return directorySelected.children.map(
     (group: File | Directory): groupType => {
       if (group.type === 'file') {
         return {
           items: [
             {
-              to: `/${prefix}/${fs.normalize(group.id)}`,
+              to: `/content/${prefix}/${fs.normalize(group.id)}`,
               isSelected: (pathname, to) => pathname.startsWith(to),
               title: fs.titleize(group.id),
               // icon: <Icon label={`${fs.titleize(group.id)} icon`} />,
@@ -28,12 +32,13 @@ export default function buildNavGroups(
         };
       }
 
-      const children = fs.getFiles(group.children);
+
+
       return {
-        title: group.id,
-        items: children.map(doc => {
+        title: fs.titleize(group.id),
+        items: group.children.map(doc => {
           return {
-            to: `/${prefix}/${group.id}/${fs.normalize(doc.id)}`,
+            to: `/content/${prefix}/${fs.normalize(group.id)}/${fs.normalize(doc.id)}`,
             isSelected: (pathname: string, to: string) =>
               pathname.startsWith(to),
             title: fs.titleize(doc.id),

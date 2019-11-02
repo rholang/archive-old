@@ -1,22 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, matchPath } from 'react-router-dom';
-import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
-import packagesNav from './navigations/Packages';
-import docsNav from './navigations/Docs';
-import ComponentIcon from '@atlaskit/icon/glyph/component';
-import OverviewIcon from '@atlaskit/icon/glyph/overview';
-import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
-import Button from '@atlaskit/button';
-import {
-  AkContainerNavigationNested as NestedNav,
-  AkNavigationItem,
-} from '@atlaskit/navigation';
+
+import { AkContainerNavigationNested as NestedNav } from '@atlaskit/navigation';
+
+import DocsNav from './navigations/Docs';
 
 import { Directory } from '../../types';
+import * as fs from '../../utils/fs';
+
 
 export type GroupsProps = {
-  docs: Directory;
+  content: Directory;
   patterns: Directory;
   packages: Directory;
   onClick?: (e: Event) => void | undefined;
@@ -31,52 +26,17 @@ export type GroupsContext = {
   router: { route: Route };
 };
 
-export default class Groups extends React.Component<
-  GroupsProps & { onClick: () => void },
-  GroupsState
-> {
+export default class Groups extends React.Component<GroupsProps & { onClick: () => void }, GroupsState>  {
   static contextTypes = {
     router: PropTypes.object,
   };
 
   state: GroupsState = {
     parentRoute: null,
-    stack: [
-      [
-        <AkNavigationItem
-          text="Documentation"
-          icon={<OverviewIcon label="Documentation" />}
-          action={
-            <Button
-              appearance="subtle"
-              iconBefore={
-                <ChevronRightIcon label="documentation" size="medium" />
-              }
-              spacing="none"
-            />
-          }
-          onClick={() => this.createDocumentationStack()}
-          key={'Documentation'}
-        />,
-        <AkNavigationItem
-          text="Packages"
-          icon={<ComponentIcon label="Packages icon" />}
-          action={
-            <Button
-              appearance="subtle"
-              iconBefore={<ChevronRightIcon label="packages" size="medium" />}
-              spacing="none"
-            />
-          }
-          onClick={() => this.createPackagesStack()}
-          key={'Packages'}
-        />,
-      ],
-    ],
+    stack: [[]],
   };
 
   UNSAFE_componentWillMount() {
-    //buildNavForPath(this.context.router.route.location.pathname);
     this.resolveRoutes(this.context.router.route.location.pathname);
   }
 
@@ -87,67 +47,33 @@ export default class Groups extends React.Component<
     this.resolveRoutes((nextContext.router.route as any).location.pathname);
   }
 
-  popStack = () => {
-    this.setState({
-      stack: [...this.state.stack.slice(0, -1)],
-    });
-  };
+  resolveRoutes(pathname: string) {
+    const { content, packages, patterns } = this.props;
+    const contentDir = fs.getDirectories(content.children)
+    const menuBuilder = contentDir.map(item => {
 
-  createDocumentationStack = () => {
-    this.setState({
-      stack: [
-        ...this.state.stack,
-        [
-          <AkNavigationItem
-            text="Back"
-            icon={<ArrowLeftIcon label="Back" />}
-            onClick={() => this.popStack()}
-            key="back"
-          />,
-          ...docsNav({
-            pathname: this.context.router.route.location.pathname,
-            docs: this.props.docs,
-            onClick: () => this.props.onClick(),
-          }),
-        ],
-      ],
-    });
-  };
+      return (
+        <Route path= {`/content/${item.id}`}>
+          <DocsNav pathname={pathname} prefix={`${item.id}`} content={content} onClick={() => this.props.onClick()}/>
+        </Route>
+      )
+    })
 
-  createPackagesStack = () => {
-    this.setState({
-      stack: [
-        ...this.state.stack,
-        [
-          <AkNavigationItem
-            text="Back"
-            icon={<ArrowLeftIcon label="Add-ons icon" />}
-            onClick={() => this.popStack()}
-            key="back"
-          />,
-          ...packagesNav({
-            pathname: this.context.router.route.location.pathname,
-            packages: this.props.packages,
-            onClick: () => this.props.onClick(),
-          }),
-        ],
-      ],
-    });
-  };
 
-  resolveRoutes = (pathname: string) => {
-    if (matchPath(pathname, '/docs')) {
-      this.createDocumentationStack();
-    } else if (matchPath(pathname, '/packages')) {
-      this.createPackagesStack();
-    }
-  };
 
-  addItemsToStack = (items: Array<React.ReactNode>) => {
-    this.setState({
-      stack: [...this.state.stack, [...items]],
-    });
-  };
+    const menus = [
+      ...menuBuilder
+    ];
+
+    const stack = menus
+      .filter(menu => matchPath(pathname, menu.props))
+      .map(menu => [React.cloneElement(menu, { key: menu.props.path })]);
+
+    const parentRoute =
+      stack.length > 1 ? stack[stack.length - 2][0].props.path : null;
+
+    this.setState({ parentRoute, stack });
+  }
 
   render() {
     const { stack } = this.state;

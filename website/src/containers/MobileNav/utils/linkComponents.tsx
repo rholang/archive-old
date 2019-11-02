@@ -56,11 +56,11 @@ const RouterLink = ({
         onClick={onClick}
         replace={replace}
         style={{ color: 'inherit' }}
-        to={href || ''}
+        to={href}
       >
         {children}
       </Link>
-      {subNav && href && (
+      {subNav && href && isSubNavExpanded(href, pathname) && (
         <SubNavWrapper>
           {renderNav(subNav, { pathname, onClick })}
         </SubNavWrapper>

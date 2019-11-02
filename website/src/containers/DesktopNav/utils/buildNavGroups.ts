@@ -14,8 +14,6 @@ export default function buildNavGroups(
   dir: Directory,
 ) {
 
-
-  console.log(dir)
   const directories = fs.getDirectories(dir.children)
   const directorySelected = directories.filter(item => item.id === prefix)[0]
 

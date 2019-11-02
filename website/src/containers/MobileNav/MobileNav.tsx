@@ -9,7 +9,7 @@ import Navigation, {
 
 import Groups from './Groups';
 import { AtlaskitIcon } from '../../components/AtlaskitIcon';
-import { externalPackages as packages, docs, patterns } from '../../site';
+import { externalPackages as packages, content, patterns } from '../../site';
 
 import GroupDrawer from './GroupDrawer';
 import MenuIcon from '@atlaskit/icon/glyph/menu';
@@ -27,14 +27,8 @@ export function Nav({
   const [groupDrawerOpen, setGroupDrawerOpen] = React.useState<boolean>(false);
   const headerKey = location.pathname.split('/').filter(p => p)[0];
   const header = CONTAINER_HEADERS_CONFIG[headerKey];
-  const groups = (
-    <Groups
-      onClick={closeNav}
-      docs={docs}
-      packages={packages}
-      patterns={patterns}
-    />
-  );
+
+  const groups = <Groups onClick={closeNav} content={content} packages={packages} patterns={patterns} />;
   const [searchDrawerOpen, setSearchDrawerOpen] = React.useState<boolean>(
     false,
   );

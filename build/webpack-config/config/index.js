@@ -269,8 +269,8 @@ function getPlugins(
     new webpack.DefinePlugin({
       ENABLE_ANALYTICS_GASV3: `${String(isAnalyticsGASv3Enabled)}`,
       WEBSITE_ENV: `"${websiteEnv}"`,
-      BASE_TITLE: `"Rholang a massive scalable language ${!isProduction ? '- DEV' : ''}"`,
-      DEFAULT_META_DESCRIPTION: `"Rholang a massive scalable language for the next generation blockchain"`,
+      BASE_TITLE: `"Rholang - A massive scalable language ${!isProduction ? '- DEV' : ''}"`,
+      DEFAULT_META_DESCRIPTION: `"Rholang - A massive scalable language for the next generation blockchain"`,
     }),
     new CopyPlugin([
       {
