@@ -30,7 +30,9 @@ export default function Nav({ location }: RouteComponentProps) {
   const headerKey = location.pathname.split('/').filter(p => p)[0];
 
   const header = CONTAINER_HEADERS_CONFIG[headerKey];
-  const groups = <Groups content={content} packages={packages} patterns={patterns} />;
+  const groups = (
+    <Groups content={content} packages={packages} patterns={patterns} />
+  );
 
   return (
     <Navigation

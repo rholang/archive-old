@@ -9,7 +9,6 @@ import DocsNav from './navigations/Docs';
 import { Directory } from '../../types';
 import * as fs from '../../utils/fs';
 
-
 export type GroupsProps = {
   content: Directory;
   patterns: Directory;
@@ -26,7 +25,10 @@ export type GroupsContext = {
   router: { route: Route };
 };
 
-export default class Groups extends React.Component<GroupsProps & { onClick: () => void }, GroupsState>  {
+export default class Groups extends React.Component<
+  GroupsProps & { onClick: () => void },
+  GroupsState
+> {
   static contextTypes = {
     router: PropTypes.object,
   };
@@ -49,21 +51,21 @@ export default class Groups extends React.Component<GroupsProps & { onClick: () 
 
   resolveRoutes(pathname: string) {
     const { content, packages, patterns } = this.props;
-    const contentDir = fs.getDirectories(content.children)
+    const contentDir = fs.getDirectories(content.children);
     const menuBuilder = contentDir.map(item => {
-
       return (
-        <Route path= {`/content/${item.id}`}>
-          <DocsNav pathname={pathname} prefix={`${item.id}`} content={content} onClick={() => this.props.onClick()}/>
+        <Route path={`/content/${item.id}`}>
+          <DocsNav
+            pathname={pathname}
+            prefix={`${item.id}`}
+            content={content}
+            onClick={() => this.props.onClick()}
+          />
         </Route>
-      )
-    })
+      );
+    });
 
-
-
-    const menus = [
-      ...menuBuilder
-    ];
+    const menus = [...menuBuilder];
 
     const stack = menus
       .filter(menu => matchPath(pathname, menu.props))

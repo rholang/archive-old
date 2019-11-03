@@ -30,9 +30,9 @@ export default () => {
                       isDesktop ? <DesktopNav {...appRouteDetails} /> : false
                     }
                   >
-                    {!isDesktop && (
-                      <MobileNav appRouteDetails={appRouteDetails} />
-                    )}
+                    {!isDesktop && <MobileNav {...appRouteDetails} />}
+                    {console.log(appRouteDetails)}
+                    {console.log('true')}
                     <ErrorBoundary>
                       <Switch>
                         {pageRoutes.map((routeProps: RouteProps, index) => (

@@ -23,20 +23,24 @@ import { toClass } from 'recompose';
 export function Nav({
   closeNav,
 }: RouteComponentProps & { closeNav: () => void }) {
-
   const [groupDrawerOpen, setGroupDrawerOpen] = React.useState<boolean>(false);
   const headerKey = location.pathname.split('/').filter(p => p)[0];
   const header = CONTAINER_HEADERS_CONFIG[headerKey];
 
-  const groups = <Groups onClick={closeNav} content={content} packages={packages} patterns={patterns} />;
+  const groups = (
+    <Groups
+      onClick={closeNav}
+      content={content}
+      packages={packages}
+      patterns={patterns}
+    />
+  );
   const [searchDrawerOpen, setSearchDrawerOpen] = React.useState<boolean>(
     false,
   );
   const [searchDrawerValue, setSearchDrawerValue] = React.useState<string>('');
   const isContainerNavOpen = location.pathname !== '/';
   const theme = isContainerNavOpen ? null : presetThemes.global;
-
-
 
   return (
     <Navigation
