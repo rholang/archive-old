@@ -39,6 +39,7 @@ export default class Groups extends React.Component<
   };
 
   UNSAFE_componentWillMount() {
+    console.log('group2');
     this.resolveRoutes(this.context.router.route.location.pathname);
   }
 
@@ -46,10 +47,13 @@ export default class Groups extends React.Component<
     nextProps: GroupsProps,
     nextContext: GroupsContext,
   ) {
+    console.log('group2');
     this.resolveRoutes((nextContext.router.route as any).location.pathname);
   }
 
   resolveRoutes(pathname: string) {
+    console.log('pathn');
+    console.log(pathname);
     const { content, packages, patterns } = this.props;
     const contentDir = fs.getDirectories(content.children);
     const menuBuilder = contentDir.map(item => {
@@ -78,6 +82,7 @@ export default class Groups extends React.Component<
   }
 
   render() {
+    console.log('group');
     const { stack } = this.state;
     return <NestedNav stack={stack} />;
   }

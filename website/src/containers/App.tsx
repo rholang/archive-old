@@ -31,8 +31,6 @@ export default () => {
                     }
                   >
                     {!isDesktop && <MobileNav {...appRouteDetails} />}
-                    {console.log(appRouteDetails)}
-                    {console.log('true')}
                     <ErrorBoundary>
                       <Switch>
                         {pageRoutes.map((routeProps: RouteProps, index) => (

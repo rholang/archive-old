@@ -12,7 +12,6 @@ import PatternsNav from './navigations/Patterns';
 import { Directory } from '../../types';
 import * as fs from '../../utils/fs';
 
-
 export type GroupsProps = {
   content: Directory;
   patterns: Directory;
@@ -52,21 +51,24 @@ export default class Groups extends React.Component<GroupsProps, GroupsState> {
 
   resolveRoutes(pathname: string) {
     const { content, packages, patterns } = this.props;
-    const contentDir = fs.getDirectories(content.children)
+    const contentDir = fs.getDirectories(content.children);
     const menuBuilder = contentDir.map(item => {
-
       return (
-        <Route path= {`/content/${item.id}`}>
-          <DocsNav pathname={pathname} prefix={`${item.id}`} content={content} />
+        <Route path={`/content/${item.id}`}>
+          <DocsNav
+            pathname={pathname}
+            prefix={`${item.id}`}
+            content={content}
+          />
         </Route>
-      )
-    })
+      );
+    });
 
     const menuRoot = [
       <Route path="/">
         <DefaultNav pathname={pathname} />
-      </Route>
-    ]
+      </Route>,
+    ];
 
     const menuPackages = [
       <Route path="/packages">
@@ -74,20 +76,20 @@ export default class Groups extends React.Component<GroupsProps, GroupsState> {
       </Route>,
       <Route path="/packages">
         <PackagesNav pathname={pathname} packages={packages} />
-      </Route>
-    ]
+      </Route>,
+    ];
 
     const menuPatterns = [
       <Route path="/patterns">
         <PatternsNav pathname={pathname} patterns={patterns} />
-      </Route>
-    ]
+      </Route>,
+    ];
 
     const menus = [
       ...menuRoot,
       ...menuBuilder,
       ...menuPackages,
-      ...menuPatterns
+      ...menuPatterns,
     ];
 
     const stack = menus
@@ -101,6 +103,7 @@ export default class Groups extends React.Component<GroupsProps, GroupsState> {
   }
 
   render() {
+    console.log('desktiopnav');
     const { stack } = this.state;
     return <NestedNav stack={stack} />;
   }

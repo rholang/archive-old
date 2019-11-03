@@ -21,12 +21,15 @@ import { CONTAINER_HEADERS_CONFIG } from '../DesktopNav/constants';
 import { toClass } from 'recompose';
 
 export function Nav({
+  location,
   closeNav,
 }: RouteComponentProps & { closeNav: () => void }) {
   const [groupDrawerOpen, setGroupDrawerOpen] = React.useState<boolean>(false);
   const headerKey = location.pathname.split('/').filter(p => p)[0];
+  const headerKeyPath = location.pathname;
   const header = CONTAINER_HEADERS_CONFIG[headerKey];
-
+  console.log('headerkey');
+  console.log(location.pathname);
   const groups = (
     <Groups
       onClick={closeNav}
@@ -35,9 +38,11 @@ export function Nav({
       patterns={patterns}
     />
   );
+
   const [searchDrawerOpen, setSearchDrawerOpen] = React.useState<boolean>(
     false,
   );
+
   const [searchDrawerValue, setSearchDrawerValue] = React.useState<string>('');
   const isContainerNavOpen = location.pathname !== '/';
   const theme = isContainerNavOpen ? null : presetThemes.global;
@@ -85,9 +90,7 @@ export function Nav({
           isOpen={groupDrawerOpen}
           closeDrawer={() => setGroupDrawerOpen(false)}
           pathname={location.pathname}
-        >
-          {groups}
-        </GroupDrawer>,
+        />,
       ]}
       containerHeaderComponent={() =>
         isContainerNavOpen &&
@@ -112,9 +115,9 @@ export function Nav({
   );
 }
 
-export default function MobileNav({ props }: { props: RouteComponentProps }) {
+export default function MobileNav(props: RouteComponentProps) {
   const [drawerState, setDrawerState] = React.useState<string>('none');
-
+  console.log(props);
   return (
     <MobileHeader
       navigation={(isOpen: boolean) =>
