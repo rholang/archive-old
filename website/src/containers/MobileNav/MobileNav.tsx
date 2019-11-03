@@ -26,10 +26,8 @@ export function Nav({
 }: RouteComponentProps & { closeNav: () => void }) {
   const [groupDrawerOpen, setGroupDrawerOpen] = React.useState<boolean>(false);
   const headerKey = location.pathname.split('/').filter(p => p)[0];
-  const headerKeyPath = location.pathname;
   const header = CONTAINER_HEADERS_CONFIG[headerKey];
-  console.log('headerkey');
-  console.log(location.pathname);
+
   const groups = (
     <Groups
       onClick={closeNav}
@@ -117,7 +115,6 @@ export function Nav({
 
 export default function MobileNav(props: RouteComponentProps) {
   const [drawerState, setDrawerState] = React.useState<string>('none');
-  console.log(props);
   return (
     <MobileHeader
       navigation={(isOpen: boolean) =>

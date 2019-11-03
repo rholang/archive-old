@@ -39,7 +39,7 @@ export const MobileNavSlider = styled.div`
   transition: transform 0.2s ease-out;
   z-index: ${layers.slider};
   ${xPositioning};
-  width: 100%;
+  width: 300px;
 `;
 
 // make space so content below doesn't slip beneath the header
