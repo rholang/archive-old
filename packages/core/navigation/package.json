@@ -41,7 +41,8 @@
     "prop-types": "^15.5.10",
     "raf-schd": "^2.1.0",
     "react-scrolllock": "^3.0.2",
-    "react-transition-group": "^2.2.1"
+    "react-transition-group": "^2.2.1",
+    "react-router-dom": "^4.2.2"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -66,7 +67,6 @@
     "react-dom": "^16.8.0",
     "react-lorem-component": "^0.12.2",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
     "sinon": "^2.2.0",
     "source-trace": "^2.0.0"

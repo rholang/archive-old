@@ -1,5 +1,6 @@
 // @flow
 import React, { PureComponent, type Node } from 'react';
+import { Link as BaseLink } from 'react-router-dom';
 import type { IconAppearance } from '../../types';
 
 type Props = {
@@ -32,18 +33,9 @@ export default class DefaultLinkComponent extends PureComponent<Props> {
     } = this.props;
 
     return href ? (
-      <a
-        className={className}
-        href={href}
-        onClick={onClick}
-        onMouseDown={onMouseDown}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        tabIndex={tabIndex}
-        {...otherProps}
-      >
+      <BaseLink className={className} to={href} {...otherProps}>
         {children}
-      </a>
+      </BaseLink>
     ) : (
       children
     );
