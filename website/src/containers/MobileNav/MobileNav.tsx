@@ -86,7 +86,10 @@ export function Nav({
         <GroupDrawer
           key="groupDrawer"
           isOpen={groupDrawerOpen}
-          closeDrawer={() => setGroupDrawerOpen(false)}
+          closeDrawer={() => {
+            setGroupDrawerOpen(false);
+            closeNav();
+          }}
           pathname={location.pathname}
         />,
       ]}
