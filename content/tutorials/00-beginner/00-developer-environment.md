@@ -11,7 +11,7 @@ In order to run the rholang snippets in this tutorial, you will need some kind o
 Members of the RChain community provide a public web-based [online rholang interpreter](http://rchain.cloud) ([mirror](https://rchaincloud.inblock.io)). This tool is the easiest way to get started and does not require installing any software.
 
 ## VSCode Plugin
-This is Visual Studio Code extension for Rholang programming language. It has support for syntax highlighting and code evaluation with error highlighting.
+This is the Visual Studio Code extension for the Rholang programming language. It has support for syntax highlighting and code evaluation with error highlighting.
 [Marketplace VSCode](https://marketplace.visualstudio.com/items?itemName=tgrospic.rholang)
 
 ## Cryptofex IDE

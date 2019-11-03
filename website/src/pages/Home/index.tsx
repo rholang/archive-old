@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { colors } from '@atlaskit/theme';
 import Cards from './Cards';
 import { DESKTOP_BREAKPOINT_MIN } from '../../constants';
+import Page, { Grid, GridColumn } from '@atlaskit/page';
 
 const fonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
@@ -14,6 +15,7 @@ const Title = styled.h1`
   font-size: 52px;
   margin: 80px 0 0 !important;
   letter-spacing: 0;
+  display: inline-block;
 `;
 const Intro = styled.div`
   color: ${colors.N0};
@@ -61,12 +63,51 @@ export default class HomePage extends React.Component {
           <title>{`${BASE_TITLE}`}</title>
         </Helmet>
         <Style />
-        <Title data-testid="title">Atlaskit</Title>
-        <Intro>
-          Atlassian&#39;s official UI library, built according to the
-          Atlassian&nbsp;Design&nbsp;Guidelines.
-        </Intro>
-        <Cards />
+        <Page>
+          <Grid>
+            <GridColumn>
+              <h1>Atlaskit</h1>
+            </GridColumn>
+            <GridColumn>
+              <h1 data-testid="title">Atlaskit</h1>
+            </GridColumn>
+
+            <GridColumn>
+              <Intro>
+                Atlassian&#39;s official UI library, built according to the
+                Atlassian&nbsp;Design&nbsp;Guidelines.
+              </Intro>
+            </GridColumn>
+
+            <GridColumn>
+              <p>Lorem</p>
+            </GridColumn>
+            <GridColumn>
+              <p>Lorem</p>
+            </GridColumn>
+            <GridColumn>
+              <Title data-testid="title">Atlaskit</Title>
+            </GridColumn>
+
+            <GridColumn>
+              <Intro>
+                Atlassian&#39;s official UI library, built according to the
+                Atlassian&nbsp;Design&nbsp;Guidelines.
+              </Intro>
+            </GridColumn>
+            <Cards />
+            <GridColumn>
+              <h2>Content below which takes up remaining space</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Blanditiis voluptatum perspiciatis doloribus dignissimos
+                accusamus commodi, nobis ut, error iusto, quas vitae nesciunt
+                consequatur possimus labore! Mollitia est quis minima
+                asperiores.
+              </p>
+            </GridColumn>
+          </Grid>
+        </Page>
       </HomePageWrapper>
     );
   }
