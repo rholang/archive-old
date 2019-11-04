@@ -163,38 +163,37 @@ class Card extends React.Component<CardProps> {
 
 const cards = [
   {
-    to: '/docs/getting-started',
+    to: '/content/guide',
     icon: () => <CardIcon color={colors.R400} />,
     image: rocket,
-    title: 'Get started with Atlaskit!',
+    title: 'Documentation',
     text: 'Everything you need to get up and running.',
   },
   {
-    to: '/packages',
-    title: 'Components and APIs',
+    to: '/content/tutorials',
+    title: 'Tutorials',
     image: platform,
     icon: () => (
       <CardIcon color={colors.Y400}>
         <PackagesIcon
-          label="Components and APIs"
+          label="Tutorials"
           primaryColor={colors.N0}
           secondaryColor={colors.Y400}
           size="small"
         />
       </CardIcon>
     ),
-    text:
-      'Check out the documentation and usage guides for the Atlaskit packages.',
+    text: 'Read tutorials from the community and learn Rholang',
   },
   {
-    href: 'http://atlassian.design',
+    href: 'https://rchain.atlassian.net/wiki/spaces/CORE/overview',
     to: '',
-    title: 'Atlassian Design Guidelines',
+    title: 'Development updates',
     image: multiTool,
     icon: () => (
       <CardIcon color={colors.B400}>
         <AtlassianIcon
-          label="Atlassian Design Guidelines"
+          label="Development updates"
           iconColor={colors.N0}
           iconGradientStart={colors.B400}
           iconGradientStop={colors.N0}
@@ -202,55 +201,86 @@ const cards = [
         />
       </CardIcon>
     ),
-    text: 'Need some more design guidance? Have a look at the ADG.',
+    text: 'Read the latest development updates',
   },
   {
-    to: '/docs/guides/contributing',
-    title: 'Make it better',
+    to: 'http://revdefine.io/',
+    title: 'Rchain Block Explorer',
     icon: () => (
       <CardIcon color={colors.R400}>
         <MediaDocIcon
-          label="Make it better"
+          label="Block Explorer"
           primaryColor={colors.N0}
           secondaryColor={colors.R400}
           size="small"
         />
       </CardIcon>
     ),
-    text:
-      'Learn how to contribute code, report issues, and review our code of conduct.',
+    text: 'Get information about blocks',
   },
   {
-    href: 'https://bitbucket.org/atlassian/atlaskit-mk-2',
+    href: 'https://github.com/rchain/rchain',
     to: '',
-    title: 'Atlaskit Repository',
+    title: 'Rchain Github Repository',
     icon: () => (
       <CardIcon color={colors.Y400}>
         <CodeIcon
-          label="Atlaskit Repository"
+          label="Rchain Repository"
           primaryColor={colors.N0}
           secondaryColor={colors.Y400}
           size="small"
         />
       </CardIcon>
     ),
-    text:
-      'Want to dive straight into the code? Check out our repo on Bitbucket.',
+    text: 'Want to dive straight into the code? Check out our repo on Github.',
   },
   {
-    href: 'https://developer.atlassian.com/blog/',
+    href: 'https://blog.rchain.coop/',
     to: '',
-    title: 'Atlassian Developer Blog',
+    title: 'Rchain Blog',
     icon: () => (
       <CardIcon color={colors.N0}>
         <BlogIcon
-          label="Atlassian Developer Blog"
+          label="Rchain Developer Blog"
           primaryColor={colors.P400}
           size="medium"
         />
       </CardIcon>
     ),
     text: 'Keep up to date on the latest in engineering at Atlassian.',
+  },
+
+  {
+    href: 'https://www.rchain.coop/community',
+    to: '',
+    title: 'Discord Community',
+    icon: () => (
+      <CardIcon color={colors.N0}>
+        <BlogIcon
+          label="Rchain Developer Blog"
+          primaryColor={colors.P400}
+          size="medium"
+        />
+      </CardIcon>
+    ),
+    text:
+      'Join our large community on Discord and become a member in the Rchain Coop',
+  },
+
+  {
+    href: 'https://www.youtube.com/channel/UCSS3jCffMiz574_q64Ukj_w',
+    to: '',
+    title: 'Youtube Development Updates',
+    icon: () => (
+      <CardIcon color={colors.N0}>
+        <BlogIcon
+          label="Rchain Developer Blog"
+          primaryColor={colors.P400}
+          size="medium"
+        />
+      </CardIcon>
+    ),
+    text: 'Watch every wednesday the development updates from Rchain',
   },
 ];
 

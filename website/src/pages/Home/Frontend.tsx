@@ -1,6 +1,7 @@
 import { DESKTOP_BREAKPOINT_MIN, MOBILE_BREAKPOINT_MAX } from '../../constants';
 import styled, { css } from 'styled-components';
 import React from 'react';
+import ModalDialogVideo from './ModalDialogVideo';
 
 const fronta = css`
   position: absolute;
@@ -145,31 +146,6 @@ const firstViewRight = css`
   }
 `;
 
-const playButton = css`
-  position: relative;
-  display: block;
-  width: 89px;
-  height: 89px;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background-color: #e9f8fe;
-  background-image: url(../images/video_play.svg);
-  background-position: 34px;
-  background-size: 30px 34px;
-  background-repeat: no-repeat;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.21);
-  -webkit-transition: all 80ms linear;
-  transition: all 80ms linear;
-  cursor: pointer;
-
-  @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-    display: none;
-  }
-`;
-
 export const FrontendA = styled.div`
   ${fronta}
 `;
@@ -177,6 +153,7 @@ export const FrontendA = styled.div`
 export const FullWith = styled.div`
   ${fullWith}
 `;
+
 export const Container960 = styled.div`
   ${_960}
   ${_960FirstView}
@@ -193,9 +170,6 @@ export const Descritption = styled.div`
 export const FirstViewRight = styled.div`
   ${firstViewRight}
 `;
-export const PlayButton = styled.button`
-  ${playButton}
-`;
 
 export default () => {
   return (
@@ -209,7 +183,7 @@ export default () => {
             </Descritption>
           </FirstViewLeft>
           <FirstViewRight>
-            <PlayButton />
+            <ModalDialogVideo />
           </FirstViewRight>
         </Container960>
       </FullWith>

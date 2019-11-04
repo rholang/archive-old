@@ -38,21 +38,9 @@ const ScrollHintScrollContainer = styled.div`
     overflow-y: auto;
 
     &:before,
-    &:after {
-      background: ${({ theme }) =>
-        getProvided(theme).background.secondary ||
-        getProvided(theme).background.primary};
-      content: '';
-      display: block;
-      flex: 0;
-      min-height: ${scrollHintHeight}px;
-      position: relative;
-      z-index: 5;
-    }
 
-    &:after {
-      top: ${bottomPadding}px;
-    }
+
+
 
     /* The following styles are to style scrollbars when there is long/wide content */
     -ms-overflow-style: -ms-autohiding-scrollbar;

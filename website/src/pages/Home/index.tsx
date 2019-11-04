@@ -7,20 +7,9 @@ import { DESKTOP_BREAKPOINT_MIN, MOBILE_BREAKPOINT_MAX } from '../../constants';
 import Page, { Grid, GridColumn } from '@atlaskit/page';
 import Background from './Background';
 import Frontend from './Frontend';
-
-const below = css`
-  position: absolute;
-  left: 0;
-  top: 100%;
-  right: 0;
-  z-index: 1;
-  overflow: hidden;
-  background-color: #fff;
-`;
-
-const BelowA = styled.div`
-  ${below}
-`;
+import NewsBanner from './NewsBanner';
+import Below from './Below';
+import MissionContainer, { MissionItem, MissionSection } from './Mission';
 
 const fonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
@@ -70,6 +59,11 @@ const Style = () => (
     background-color: ${colors.B500};
   }
 
+  div {
+    max-width: none;
+    max-height: none;
+  }
+
 
 `}</style>
 );
@@ -84,14 +78,15 @@ export default class HomePage extends React.Component {
         <Style />
         <Background />
         <Frontend />
-        <BelowA>
+        <Below>
+          <NewsBanner />
           <Title data-testid="title">Atlaskit</Title>
           <Intro>
             Atlassian&#39;s official UI library, built according to the
             Atlassian&nbsp;Design&nbsp;Guidelines.
           </Intro>
           <Cards />
-        </BelowA>
+        </Below>
       </HomePageWrapper>
     );
   }
