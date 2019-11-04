@@ -82,8 +82,6 @@ const BaseCardStyles = css`
   text-align: left;
 
   z-index: 100;
-  box-shadow: 0 1px 1px rgba(23, 43, 77, 0.2),
-    0 0 0.5px 0 rgba(23, 43, 77, 0.25);
   transition: all 0.3s cubic-bezier(0.15, 1, 0.33, 1);
 
   @media (max-width: ${TABLET_BREAKPOINT_MIN}px) {
@@ -166,11 +164,7 @@ class Card extends React.Component<CardProps> {
 const cards = [
   {
     to: '/docs/getting-started',
-    icon: () => (
-      <CardIcon color={colors.R400}>
-
-      </CardIcon>
-    ),
+    icon: () => <CardIcon color={colors.R400} />,
     image: rocket,
     title: 'Get started with Atlaskit!',
     text: 'Everything you need to get up and running.',
