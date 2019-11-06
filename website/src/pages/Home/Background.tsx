@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import React from 'react';
 
 export const bg = css`
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   right: 0;
@@ -27,8 +27,6 @@ export const bg = css`
 export const bgGradient = css`
   position: relative;
   width: 100%;
-  height: 100vh;
-  float: left;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -93,7 +91,6 @@ export const bgGradientGhost = css`
   top: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
   height: 100%;
   background-color: #082fa2;
   opacity: 0;
@@ -104,9 +101,9 @@ export const bgGradientGhost = css`
 export const bgIllustration = css`
   position: relative;
   overflow: hidden;
-  width: calc(50% - 80px);
   height: 100vh;
   display: flex;
+  flex: 1;
   align-items: center;
   background-image: -webkit-linear-gradient(270deg, #091440, #091440);
   background-image: linear-gradient(180deg, #091440, #091440);

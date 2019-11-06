@@ -37,7 +37,7 @@ export const B100 = '#4C9AFF';
 export const B200 = '#2684FF';
 export const B300 = '#0065FF';
 export const B400 = '#0052CC';
-export const B500 = '#005ebb80';
+export const B500 = '#354a5f';
 
 // Purples
 export const P50 = '#EAE6FF';

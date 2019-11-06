@@ -10,28 +10,11 @@ const fronta = css`
   right: 0;
   bottom: 0;
   z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
   }
 `;
@@ -40,46 +23,30 @@ const fullWith = css`
   width: 100%;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
     flex: 1;
   }
 `;
 
-const _960FirstView = css`
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+const container960 = css`
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
+  justify-content: center;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
     height: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 `;
 
 const firstViewLeft = css`
   position: relative;
-  flex: 1;
-  -webkit-transition: opacity 100ms linear;
+  flex: 2;
+  display: flex;
   transition: opacity 100ms linear;
+  justify-content: center;
+  align-items: center;
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
     width: 50%;
   }
@@ -87,50 +54,31 @@ const firstViewLeft = css`
 
 const logo = css`
   height: 80px;
-  margin-left: -125px;
   background-image: url(../images/logo.svg);
   background-position: 0;
   background-size: contain;
   background-repeat: no-repeat;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-    margin-bottom: 35px;
-    margin-left: 0;
   }
 `;
 
 const descriptionFont38 = css`
-  padding-top: 56px;
   line-height: 42px;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
     width: 300px;
-    padding-top: 10px;
-    padding-left: 0;
     font-size: 28px;
     line-height: 38px;
   }
 `;
 
 const firstViewRight = css`
-  margin-left: -55px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  flex: 2;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
     position: relative;
@@ -147,7 +95,7 @@ export const FullWith = styled.div`
 `;
 
 export const Container960 = styled.div`
-  ${_960FirstView}
+  ${container960}
 `;
 export const FirstViewLeft = styled.div`
   ${firstViewLeft}
@@ -173,8 +121,11 @@ export default () => {
               Rholang is a massive scalable blockchain language
             </Descritption>
           </FirstViewLeft>
+          <ModalDialogVideo />
           <FirstViewRight>
-            <ModalDialogVideo />
+            <Descritption>
+              Rholang is a massive scalable blockchain language
+            </Descritption>
           </FirstViewRight>
         </Container960>
       </FullWith>

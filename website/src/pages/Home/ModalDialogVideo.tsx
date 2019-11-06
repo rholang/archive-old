@@ -1,12 +1,37 @@
 import React from 'react';
 import 'react-video-play/public/css/react-video-play.css';
-
-import Button from '@atlaskit/button';
+import { DESKTOP_BREAKPOINT_MIN, MOBILE_BREAKPOINT_MAX } from '../../constants';
+import styled, { css } from 'styled-components';
 import { colors } from '@atlaskit/theme';
 import Loadable from 'react-loadable';
 import Loading from '../../components/Loading';
+import VidPlayIcon from '@atlaskit/icon/glyph/vid-play';
 
 import ModalDialog, { ModalTransition } from '@atlaskit/modal-dialog';
+
+const Button = styled.button`
+  position: relative;
+  width: 89px;
+  height: 89px;
+  border-radius: 50%;
+  background-color: #e9f8fe;
+  background-position: 34px;
+  background-size: 30px 34px;
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.21);
+  transition: all 80ms linear;
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  :hover {
+    background-color: #afafaf;
+  }
+`;
+
+const Wrapper = styled.div`
+  flex: 1;
+`;
 
 const headerStyles: React.CSSProperties = {
   paddingTop: 0,
@@ -58,8 +83,10 @@ export default class ModalDemo extends React.Component<{}, State> {
     });
 
     return (
-      <div style={{ padding: 16 }}>
-        <Button onClick={this.open}>Open Modal</Button>
+      <Wrapper>
+        <Button onClick={this.open}>
+          <VidPlayIcon size="xlarge" label="rchain" />
+        </Button>
 
         <ModalTransition>
           {isOpen && (
@@ -82,7 +109,7 @@ export default class ModalDemo extends React.Component<{}, State> {
             </ModalDialog>
           )}
         </ModalTransition>
-      </div>
+      </Wrapper>
     );
   }
 }
