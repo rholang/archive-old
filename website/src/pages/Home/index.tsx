@@ -10,6 +10,7 @@ import Frontend from './Frontend';
 import NewsBanner from './NewsBanner';
 import Below from './Below';
 import MissionContainer, { MissionItem, MissionSection } from './Mission';
+import rocket from '../../assets/Rocket.png';
 
 const fonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
@@ -76,9 +77,34 @@ export default class HomePage extends React.Component {
           <title>{`${BASE_TITLE}`}</title>
         </Helmet>
         <Style />
+
         <Background />
         <Frontend />
         <Below>
+          <div>
+            Icons made by{' '}
+            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+              Freepik
+            </a>{' '}
+            from{' '}
+            <a href="https://www.flaticon.com/" title="Flaticon">
+              www.flaticon.com
+            </a>
+          </div>
+          <Page>
+            <Grid>
+              <GridColumn medium={6}>
+                <h1>Test 123 33</h1>>
+                <p>
+                  Test absscd ssfsdfskdjfs sdjs jsdj s sk
+                  sldjfsdfjsdfjsdfdfsfdds adf as
+                </p>
+              </GridColumn>
+              <GridColumn medium={6}>
+                <img src={rocket} alt="Logo" />;
+              </GridColumn>
+            </Grid>
+          </Page>
           <NewsBanner />
           <Title data-testid="title">Atlaskit</Title>
           <Intro>

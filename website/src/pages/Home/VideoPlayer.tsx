@@ -1,4 +1,3 @@
-import video from '../../assets/home/rchain-video.mp4';
 import { ReactVideoPlay, VideoSourceType } from 'react-video-play';
 import React from 'react';
 
@@ -8,19 +7,12 @@ export default () => {
       name: '1080p',
       source: [
         {
-          source: video,
+          source: 'https://rholang.netlify.com/home/rchain-video.mp4',
           type: VideoSourceType.video_mp4,
         },
       ],
     },
   ];
 
-  return (
-    <ReactVideoPlay
-      sources={src}
-      enableSlider={true}
-      autoplay={true}
-      muted={false}
-    />
-  );
+  return <ReactVideoPlay sources={src} enableSlider={true} autoplay={true} />;
 };

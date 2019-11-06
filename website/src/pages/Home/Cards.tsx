@@ -204,12 +204,13 @@ const cards = [
     text: 'Read the latest development updates',
   },
   {
-    to: 'http://revdefine.io/',
-    title: 'Rchain Block Explorer',
+    href: 'https://developer.rchain.coop/',
+    to: '',
+    title: 'Rchain Developer Page',
     icon: () => (
       <CardIcon color={colors.R400}>
         <MediaDocIcon
-          label="Block Explorer"
+          label="Developer Page"
           primaryColor={colors.N0}
           secondaryColor={colors.R400}
           size="small"
@@ -218,6 +219,7 @@ const cards = [
     ),
     text: 'Get information about blocks',
   },
+
   {
     href: 'https://github.com/rchain/rchain',
     to: '',
@@ -247,7 +249,7 @@ const cards = [
         />
       </CardIcon>
     ),
-    text: 'Keep up to date on the latest in engineering at Atlassian.',
+    text: 'Keep up to date with new blog posts',
   },
 
   {
@@ -281,6 +283,22 @@ const cards = [
       </CardIcon>
     ),
     text: 'Watch every wednesday the development updates from Rchain',
+  },
+  {
+    href: 'http://revdefine.io/',
+    to: '',
+    title: 'Rchain Block Explorer',
+    icon: () => (
+      <CardIcon color={colors.R400}>
+        <MediaDocIcon
+          label="Block Explorer"
+          primaryColor={colors.N0}
+          secondaryColor={colors.R400}
+          size="small"
+        />
+      </CardIcon>
+    ),
+    text: 'Get information about blocks',
   },
 ];
 

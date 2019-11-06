@@ -19,8 +19,8 @@
     "build:no-minimize": "yarn build:home --no-minimize",
     "build:copy": "cp dist/index.html dist/404.html && cp -R public/* dist/",
     "deploy:staging": "STAGING=true node ./scripts/retry.publishing.website.js",
-    "depl:netlify": "env-cmd node ./scripts/retry.publishing.website.js",
-    "depl:gh-pages": "env-cmd yarn build:home && yarn build:copy && gh-pages -b master -d dist"
+    "depl:netlify": "yarn run build:home && yarn run build:copy && env-cmd node ./scripts/retry.publishing.website.js",
+    "depl:gh-pages": "env-cmd yarn run build:home && yarn run build:copy && gh-pages -b master -d dist"
   },
   "repository": "atlaskit/fabric",
   "devDependencies": {
@@ -28,7 +28,6 @@
     "@atlaskit/webdriver-runner": "^0.1.5",
     "@types/node-sass": "^4.11.0",
     "@types/react-router": "^4.4.1",
-    "@u-wave/react-vimeo": "^0.8.1",
     "bolt-query": "^1.1.4",
     "chalk": "^2.1.0",
     "env-cmd": "^10.0.1",
@@ -40,12 +39,10 @@
     "react-awesome-player": "^1.0.10",
     "react-html5video": "^2.5.1",
     "react-modal-video": "^1.2.3",
-    "react-player": "^1.13.0",
     "react-quicklink-component": "^0.0.5",
     "react-video-play": "^2.0.3",
     "ts-node": "^6.1.1",
     "tty-table": "^2.6.8",
-    "video-react": "^0.14.1",
     "webpack-bundle-analyzer": "^2.13.0"
   },
   "dependencies": {
