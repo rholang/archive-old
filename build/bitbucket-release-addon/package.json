@@ -15,7 +15,7 @@
     "fetch-mock": "^7.3.3",
     "html-webpack-plugin": "^3.2.0",
     "ngrok": "^2.2.24",
-    "webpack": "^4.16.1",
+    "webpack": "4.41.2",
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {

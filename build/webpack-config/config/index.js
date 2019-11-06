@@ -171,16 +171,16 @@ module.exports = async function createWebpackConfig(
                 camelCase: true,
                 importLoaders: 1,
                 mergeRules: false,
-                modules: true,
+                modules: false,
               },
             },
           ],
         },
         {
-          test: /\.(gif|jpe?g|png|ico|woff|woff2)$/,
+          test: /\.(gif|jpe?g|png|ico|woff|woff2|mp4)$/,
           loader: require.resolve('url-loader'),
           options: {
-            limit: 10000,
+            limit: 10000000,
           },
         },
         {
@@ -195,6 +195,17 @@ module.exports = async function createWebpackConfig(
         {
           test: /\.less$/,
           use: ['style-loader', 'css-loader', 'less-loader'],
+        },
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            // Creates `style` nodes from JS strings
+            'style-loader',
+            // Translates CSS into CommonJS
+            'css-loader',
+            // Compiles Sass to CSS
+            'sass-loader',
+          ],
         },
       ],
     },
@@ -249,7 +260,9 @@ function getPlugins(
     websiteDir,
     `public/favicon${!isProduction ? '-dev' : ''}.ico`,
   );
-  const HTMLPageTitle = `Rholang a massive scalable language${!isProduction ? ' - DEV' : ''}`;
+  const HTMLPageTitle = `Rholang a massive scalable language${
+    !isProduction ? ' - DEV' : ''
+  }`;
   const plugins = [
     new HtmlWebpackPlugin({
       template: path.join(websiteDir, 'public/index.html.ejs'),
@@ -269,7 +282,9 @@ function getPlugins(
     new webpack.DefinePlugin({
       ENABLE_ANALYTICS_GASV3: `${String(isAnalyticsGASv3Enabled)}`,
       WEBSITE_ENV: `"${websiteEnv}"`,
-      BASE_TITLE: `"Rholang - A massive scalable language ${!isProduction ? '- DEV' : ''}"`,
+      BASE_TITLE: `"Rholang - A massive scalable language ${
+        !isProduction ? '- DEV' : ''
+      }"`,
       DEFAULT_META_DESCRIPTION: `"Rholang - A massive scalable language for the next generation blockchain"`,
     }),
     new CopyPlugin([
@@ -278,10 +293,9 @@ function getPlugins(
         to: '[2]/[3]/[4].[ext]',
         test: /([^/]+)\/(content.*)\/[\d]+-(.+)\/(.*)\.(png|jpg|pdf|gif)$/,
         toType: 'template',
-        ignore: ['*.js','*.md','*.yml','*.svg'],
+        ignore: ['*.js', '*.md', '*.yml', '*.svg'],
       },
-    ]
-   ),
+    ]),
   ];
 
   if (report) {

@@ -37,7 +37,7 @@ export const B100 = '#4C9AFF';
 export const B200 = '#2684FF';
 export const B300 = '#0065FF';
 export const B400 = '#0052CC';
-export const B500 = '#0747A6';
+export const B500 = '#2e82ff';
 
 // Purples
 export const P50 = '#EAE6FF';
@@ -81,7 +81,7 @@ export const N800 = '#172B4D';
 export const N900 = '#091E42';
 
 // Each tint is made of N900 and an alpha channel
-export const N10A = 'rgba(9, 30, 66, 0.02)';
+export const N10A = 'rgba(255, 255, 255, 0.00)';
 export const N20A = 'rgba(9, 30, 66, 0.04)';
 export const N30A = 'rgba(9, 30, 66, 0.08)';
 export const N40A = 'rgba(9, 30, 66, 0.13)';

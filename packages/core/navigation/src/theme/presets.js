@@ -239,10 +239,12 @@ export const siteSettings: Provided = ((): Provided => {
 
 export const global: Provided = ((): Provided => {
   const primaryBackground: string = colors.B500;
+  const primaryBackgroundTransp: string = colors.N10A;
   const activeBackground: string = colors.B200;
   const item: ItemTheme = {
     default: {
       background: primaryBackground,
+      primaryBackgroundTransp,
     },
     hover: {
       background: themed({
