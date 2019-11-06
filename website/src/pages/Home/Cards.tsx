@@ -50,10 +50,12 @@ const loadInAnimation = keyframes`
 
 export const CardsWrapper = styled.div`
   display: flex;
+  align-items: start;
   max-width: 980px;
-  justify-content: center;
+  justify-content: start;
   margin: 0 auto;
   box-sizing: border-box;
+  flex-wrap: wrap;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
     margin-top: 0;
@@ -61,7 +63,7 @@ export const CardsWrapper = styled.div`
 `;
 
 export const CardColumn = styled.div`
-  flex: 0 0 0;
+  display: flex;
 `;
 
 const BaseCardStyles = css`
@@ -276,7 +278,7 @@ const cards = [
     icon: () => (
       <CardIcon color={colors.N0}>
         <BlogIcon
-          label="Rchain Developer Blog"
+          label="Youtube Development Updates"
           primaryColor={colors.P400}
           size="medium"
         />
@@ -291,7 +293,7 @@ const cards = [
     icon: () => (
       <CardIcon color={colors.R400}>
         <MediaDocIcon
-          label="Block Explorer"
+          label="Rchain Block Explorer"
           primaryColor={colors.N0}
           secondaryColor={colors.R400}
           size="small"
@@ -334,11 +336,11 @@ export default class Cards extends React.Component {
   columnIndexes = () => {
     const { columnCount } = this.state;
     if (columnCount === 1) {
-      return [[0, 1, 2, 3, 4, 5]];
+      return [0, 1, 2, 3, 4, 5, 6, 7];
     } else if (columnCount === 2) {
-      return [[0, 2], [1, 3, 4, 5]];
+      return [0, 1, 2, 3, 4, 5, 6, 7];
     }
-    return [[0, 3], [1, 4], [2, 5]];
+    return [0, 1, 2, 3, 4, 5, 6, 7];
   };
 
   render() {
@@ -346,15 +348,10 @@ export default class Cards extends React.Component {
 
     return (
       <CardsWrapper innerRef={this.detectColumns}>
-        {columns.map((cardKeys, colIndex) => (
-          /* eslint-disable react/no-array-index-key */
-          <CardColumn key={colIndex}>
-            {cardKeys.map((cardIndex, index) => {
-              const props = cards[cardIndex];
-              return <Card index={index} key={props.title} {...props} />;
-            })}
-          </CardColumn>
-        ))}
+        {columns.map((cardIndex, index) => {
+          const props = cards[cardIndex];
+          return <Card index={index} key={props.title} {...props} />;
+        })}
       </CardsWrapper>
     );
   }
