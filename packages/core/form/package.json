@@ -23,7 +23,7 @@
   "dependencies": {
     "@atlaskit/icon": "^19.0.6",
     "@atlaskit/theme": "^9.2.4",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "7.7.1",
     "final-form": "^4.13.0",
     "final-form-focus": "^1.1.0",
     "memoize-one": "^5.1.0",

@@ -31,7 +31,7 @@
     "@atlaskit/spinner": "^12.1.1",
     "@atlaskit/theme": "^9.2.4",
     "@atlaskit/type-helpers": "^4.2.2",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "7.7.1",
     "classnames": "^2.2.5",
     "react-lazily-render": "^1.2.0",
     "tslib": "^1.9.3",

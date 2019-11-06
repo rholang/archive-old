@@ -17,6 +17,10 @@ const baseCacheDir = path.resolve(
   '../../../node_modules/.cache-loader',
 );
 
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
+  .default;
+const styledComponentsTransformer = createStyledComponentsTransformer();
+
 module.exports = async function createWebpackConfig(
   {
     globs = createDefaultGlob(),
@@ -155,6 +159,9 @@ module.exports = async function createWebpackConfig(
               loader: require.resolve('ts-loader'),
               options: {
                 transpileOnly: true,
+                getCustomTransformers: () => ({
+                  before: [styledComponentsTransformer],
+                }),
               },
             },
           ],

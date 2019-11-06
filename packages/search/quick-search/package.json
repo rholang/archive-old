@@ -23,7 +23,7 @@
     "@atlaskit/item": "^10.1.6",
     "@atlaskit/spinner": "^12.1.1",
     "@atlaskit/theme": "^9.2.4",
-    "@babel/runtime": "^7.0.0"
+    "@babel/runtime": "7.7.1"
   },
   "peerDependencies": {
     "react": "^16.8.0",

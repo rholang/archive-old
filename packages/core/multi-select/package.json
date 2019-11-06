@@ -29,7 +29,7 @@
     "@atlaskit/tag": "^9.0.9",
     "@atlaskit/tag-group": "^9.0.5",
     "@atlaskit/theme": "^9.2.4",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "7.7.1",
     "classnames": "^2.2.5",
     "uuid": "^3.1.0"
   },

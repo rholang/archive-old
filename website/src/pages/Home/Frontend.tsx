@@ -16,9 +16,9 @@ const fronta = css`
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -45,14 +45,6 @@ const fullWith = css`
     -ms-flex: 1;
     flex: 1;
   }
-`;
-
-const _960 = css`
-  position: relative;
-  display: block;
-  width: 960px;
-  margin-right: auto;
-  margin-left: auto;
 `;
 
 const _960FirstView = css`
@@ -85,7 +77,7 @@ const _960FirstView = css`
 
 const firstViewLeft = css`
   position: relative;
-  width: 570px;
+  flex: 1;
   -webkit-transition: opacity 100ms linear;
   transition: opacity 100ms linear;
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
@@ -155,7 +147,6 @@ export const FullWith = styled.div`
 `;
 
 export const Container960 = styled.div`
-  ${_960}
   ${_960FirstView}
 `;
 export const FirstViewLeft = styled.div`

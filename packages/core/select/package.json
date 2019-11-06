@@ -25,7 +25,7 @@
     "@atlaskit/icon": "^19.0.6",
     "@atlaskit/spinner": "^12.1.1",
     "@atlaskit/theme": "^9.2.4",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "7.7.1",
     "@emotion/core": "^10.0.9",
     "focus-trap": "^2.4.5",
     "memoize-one": "^5.1.0",

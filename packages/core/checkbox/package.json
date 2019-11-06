@@ -25,7 +25,7 @@
     "@atlaskit/analytics-next": "^6.3.1",
     "@atlaskit/icon": "^19.0.6",
     "@atlaskit/theme": "^9.2.4",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "7.7.1",
     "@emotion/core": "^10.0.9",
     "emotion-theming": "^10.0.7",
     "lodash.merge": "^4.6.1",

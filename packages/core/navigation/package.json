@@ -33,16 +33,16 @@
     "@atlaskit/size-detector": "^8.0.7",
     "@atlaskit/theme": "^9.2.4",
     "@atlaskit/tooltip": "^15.1.1",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "7.7.1",
     "chromatism": "^2.6.0",
     "es6-object-assign": "^1.1.0",
     "lodash.clonedeep": "^4.5.0",
     "memoize-one": "^5.1.0",
     "prop-types": "^15.5.10",
     "raf-schd": "^2.1.0",
+    "react-router-dom": "^4.2.2",
     "react-scrolllock": "^3.0.2",
-    "react-transition-group": "^2.2.1",
-    "react-router-dom": "^4.2.2"
+    "react-transition-group": "^2.2.1"
   },
   "peerDependencies": {
     "react": "^16.8.0",
