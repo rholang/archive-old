@@ -3,7 +3,7 @@ import css from './utils/evaluate-inner';
 export default css`
   html,
   body {
-    margin: 0px
+    margin: 0px;
   }
   div,
   h1,
@@ -15,10 +15,7 @@ export default css`
   ul,
   ol,
   dl,
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
+  img,
   pre,
   form,
   fieldset {
@@ -28,5 +25,10 @@ export default css`
   img,
   fieldset {
     border: 0;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
   }
 `;

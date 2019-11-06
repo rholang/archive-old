@@ -5,8 +5,13 @@ const loaderUtils = require('loader-utils');
 const globby = require('globby');
 const bolt = require('bolt');
 const { dir, buildFs, isDirHasFiles } = require('./buildFs');
-const { printDir, getSitemap} = require('./printFs');
-const { createSitemapsAndIndex ,buildSitemapIndex, SitemapStream, streamToPromise } = require('sitemap');
+const { printDir, getSitemap } = require('./printFs');
+const {
+  createSitemapsAndIndex,
+  buildSitemapIndex,
+  SitemapStream,
+  streamToPromise,
+} = require('sitemap');
 const fs = require('fs');
 /*::
 import type { Directory, File, LoaderOptions } from './types';
@@ -28,10 +33,9 @@ function createLoaderOutput(
 
     export default ${printDir(dir)};
   `;
-  let sitemapList = getSitemap(dir)
+
+  let sitemapList = getSitemap(dir);
   sitemapCreator(sitemapList);
-
-
 
   if (debug) {
     const groupName = 'Bolt FS Loader Debug Info';
@@ -66,30 +70,31 @@ function addWebpackDependencies(
   );
 }
 
-function sitemapCreator (sitemapList) {
-
-  const sitemap = new SitemapStream({ hostname: 'https://rholang.netlify.com/' });
+function sitemapCreator(sitemapList) {
+  const sitemap = new SitemapStream({
+    hostname: 'https://rholang.netlify.com/',
+  });
 
   sitemapList.map(item =>
-    sitemap.write({ url: `${item}`, changefreq: 'daily', priority: 0.3 ,links: [{lang: 'en', url:`https://rholang.netlify.com/${item}` 	}]}
-    ))
-  sitemap.end()
+    sitemap.write({
+      url: `${item}`,
+      changefreq: 'daily',
+      priority: 0.3,
+      links: [{ lang: 'en', url: `https://rholang.netlify.com/${item}` }],
+    }),
+  );
+  sitemap.end();
 
   streamToPromise(sitemap)
     .then(sm =>
-      fs.writeFile(process.cwd() + "/public/sitemap.xml", sm, function(err) {
-        if(err) {
-            console.log(err);
+      fs.writeFile(process.cwd() + '/public/sitemap.xml', sm, function(err) {
+        if (err) {
+          console.log(err);
         }
-      }))
+      }),
+    )
     .catch(console.error);
-
-
-
-
-};
-
-
+}
 
 module.exports = async function boltFsLoader() {
   const opts /*: LoaderOptions */ = Object.assign(

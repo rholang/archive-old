@@ -48,6 +48,7 @@ function buildFs(
     restSegments,
     rootDir,
   );
+
   return appendToDir(curDir, item);
 }
 
