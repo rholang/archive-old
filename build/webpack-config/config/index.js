@@ -159,9 +159,6 @@ module.exports = async function createWebpackConfig(
               loader: require.resolve('ts-loader'),
               options: {
                 transpileOnly: true,
-                getCustomTransformers: () => ({
-                  before: [styledComponentsTransformer],
-                }),
               },
             },
           ],

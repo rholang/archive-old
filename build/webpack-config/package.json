@@ -41,8 +41,6 @@
     "copy-webpack-plugin": "^4.5.2",
     "file-loader": "^1.1.11",
     "markdown-image-loader": "^2.0.0",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
     "webpack": "4.41.2"
   }
 }

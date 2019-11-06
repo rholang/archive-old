@@ -45,7 +45,7 @@ if (process.env.VISUAL_REGRESSION) {
   disableHostCheck = true;
 }
 
-const PORT = +process.env.ATLASKIT_DEV_PORT || 9001;
+const PORT = +process.env.ATLASKIT_DEV_PORT || 9000;
 const stats = require('../config/statsOptions');
 
 async function runDevServer() {
