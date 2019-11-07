@@ -2,9 +2,7 @@ import css from './utils/evaluate-inner';
 // Reset
 export default css`
   html,
-  body {
-    margin: 0px;
-  }
+  body,
   div,
   h1,
   h2,

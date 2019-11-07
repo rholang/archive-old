@@ -36,7 +36,7 @@ const container960 = css`
     height: 100%;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
   }
 `;
 

@@ -1,29 +1,16 @@
+import { colors } from '@atlaskit/theme';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled, { css } from 'styled-components';
-import { colors } from '@atlaskit/theme';
-import Cards from './Cards';
-import { DESKTOP_BREAKPOINT_MIN, MOBILE_BREAKPOINT_MAX } from '../../constants';
-import Page, { Grid, GridColumn } from '@atlaskit/page';
+import Mission, { Title, fonts } from './Mission';
+import { DESKTOP_BREAKPOINT_MIN } from '../../constants';
 import Background from './Background';
+import Below from './Below';
+import Cards from './Cards';
 import Frontend from './Frontend';
 import NewsBanner from './NewsBanner';
-import Below from './Below';
-import MissionContainer, { MissionItem, MissionSection } from './Mission';
-import rocket from '../../assets/Rocket.png';
+import Footer from './Footer';
 
-const fonts =
-  '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
-
-const Title = styled.h1`
-  color: ${colors.N900};
-  font-family: 'Charlie_Display_Semibold', ${fonts}; /* stylelint-disable-line */
-  font-size: 52px;
-  margin: 80px 0 0 !important;
-  letter-spacing: 0;
-  display: block;
-  text-align: center;
-`;
 const Intro = styled.div`
   color: ${colors.N900};
   display: block;
@@ -44,9 +31,18 @@ const Intro = styled.div`
   }
 `;
 
+const IconsCopyright = styled.div`
+  color: ${colors.N900};
+  font-size: 14px;
+  justify-content: center;
+  display: flex;
+  margin-top: 70px;
+  font-family: 'Charlie_Display_Regular', ${fonts}; /* stylelint-disable-line */
+`;
+
 const HomePageWrapper = styled.div`
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   color: ${colors.N0};
 
   @media (min-width: ${DESKTOP_BREAKPOINT_MIN}px) {
@@ -61,8 +57,8 @@ const Style = () => (
   }
 
   div {
-    max-width: none;
-    max-height: none;
+    max-width: 100%;
+
   }
 
 
@@ -77,34 +73,11 @@ export default class HomePage extends React.Component {
           <title>{`${BASE_TITLE}`}</title>
         </Helmet>
         <Style />
-
         <Background />
         <Frontend />
+
         <Below>
-          <div>
-            Icons made by{' '}
-            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
-              Freepik
-            </a>{' '}
-            from{' '}
-            <a href="https://www.flaticon.com/" title="Flaticon">
-              www.flaticon.com
-            </a>
-          </div>
-          <Page>
-            <Grid>
-              <GridColumn medium={6}>
-                <h1>Test 123 33</h1>>
-                <p>
-                  Test absscd ssfsdfskdjfs sdjs jsdj s sk
-                  sldjfsdfjsdfjsdfdfsfdds adf as
-                </p>
-              </GridColumn>
-              <GridColumn medium={6}>
-                <img src={rocket} alt="Logo" />;
-              </GridColumn>
-            </Grid>
-          </Page>
+          <Mission />
           <NewsBanner />
           <Title data-testid="title">Atlaskit</Title>
           <Intro>
@@ -112,6 +85,12 @@ export default class HomePage extends React.Component {
             Atlassian&nbsp;Design&nbsp;Guidelines.
           </Intro>
           <Cards />
+          <IconsCopyright>
+            <p>Icons made by &nbsp; </p>
+            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+              Freepik
+            </a>{' '}
+          </IconsCopyright>
         </Below>
       </HomePageWrapper>
     );

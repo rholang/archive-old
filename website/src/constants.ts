@@ -6,7 +6,7 @@ export const LAUNCH_DARKLY_PRODUCTION_KEY = '5b39e1d5cb05a814d7dbce98';
 export const MOBILE_NAV_HEIGHT = 54;
 
 // responsive tiers (mobile > tablet > desktop)
-export const TABLET_BREAKPOINT_MIN = 1024;
+export const TABLET_BREAKPOINT_MIN = 600;
 export const TABLET_BREAKPOINT_MAX = 1240;
 
 export const MOBILE_BREAKPOINT_MAX = TABLET_BREAKPOINT_MIN - 1;

@@ -31,6 +31,8 @@ const Button = styled.button`
 
 const Wrapper = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: center;
 `;
 
 const headerStyles: React.CSSProperties = {
