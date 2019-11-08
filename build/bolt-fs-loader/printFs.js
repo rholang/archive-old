@@ -47,32 +47,31 @@ function printDir(dir /*: Directory */, depth /*: number */ = 0) {
 }
 
 function getSitemapFile(file /*: File */, depth /*: number */) {
-  return file.uid
-
+  return file.uid;
 }
 
 function getSitemap(dir /*: Directory */, depth /*: number */ = 0) {
-  let uriList =
-    dir.children
-      .map(child =>
-        child.type === 'dir'
-          ? getSitemap(child, depth + 1)
-          : getSitemapFile(child, depth + 1),
-      ).join(',').split(',')
+  let uriList = dir.children
+    .map(child =>
+      child.type === 'dir'
+        ? getSitemap(child, depth + 1)
+        : getSitemapFile(child, depth + 1),
+    )
+    .join(',')
+    .split(',');
 
-  let matchList =
-    uriList.map(
-      text => text.replace(/(^[^\d]*)[\d|\-]*([^\d]*)\..*/, (matchedString, first, second) => {
-        return first + second
-    }))
+  let matchList = uriList.map(text =>
+    text.replace(
+      /^.*(content)([^\d]*)[\d|\-]*([^\d]*)[\d|\-]*([^\d]*)\..*/,
+      (matchedString, first, second, third, fourth) => {
+        return first + second + third + fourth;
+      },
+    ),
+  );
 
-  return matchList
+  let filteredList = matchList.filter(x => x.match(/.*content.*/g));
 
-
-
+  return filteredList;
 }
 
-
-
-
-module.exports = { printDir,getSitemap, printFile, pad };
+module.exports = { printDir, getSitemap, printFile, pad };
