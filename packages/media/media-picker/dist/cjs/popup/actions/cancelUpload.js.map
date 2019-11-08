@@ -1,0 +1,1 @@
+{"version":3,"file":"cancelUpload.js","sourceRoot":"","sources":["../../../../src/popup/actions/cancelUpload.tsx"],"names":[],"mappings":";;AAEa,QAAA,aAAa,GAAG,eAAe,CAAC;AAW7C,SAAgB,oBAAoB,CAClC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,qBAAa,CAAC;AACvC,CAAC;AAJD,oDAIC;AAED,SAAgB,YAAY,CAC1B,OAAkC;IAElC,OAAO;QACL,IAAI,EAAE,qBAAa;QACnB,OAAO,SAAA;KACR,CAAC;AACJ,CAAC;AAPD,oCAOC"}

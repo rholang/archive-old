@@ -1,0 +1,1 @@
+{"version":3,"file":"changeService.js","sourceRoot":"","sources":["../../../../src/popup/actions/changeService.tsx"],"names":[],"mappings":";;AAGa,QAAA,cAAc,GAAG,gBAAgB,CAAC;AAO/C,SAAgB,qBAAqB,CACnC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,sBAAc,CAAC;AACxC,CAAC;AAJD,sDAIC;AAED,SAAgB,aAAa,CAAC,WAAwB;IACpD,OAAO;QACL,IAAI,EAAE,sBAAc;QACpB,WAAW,aAAA;KACZ,CAAC;AACJ,CAAC;AALD,sCAKC"}

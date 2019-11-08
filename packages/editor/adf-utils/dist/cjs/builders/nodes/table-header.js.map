@@ -1,0 +1,1 @@
+{"version":3,"file":"table-header.js","sourceRoot":"","sources":["../../../../src/builders/nodes/table-header.ts"],"names":[],"mappings":";;AAEa,QAAA,WAAW,GAAG,UAAC,KAAsB,IAAK,OAAA;IACrD,iBAA4C;SAA5C,UAA4C,EAA5C,qBAA4C,EAA5C,IAA4C;QAA5C,4BAA4C;;IAClB,OAAA,CAAC;QAC3B,IAAI,EAAE,aAAa;QACnB,KAAK,OAAA;QACL,OAAO,EAAE,OAAO;KACjB,CAAC;AAJ0B,CAI1B,EANqD,CAMrD,CAAC"}

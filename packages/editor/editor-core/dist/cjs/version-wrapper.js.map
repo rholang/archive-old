@@ -1,0 +1,1 @@
+{"version":3,"file":"version-wrapper.js","sourceRoot":"","sources":["../../src/version-wrapper.ts"],"names":[],"mappings":";;AAAA,+CAA+C;AAMtC,eANA,mBAAI,CAMA;AAAE,kBANA,sBAAO,CAMA;AAJtB,IAAM,gBAAgB,GAAG;IACvB,OAAO,CAAC,MAAM,CAAC,sBAAO,CAAC,KAAK,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC;AAC7D,CAAC,CAAC;AAEsB,4CAAgB"}

@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    props: {
+        type: { type: 'enum', values: ['layoutSection'] },
+        content: {
+            type: 'array',
+            items: ['layoutColumn'],
+            minItems: 2,
+            maxItems: 3,
+        },
+        marks: { type: 'array', items: ['breakout'], optional: true },
+    },
+};
+//# sourceMappingURL=layoutSection.js.map

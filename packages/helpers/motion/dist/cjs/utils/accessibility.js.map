@@ -1,0 +1,1 @@
+{"version":3,"file":"accessibility.js","sourceRoot":"","sources":["../../../src/utils/accessibility.tsx"],"names":[],"mappings":";;AAAA;;GAEG;AACU,QAAA,eAAe,GAAG;IACrB,IAAA,uEAAO,CAA2D;IAC1E,OAAO,OAAO,CAAC;AACjB,CAAC,CAAC;AAEF;;;GAGG;AACU,QAAA,oBAAoB,GAAG,cAAM,OAAA,CAAC;IACzC,yCAAyC,EAAE;QACzC,SAAS,EAAE,MAAM;QACjB,UAAU,EAAE,MAAM;KACnB;CACF,CAAC,EALwC,CAKxC,CAAC"}

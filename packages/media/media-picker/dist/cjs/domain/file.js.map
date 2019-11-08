@@ -1,0 +1,1 @@
+{"version":3,"file":"file.js","sourceRoot":"","sources":["../../../src/domain/file.ts"],"names":[],"mappings":";;AASA,SAAgB,sBAAsB,CACpC,EAA4D,EAC5D,MAAc;QADZ,cAAI,EAAE,cAAI,EAAE,8BAAY,EAAE,cAAI,EAAE,gCAAa;IAG/C,wEAAwE;IACxE,OAAO;QACL,EAAE,EAAE,MAAM;QACV,IAAI,MAAA;QACJ,IAAI,MAAA;QACJ,YAAY,cAAA;QACZ,IAAI,MAAA;QACJ,aAAa,eAAA;KACd,CAAC;AACJ,CAAC;AAbD,wDAaC"}

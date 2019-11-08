@@ -1,0 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var adf_schema_1 = require("@atlaskit/adf-schema");
+var editor_common_1 = require("@atlaskit/editor-common");
+var SortOrder;
+(function (SortOrder) {
+    SortOrder["ASC"] = "asc";
+    SortOrder["DESC"] = "desc";
+})(SortOrder = exports.SortOrder || (exports.SortOrder = {}));
+var TableDecorations;
+(function (TableDecorations) {
+    TableDecorations["ALL_CONTROLS_HOVER"] = "CONTROLS_HOVER";
+    TableDecorations["ROW_CONTROLS_HOVER"] = "ROW_CONTROLS_HOVER";
+    TableDecorations["COLUMN_CONTROLS_HOVER"] = "COLUMN_CONTROLS_HOVER";
+    TableDecorations["TABLE_CONTROLS_HOVER"] = "TABLE_CONTROLS_HOVER";
+    TableDecorations["CELL_CONTROLS_HOVER"] = "CELL_CONTROLS_HOVER";
+    TableDecorations["COLUMN_CONTROLS_DECORATIONS"] = "COLUMN_CONTROLS_DECORATIONS";
+    TableDecorations["COLUMN_SELECTED"] = "COLUMN_SELECTED";
+})(TableDecorations = exports.TableDecorations || (exports.TableDecorations = {}));
+exports.TableCssClassName = tslib_1.__assign(tslib_1.__assign({}, editor_common_1.TableSharedCssClassName), { COLUMN_CONTROLS: adf_schema_1.tablePrefixSelector + "-column-controls", COLUMN_CONTROLS_DECORATIONS: adf_schema_1.tablePrefixSelector + "-column-controls-decoration", COLUMN_SELECTED: adf_schema_1.tablePrefixSelector + "-column__selected", ROW_CONTROLS_WRAPPER: adf_schema_1.tablePrefixSelector + "-row-controls-wrapper", ROW_CONTROLS: adf_schema_1.tablePrefixSelector + "-row-controls", ROW_CONTROLS_INNER: adf_schema_1.tablePrefixSelector + "-row-controls__inner", ROW_CONTROLS_BUTTON_WRAP: adf_schema_1.tablePrefixSelector + "-row-controls__button-wrap", ROW_CONTROLS_BUTTON: adf_schema_1.tablePrefixSelector + "-row-controls__button", CONTROLS_BUTTON: adf_schema_1.tablePrefixSelector + "-controls__button", CONTROLS_BUTTON_ICON: adf_schema_1.tablePrefixSelector + "-controls__button-icon", CONTROLS_INSERT_BUTTON: adf_schema_1.tablePrefixSelector + "-controls__insert-button", CONTROLS_INSERT_BUTTON_INNER: adf_schema_1.tablePrefixSelector + "-controls__insert-button-inner", CONTROLS_INSERT_BUTTON_WRAP: adf_schema_1.tablePrefixSelector + "-controls__insert-button-wrap", CONTROLS_INSERT_LINE: adf_schema_1.tablePrefixSelector + "-controls__insert-line", CONTROLS_BUTTON_OVERLAY: adf_schema_1.tablePrefixSelector + "-controls__button-overlay", LAYOUT_BUTTON: adf_schema_1.tablePrefixSelector + "-layout-button", CONTROLS_INSERT_MARKER: adf_schema_1.tablePrefixSelector + "-controls__insert-marker", CONTROLS_INSERT_COLUMN: adf_schema_1.tablePrefixSelector + "-controls__insert-column", CONTROLS_INSERT_ROW: adf_schema_1.tablePrefixSelector + "-controls__insert-row", CONTROLS_DELETE_BUTTON_WRAP: adf_schema_1.tablePrefixSelector + "-controls__delete-button-wrap", CONTROLS_DELETE_BUTTON: adf_schema_1.tablePrefixSelector + "-controls__delete-button", CONTROLS_FLOATING_BUTTON_COLUMN: adf_schema_1.tablePrefixSelector + "-controls-floating__button-column", CONTROLS_FLOATING_BUTTON_ROW: adf_schema_1.tablePrefixSelector + "-controls-floating__button-row", CORNER_CONTROLS: adf_schema_1.tablePrefixSelector + "-corner-controls", CORNER_CONTROLS_INSERT_ROW_MARKER: adf_schema_1.tablePrefixSelector + "-corner-controls__insert-row-marker", CORNER_CONTROLS_INSERT_COLUMN_MARKER: adf_schema_1.tablePrefixSelector + "-corner-controls__insert-column-marker", CONTROLS_CORNER_BUTTON: adf_schema_1.tablePrefixSelector + "-corner-button", NUMBERED_COLUMN: adf_schema_1.tablePrefixSelector + "-numbered-column", NUMBERED_COLUMN_BUTTON: adf_schema_1.tablePrefixSelector + "-numbered-column__button", HOVERED_COLUMN: adf_schema_1.tablePrefixSelector + "-hovered-column", HOVERED_ROW: adf_schema_1.tablePrefixSelector + "-hovered-row", HOVERED_TABLE: adf_schema_1.tablePrefixSelector + "-hovered-table", HOVERED_CELL: adf_schema_1.tablePrefixSelector + "-hovered-cell", HOVERED_CELL_IN_DANGER: 'danger', HOVERED_CELL_ACTIVE: 'active', HOVERED_CELL_WARNING: adf_schema_1.tablePrefixSelector + "-hovered-cell__warning", HOVERED_DELETE_BUTTON: adf_schema_1.tablePrefixSelector + "-hovered-delete-button", WITH_CONTROLS: adf_schema_1.tablePrefixSelector + "-with-controls", RESIZING_PLUGIN: adf_schema_1.tablePrefixSelector + "-resizing-plugin", RESIZE_CURSOR: adf_schema_1.tablePrefixSelector + "-resize-cursor", IS_RESIZING: adf_schema_1.tablePrefixSelector + "-is-resizing", RESIZE_HANDLE: adf_schema_1.tablePrefixSelector + "-resize-handle", CONTEXTUAL_SUBMENU: adf_schema_1.tablePrefixSelector + "-contextual-submenu", CONTEXTUAL_MENU_BUTTON_WRAP: adf_schema_1.tablePrefixSelector + "-contextual-menu-button-wrap", CONTEXTUAL_MENU_BUTTON: adf_schema_1.tablePrefixSelector + "-contextual-menu-button", CONTEXTUAL_MENU_ICON: adf_schema_1.tablePrefixSelector + "-contextual-submenu-icon", 
+    // come from prosemirror-table
+    SELECTED_CELL: 'selectedCell', 
+    // defined in ReactNodeView based on PM node name
+    NODEVIEW_WRAPPER: 'tableView-content-wrap', TABLE_SELECTED: adf_schema_1.tablePrefixSelector + "-table__selected", TABLE_CELL: adf_schema_1.tableCellSelector, TABLE_HEADER_CELL: adf_schema_1.tableHeaderSelector, TOP_LEFT_CELL: 'table > tbody > tr:nth-child(2) > td:nth-child(1)' });
+//# sourceMappingURL=types.js.map

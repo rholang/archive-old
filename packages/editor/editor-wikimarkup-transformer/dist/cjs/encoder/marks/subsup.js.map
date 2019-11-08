@@ -1,0 +1,1 @@
+{"version":3,"file":"subsup.js","sourceRoot":"","sources":["../../../../src/encoder/marks/subsup.ts"],"names":[],"mappings":";;AACA,mCAA2C;AAE9B,QAAA,MAAM,GAAgB,UACjC,IAAY,EACZ,KAA8B;IAE9B,IAAI,KAAK,CAAC,IAAI,KAAK,KAAK,EAAE;QACxB,OAAO,wBAAe,CAAC,IAAI,EAAE,GAAG,CAAC,CAAC;KACnC;SAAM;QACL,OAAO,wBAAe,CAAC,IAAI,EAAE,GAAG,CAAC,CAAC;KACnC;AACH,CAAC,CAAC"}

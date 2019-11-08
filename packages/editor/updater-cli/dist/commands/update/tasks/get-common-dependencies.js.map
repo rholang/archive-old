@@ -1,0 +1,1 @@
+{"version":3,"file":"get-common-dependencies.js","sourceRoot":"","sources":["../../../../src/commands/update/tasks/get-common-dependencies.ts"],"names":[],"mappings":";;;AACA,4DAAqE;AAExD,QAAA,yBAAyB,GAAe;IACnD,KAAK,EAAE,iDAAiD;IAClD,IAAI,YAAC,GAAG;;;gBACZ,GAAG,CAAC,gBAAgB,GAAG,qCAAsB,CAAC,GAAG,CAAC,WAAW,EAAE,GAAG,CAAC,IAAI,CAAC,CAAC;;;;KAC1E;CACF,CAAC"}

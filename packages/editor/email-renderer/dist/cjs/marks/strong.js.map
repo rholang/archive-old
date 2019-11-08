@@ -1,0 +1,1 @@
+{"version":3,"file":"strong.js","sourceRoot":"","sources":["../../../src/marks/strong.ts"],"names":[],"mappings":";;AAAA,4CAA0C;AAC1C,uCAAiD;AAGpC,QAAA,MAAM,GAAG,QACnB,sBAAe,CAAC,aAAa,CAAC,kCAGhC,CAAC;AAEF,SAAwB,MAAM,CAAC,EAA4B;QAA1B,cAAI;IACnC,OAAO,sBAAS,CAAC,MAAM,EAAE,EAAE,KAAK,EAAE,sBAAe,CAAC,aAAa,CAAC,EAAE,EAAE,IAAI,CAAC,CAAC;AAC5E,CAAC;AAFD,yBAEC"}

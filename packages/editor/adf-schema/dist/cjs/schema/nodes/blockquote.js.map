@@ -1,0 +1,1 @@
+{"version":3,"file":"blockquote.js","sourceRoot":"","sources":["../../../../src/schema/nodes/blockquote.ts"],"names":[],"mappings":";;AAca,QAAA,UAAU,GAAa;IAClC,OAAO,EAAE,YAAY;IACrB,KAAK,EAAE,OAAO;IACd,QAAQ,EAAE,IAAI;IACd,UAAU,EAAE,KAAK;IACjB,QAAQ,EAAE,CAAC,EAAE,GAAG,EAAE,YAAY,EAAE,CAAC;IACjC,KAAK;QACH,OAAO,CAAC,YAAY,EAAE,CAAC,CAAC,CAAC;IAC3B,CAAC;CACF,CAAC"}

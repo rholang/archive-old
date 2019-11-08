@@ -1,0 +1,10 @@
+import * as React from 'react';
+import { CardProps } from '../view/Card';
+export declare const isCardWithData: (props: CardProps) => boolean;
+export declare const isSpecialEvent: (evt: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>) => boolean;
+export declare const isIframe: () => boolean;
+export declare const isSpecialKey: (event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>) => boolean;
+export declare const isSpecialClick: (event: React.MouseEvent<Element, MouseEvent>) => boolean;
+export declare const getCollapsedIcon: (details: import("..").ResolveResponse | undefined) => string | undefined;
+export declare const getIconForFileType: (fileMimeType: string) => React.ReactNode;
+export declare const getLabelForFileType: (fileMimeType: string) => React.ReactNode;

@@ -1,0 +1,1 @@
+{"version":3,"file":"startApp.js","sourceRoot":"","sources":["../../../../src/popup/reducers/startApp.ts"],"names":[],"mappings":";;;AAEA,gDAAuD;AAGvD,mBAAwB,KAAY,EAAE,MAAc;IAClD,IAAI,2BAAgB,CAAC,MAAM,CAAC,EAAE;QAC5B,6CACK,KAAK,KACR,cAAc,EAAE,MAAM,CAAC,OAAO,CAAC,cAAc,IAC7C;KACH;SAAM;QACL,OAAO,KAAK,CAAC;KACd;AACH,CAAC;AATD,4BASC"}

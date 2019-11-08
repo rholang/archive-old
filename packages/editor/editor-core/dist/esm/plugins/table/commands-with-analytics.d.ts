@@ -1,0 +1,17 @@
+import { Rect } from 'prosemirror-tables';
+import { INPUT_METHOD } from '../analytics';
+import { SortOrder } from './types';
+export declare const emptyMultipleCellsWithAnalytics: (inputMethod: INPUT_METHOD.KEYBOARD | INPUT_METHOD.CONTEXT_MENU, targetCellPosition?: number | undefined) => import("../..").Command;
+export declare const mergeCellsWithAnalytics: () => import("../..").Command;
+export declare const splitCellWithAnalytics: () => import("../..").Command;
+export declare const setColorWithAnalytics: (cellColor: string, targetCellPosition?: number | undefined) => import("../..").Command;
+export declare const insertRowWithAnalytics: (inputMethod: INPUT_METHOD.KEYBOARD | INPUT_METHOD.SHORTCUT | INPUT_METHOD.CONTEXT_MENU | INPUT_METHOD.BUTTON, position: number) => import("../..").Command;
+export declare const insertColumnWithAnalytics: (inputMethod: INPUT_METHOD.SHORTCUT | INPUT_METHOD.CONTEXT_MENU | INPUT_METHOD.BUTTON, position: number) => import("../..").Command;
+export declare const deleteRowsWithAnalytics: (inputMethod: INPUT_METHOD.CONTEXT_MENU | INPUT_METHOD.BUTTON, rect: Rect, isHeaderRowRequired: boolean) => import("../..").Command;
+export declare const deleteColumnsWithAnalytics: (inputMethod: INPUT_METHOD.CONTEXT_MENU | INPUT_METHOD.BUTTON, rect: Rect) => import("../..").Command;
+export declare const deleteTableWithAnalytics: () => import("../..").Command;
+export declare const toggleHeaderRowWithAnalytics: () => import("../..").Command;
+export declare const toggleHeaderColumnWithAnalytics: () => import("../..").Command;
+export declare const toggleNumberColumnWithAnalytics: () => import("../..").Command;
+export declare const toggleTableLayoutWithAnalytics: () => import("../..").Command;
+export declare const sortColumnWithAnalytics: (inputMethod: INPUT_METHOD.CONTEXT_MENU, columnIndex: number, sortOrder: SortOrder) => import("../..").Command;

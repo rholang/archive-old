@@ -1,0 +1,12 @@
+import { SizeType, IndicatorSizeType } from '../types';
+declare type AvatarSizeMap = Record<SizeType, number>;
+declare type IconSizeMap = Record<IndicatorSizeType, number>;
+export declare const TRANSITION_DURATION = "200ms";
+export declare const AVATAR_SIZES: AvatarSizeMap;
+export declare const AVATAR_RADIUS: AvatarSizeMap;
+export declare const BORDER_WIDTH: AvatarSizeMap;
+export declare const EXCESS_INDICATOR_FONT_SIZE: IconSizeMap;
+export declare const ICON_SIZES: IconSizeMap;
+export declare const ICON_OFFSET: IconSizeMap;
+export declare const SQUARE_ICON_OFFSET: IconSizeMap;
+export {};

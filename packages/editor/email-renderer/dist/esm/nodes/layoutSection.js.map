@@ -1,0 +1,1 @@
+{"version":3,"file":"layoutSection.js","sourceRoot":"","sources":["../../../src/nodes/layoutSection.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,SAAS,EAAE,MAAM,eAAe,CAAC;AAE1C,MAAM,CAAC,OAAO,UAAU,aAAa,CAAC,EAA4B;QAA1B,cAAI;IAC1C,OAAO,SAAS,CAAC,KAAK,EAAE,EAAE,EAAE,IAAI,CAAC,CAAC;AACpC,CAAC"}

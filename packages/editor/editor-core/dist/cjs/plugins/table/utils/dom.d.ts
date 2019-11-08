@@ -1,0 +1,10 @@
+export declare const isCell: (node: HTMLElement) => boolean;
+export declare const isCornerButton: (node: HTMLElement) => boolean;
+export declare const isInsertRowButton: (node: HTMLElement) => boolean | HTMLElement | null;
+export declare const getColumnOrRowIndex: (target: HTMLElement) => [number, number];
+export declare const isColumnControlsDecorations: (node: HTMLElement) => boolean;
+export declare const isRowControlsButton: (node: HTMLElement) => boolean;
+export declare const isTableControlsButton: (node: HTMLElement) => boolean;
+export declare const getMousePositionHorizontalRelativeByElement: (mouseEvent: MouseEvent) => "left" | "right" | null;
+export declare const getMousePositionVerticalRelativeByElement: (mouseEvent: MouseEvent) => "bottom" | "top" | null;
+export declare const updateResizeHandles: (tableRef: HTMLElement | null | undefined) => void;

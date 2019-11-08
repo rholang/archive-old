@@ -1,0 +1,11 @@
+import { ConfigResponse, DialogContentState, OriginTracing } from '../types/index.js';
+export declare const CHANNEL_ID = "fabric-elements";
+export declare const ANALYTICS_SOURCE = "shareModal";
+export declare const screenEvent: () => Record<string, any>;
+export declare const errorEncountered: (actionSubjectId: string | undefined, attributes?: any) => Record<string, any>;
+export declare const shareTriggerButtonClicked: () => Record<string, any>;
+export declare const cancelShare: (start: number) => Record<string, any>;
+export declare const shortUrlRequested: () => Record<string, any>;
+export declare const shortUrlGenerated: (start: number, tooSlow: boolean) => Record<string, any>;
+export declare const copyLinkButtonClicked: (start: number, shareContentType?: string | undefined, shareOrigin?: OriginTracing | undefined) => Record<string, any>;
+export declare const formShareSubmitted: (start: number, data: DialogContentState, shareContentType?: string | undefined, shareOrigin?: OriginTracing | undefined, config?: ConfigResponse | undefined) => Record<string, any>;

@@ -1,0 +1,1 @@
+{"version":3,"file":"remoteUploadStart.js","sourceRoot":"","sources":["../../../../src/popup/actions/remoteUploadStart.tsx"],"names":[],"mappings":";;AAEa,QAAA,mBAAmB,GAAG,qBAAqB,CAAC;AAOzD,SAAgB,iBAAiB,CAAC,QAAgB;IAChD,OAAO;QACL,IAAI,EAAE,2BAAmB;QACzB,QAAQ,UAAA;KACT,CAAC;AACJ,CAAC;AALD,8CAKC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"editorClose.js","sourceRoot":"","sources":["../../../../src/popup/actions/editorClose.tsx"],"names":[],"mappings":";;AAEa,QAAA,YAAY,GAAG,cAAc,CAAC;AAO3C,SAAgB,mBAAmB,CAAC,MAAc;IAChD,OAAO,MAAM,CAAC,IAAI,KAAK,oBAAY,CAAC;AACtC,CAAC;AAFD,kDAEC;AAED,SAAgB,WAAW,CAAC,SAAoB;IAC9C,OAAO;QACL,IAAI,EAAE,oBAAY;QAClB,SAAS,WAAA;KACV,CAAC;AACJ,CAAC;AALD,kCAKC"}

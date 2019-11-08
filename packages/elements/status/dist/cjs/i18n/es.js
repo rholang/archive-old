@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// Spanish
+exports.default = {
+    'fabric.status.color.grey': 'Gris',
+    'fabric.status.color.purple': 'Morado',
+    'fabric.status.color.blue': 'Azul',
+    'fabric.status.color.red': 'Rojo',
+    'fabric.status.color.yellow': 'Amarillo',
+    'fabric.status.color.green': 'Verde',
+};
+//# sourceMappingURL=es.js.map

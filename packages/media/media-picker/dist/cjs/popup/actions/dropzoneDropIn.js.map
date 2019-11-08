@@ -1,0 +1,1 @@
+{"version":3,"file":"dropzoneDropIn.js","sourceRoot":"","sources":["../../../../src/popup/actions/dropzoneDropIn.ts"],"names":[],"mappings":";;AAEa,QAAA,gBAAgB,GAAG,kBAAkB,CAAC;AAOnD,SAAgB,sBAAsB,CACpC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,wBAAgB,CAAC;AAC1C,CAAC;AAJD,wDAIC;AAED,SAAgB,cAAc,CAAC,SAAiB;IAC9C,OAAO;QACL,IAAI,EAAE,wBAAgB;QACtB,SAAS,WAAA;KACV,CAAC;AACJ,CAAC;AALD,wCAKC"}

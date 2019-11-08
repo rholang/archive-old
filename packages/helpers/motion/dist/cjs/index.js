@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var durations_1 = require("./utils/durations");
+exports.durationStep = durations_1.durationStep;
+exports.largeDurationMs = durations_1.largeDurationMs;
+exports.mediumDurationMs = durations_1.mediumDurationMs;
+exports.smallDurationMs = durations_1.smallDurationMs;
+var curves_1 = require("./utils/curves");
+exports.easeIn = curves_1.easeIn;
+exports.easeInOut = curves_1.easeInOut;
+exports.easeOut = curves_1.easeOut;
+var fade_in_1 = require("./entering/fade-in");
+exports.FadeIn = fade_in_1.default;
+exports.fadeInAnimation = fade_in_1.fadeInAnimation;
+var staggered_entrance_1 = require("./entering/staggered-entrance");
+exports.StaggeredEntrance = staggered_entrance_1.default;
+var accessibility_1 = require("./utils/accessibility");
+exports.isReducedMotion = accessibility_1.isReducedMotion;
+exports.prefersReducedMotion = accessibility_1.prefersReducedMotion;
+//# sourceMappingURL=index.js.map

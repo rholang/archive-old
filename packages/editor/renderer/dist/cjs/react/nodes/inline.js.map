@@ -1,0 +1,1 @@
+{"version":3,"file":"inline.js","sourceRoot":"","sources":["../../../../src/react/nodes/inline.tsx"],"names":[],"mappings":";;;AAAA,mDAA+B;AAE/B,SAAwB,MAAM,CAAC,KAAU;IAC/B,IAAA,yBAAQ,CAAW;IAC3B,IAAM,UAAU,GAAG,KAAK,CAAC,QAAQ,CAAC,OAAO,CAAC,QAAQ,CAAC,CAAC,MAAM,CAAC;IAE3D,IAAI,CAAC,UAAU,EAAE;QACf,OAAO,mDAAW,CAAC;KACpB;IAED,OAAO,QAAQ,CAAC;AAClB,CAAC;AATD,yBASC"}

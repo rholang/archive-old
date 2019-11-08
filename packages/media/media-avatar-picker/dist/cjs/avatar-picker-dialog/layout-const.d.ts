@@ -1,0 +1,10 @@
+import { Rectangle } from '@atlaskit/media-ui';
+export declare const DEFAULT_VISIBLE_PREDEFINED_AVATARS = 5;
+export declare const AVATAR_DIALOG_WIDTH = 375;
+export declare const AVATAR_DIALOG_HEIGHT = 470;
+export declare const PREDEFINED_AVATARS_VIEW_WIDTH = 343;
+export declare const PREDEFINED_AVATARS_VIEW_HEIGHT = 290;
+export declare const CONTAINER_SIZE: number;
+export declare const CONTAINER_INNER_SIZE: number;
+export declare const CONTAINER_PADDING: number;
+export declare const CONTAINER_RECT: Rectangle;

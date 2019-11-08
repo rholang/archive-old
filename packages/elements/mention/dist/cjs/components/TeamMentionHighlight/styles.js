@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var styled_components_1 = tslib_1.__importDefault(require("styled-components"));
+var theme_1 = require("@atlaskit/theme");
+exports.Actions = styled_components_1.default.div(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n  justify-content: flex-end;\n  margin-top: -", "px; /* Negative margin is used to middle align x button with title*/\n  margin-right: ", "px;\n"], ["\n  justify-content: flex-end;\n  margin-top: -", "px; /* Negative margin is used to middle align x button with title*/\n  margin-right: ", "px;\n"])), theme_1.gridSize() * 0.5, theme_1.gridSize() * 0.5);
+exports.Title = styled_components_1.default.div(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n  ", ";\n  margin-top: 0px;\n"], ["\n  ", ";\n  margin-top: 0px;\n"])), theme_1.typography.h400);
+exports.Heading = styled_components_1.default.div(templateObject_3 || (templateObject_3 = tslib_1.__makeTemplateObject(["\n  margin-left: ", "px;\n  margin-bottom: ", "px;\n"], ["\n  margin-left: ", "px;\n  margin-bottom: ", "px;\n"])), theme_1.gridSize() * 2, theme_1.gridSize() * 0.5);
+exports.Card = styled_components_1.default.div(templateObject_4 || (templateObject_4 = tslib_1.__makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  background-color: ", ";\n  overflow: hidden;\n  line-height: 21px;\n  padding-top: ", "px;\n  padding-bottom: ", "px;\n  padding-left: ", "px;\n  padding-right: 0px;\n  margin-top: -", "px; /* Negative margin is used to fill the entire top of the mention dropdown with background colour of highlight*/\n"], ["\n  display: flex;\n  flex-direction: row;\n  background-color: ", ";\n  overflow: hidden;\n  line-height: 21px;\n  padding-top: ", "px;\n  padding-bottom: ", "px;\n  padding-left: ", "px;\n  padding-right: 0px;\n  margin-top: -", "px; /* Negative margin is used to fill the entire top of the mention dropdown with background colour of highlight*/\n"])), theme_1.colors.P50, theme_1.gridSize() * 2, theme_1.gridSize() * 2, theme_1.gridSize() * 2, theme_1.gridSize() * 0.5);
+exports.Content = styled_components_1.default.div(templateObject_5 || (templateObject_5 = tslib_1.__makeTemplateObject(["\n  max-width: 290px;\n  display: flex;\n"], ["\n  max-width: 290px;\n  display: flex;\n"])));
+exports.Section = styled_components_1.default.div(templateObject_6 || (templateObject_6 = tslib_1.__makeTemplateObject([""], [""])));
+exports.Aside = styled_components_1.default.div(templateObject_7 || (templateObject_7 = tslib_1.__makeTemplateObject(["\n  opacity: 0.8;\n"], ["\n  opacity: 0.8;\n"])));
+exports.Body = styled_components_1.default.div(templateObject_8 || (templateObject_8 = tslib_1.__makeTemplateObject(["\n  margin-left: ", "px;\n  ", ";\n"], ["\n  margin-left: ", "px;\n  ", ";\n"])), theme_1.gridSize() * 2, theme_1.typography.p500);
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+//# sourceMappingURL=styles.js.map

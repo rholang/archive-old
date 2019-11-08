@@ -1,0 +1,1 @@
+{"version":3,"file":"upload.js","sourceRoot":"","sources":["../../../../src/mocks/database/upload.ts"],"names":[],"mappings":";;;AACA,iDAA6B;AAE7B,uCAA2C;AAM3C,SAAgB,YAAY;IAC1B,OAAO;QACL,EAAE,EAAE,IAAI,CAAC,EAAE,EAAE;QACb,OAAO,EAAE,IAAI,CAAC,GAAG,EAAE;QACnB,OAAO,EAAE,wBAAa,EAAE,CAAC,OAAO,EAAE;QAClC,MAAM,EAAE,EAAE;KACX,CAAC;AACJ,CAAC;AAPD,oCAOC"}

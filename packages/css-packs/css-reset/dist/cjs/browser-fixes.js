@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var evaluate_inner_1 = tslib_1.__importDefault(require("./utils/evaluate-inner"));
+exports.default = evaluate_inner_1.default(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n  /* IE11 doesn't support <template> elements which shouldn't be displayed */\n  template {\n    display: none;\n  }\n\n  /* IE11 and some older browsers don't support these elements yet and treat them as display: inline; */\n  article,\n  aside,\n  details,\n  figcaption,\n  figure,\n  footer,\n  header,\n  hgroup,\n  main,\n  menu,\n  nav,\n  section {\n    display: block;\n  }\n\n  /* Suppress the ugly broken image styling in Firefox */\n  @-moz-document url-prefix() {\n    img {\n      font-size: 0;\n    }\n    img:-moz-broken {\n      font-size: inherit;\n    }\n  }\n"], ["\n  /* IE11 doesn't support <template> elements which shouldn't be displayed */\n  template {\n    display: none;\n  }\n\n  /* IE11 and some older browsers don't support these elements yet and treat them as display: inline; */\n  article,\n  aside,\n  details,\n  figcaption,\n  figure,\n  footer,\n  header,\n  hgroup,\n  main,\n  menu,\n  nav,\n  section {\n    display: block;\n  }\n\n  /* Suppress the ugly broken image styling in Firefox */\n  @-moz-document url-prefix() {\n    img {\n      font-size: 0;\n    }\n    img:-moz-broken {\n      font-size: inherit;\n    }\n  }\n"])));
+var templateObject_1;
+//# sourceMappingURL=browser-fixes.js.map

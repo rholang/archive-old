@@ -1,52 +1,60 @@
 import { DESKTOP_BREAKPOINT_MIN, MOBILE_BREAKPOINT_MAX } from '../../constants';
 import styled, { css } from 'styled-components';
 import React from 'react';
-import { Container960 } from './Frontend';
+import { ProgressTracker, Stages } from '@atlaskit/progress-tracker';
 
-const newsBanner = css`
-  background: #1b41b3;
-  width: 100%;
-`;
-
-const newsBannerContent = css`
-  padding: 30px 0;
-  display: flex;
-`;
-
-const _960 = css`
-  position: relative;
-  display: block;
-  width: 960px;
-  margin-right: auto;
-  margin-left: auto;
-
+const Progress = styled.div`
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-    width: 100%;
-    padding-right: 20px;
-    padding-left: 20px;
+    display: none;
   }
 `;
+const items: Stages = [
+  {
+    id: 'test-1',
+    label: 'Testnet-1',
+    percentageComplete: 100,
+    status: 'visited',
+    href: '#',
+  },
+  {
+    id: 'visited-1',
+    label: 'Testnet-2',
+    percentageComplete: 100,
+    status: 'visited',
+    href: '#',
+  },
+  {
+    id: 'current-1',
+    label: 'Testnet-3',
+    percentageComplete: 100,
+    status: 'visited',
+    href: '#',
+  },
+  {
+    id: 'unvisited-1',
+    label: 'Hardening-Phase',
+    percentageComplete: 50,
+    status: 'current',
+    href: '#',
+  },
+  {
+    id: 'unvisited-2',
+    label: 'Mainnet',
+    percentageComplete: 0,
+    status: 'unvisited',
+    href: '#',
+  },
+  {
+    id: 'unvisited-3',
+    label: 'Venus update',
+    percentageComplete: 0,
+    status: 'unvisited',
+    href: '#',
+  },
+];
 
-export const NewsBanner = styled.div`
-  ${newsBanner}
-`;
-
-export const Container_960 = styled.div`
-  ${_960}
-`;
-
-export const NewsBannerContent = styled.div`
-  ${newsBannerContent}
-`;
-
-export default () => {
-  return (
-    <NewsBanner>
-      <Container960>
-        <NewsBannerContent>
-          <h2>Test</h2>
-        </NewsBannerContent>
-      </Container960>
-    </NewsBanner>
-  );
-};
+export default () => (
+  <Progress>
+    <ProgressTracker items={items} />
+  </Progress>
+);

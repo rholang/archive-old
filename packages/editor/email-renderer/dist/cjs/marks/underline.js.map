@@ -1,0 +1,1 @@
+{"version":3,"file":"underline.js","sourceRoot":"","sources":["../../../src/marks/underline.ts"],"names":[],"mappings":";;AAAA,4CAA0C;AAC1C,uCAAiD;AAGpC,QAAA,MAAM,GAAG,QACnB,sBAAe,CAAC,gBAAgB,CAAC,2CAGnC,CAAC;AAEF,SAAwB,MAAM,CAAC,EAA4B;QAA1B,cAAI;IACnC,OAAO,sBAAS,CAAC,MAAM,EAAE,EAAE,KAAK,EAAE,sBAAe,CAAC,gBAAgB,CAAC,EAAE,EAAE,IAAI,CAAC,CAAC;AAC/E,CAAC;AAFD,yBAEC"}

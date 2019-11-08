@@ -1,0 +1,1 @@
+{"version":3,"file":"media-group.js","sourceRoot":"","sources":["../../../src/nodes/media-group.ts"],"names":[],"mappings":";;AACA,4CAA0C;AAC1C,sDAAoD;AAEpD,SAAwB,UAAU,CAAC,EAA4B;QAA1B,cAAI;IACvC,IAAM,KAAK,GAAG,gCAAc,CAAC;QAC3B,KAAK,EAAE,MAAM;KACd,CAAC,CAAC;IAEH,OAAO,sBAAS,CAAC,KAAK,EAAE,EAAE,KAAK,OAAA,EAAE,EAAE,IAAI,CAAC,CAAC;AAC3C,CAAC;AAND,6BAMC"}

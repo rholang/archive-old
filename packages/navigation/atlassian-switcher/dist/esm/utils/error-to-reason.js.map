@@ -1,0 +1,1 @@
+{"version":3,"file":"error-to-reason.js","sourceRoot":"","sources":["../../../src/utils/error-to-reason.ts"],"names":[],"mappings":"AAKA,MAAM,UAAU,aAAa,CAAC,KAAU;IAChC,IAAA,gBAAsD,EAApD,YAAgB,EAAhB,qCAAgB,EAAE,cAAkB,EAAlB,uCAAkC,CAAC;IAE7D,OAAO;QACL,IAAI,MAAA;QACJ,MAAM,QAAA;KACP,CAAC;AACJ,CAAC"}

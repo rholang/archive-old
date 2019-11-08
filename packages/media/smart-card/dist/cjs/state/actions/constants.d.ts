@@ -1,0 +1,11 @@
+export declare const ACTION_PENDING = "pending";
+export declare const ACTION_LOADING = "loading";
+export declare const ACTION_RESOLVING = "resolving";
+export declare const ACTION_RESOLVED = "resolved";
+export declare const ACTION_UNAUTHORIZED = "unauthorized";
+export declare const ACTION_RELOAD = "reloading";
+export declare const ACTION_ERROR = "errored";
+export declare const MAX_LOADING_DELAY = 1200;
+export declare const MAX_RELOAD_DELAY: number;
+export declare const ERROR_MESSAGE_OAUTH = "Provider.authFlow is not set to OAuth2.";
+export declare const ERROR_MESSAGE_FATAL = "Fatal error resolving URL";

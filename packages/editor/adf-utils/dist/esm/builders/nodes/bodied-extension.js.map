@@ -1,0 +1,1 @@
+{"version":3,"file":"bodied-extension.js","sourceRoot":"","sources":["../../../../src/builders/nodes/bodied-extension.ts"],"names":[],"mappings":"AAKA,MAAM,CAAC,IAAM,eAAe,GAAG,UAAC,KAAyC,IAAK,OAAA;IAC5E,iBAA4B;SAA5B,UAA4B,EAA5B,qBAA4B,EAA5B,IAA4B;QAA5B,4BAA4B;;IACE,OAAA,CAAC;QAC/B,IAAI,EAAE,iBAAiB;QACvB,KAAK,OAAA;QACL,OAAO,SAAA;KACR,CAAC;AAJ8B,CAI9B,EAN4E,CAM5E,CAAC"}

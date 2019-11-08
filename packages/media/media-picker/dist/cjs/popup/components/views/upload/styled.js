@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var styled_components_1 = tslib_1.__importDefault(require("styled-components"));
+var icons_1 = require("../../../../icons");
+exports.SpinnerWrapper = styled_components_1.default.div(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 60px;\n  height: calc(100% - 211px);\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 60px;\n  height: calc(100% - 211px);\n"])));
+exports.DefaultImage = styled_components_1.default.img(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n  float: left;\n  width: 115px;\n"], ["\n  float: left;\n  width: 115px;\n"])));
+exports.TextWrapper = styled_components_1.default.div(templateObject_3 || (templateObject_3 = tslib_1.__makeTemplateObject(["\n  float: left;\n"], ["\n  float: left;\n"])));
+exports.DropzoneText = styled_components_1.default.div(templateObject_4 || (templateObject_4 = tslib_1.__makeTemplateObject(["\n  display: block;\n  margin-left: 10px;\n  white-space: nowrap;\n  margin-top: 15px;\n  color: #6c798f;\n"], ["\n  display: block;\n  margin-left: 10px;\n  white-space: nowrap;\n  margin-top: 15px;\n  color: #6c798f;\n"])));
+exports.ButtonWrapper = styled_components_1.default.div(templateObject_5 || (templateObject_5 = tslib_1.__makeTemplateObject(["\n  margin-left: 10px;\n  margin-top: 14px;\n  text-align: center;\n"], ["\n  margin-left: 10px;\n  margin-top: 14px;\n  text-align: center;\n"])));
+exports.DropzoneContentWrapper = styled_components_1.default.div(templateObject_6 || (templateObject_6 = tslib_1.__makeTemplateObject(["\n  display: block;\n  float: left;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"], ["\n  display: block;\n  float: left;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"])));
+exports.DropzoneContainer = styled_components_1.default.div(templateObject_7 || (templateObject_7 = tslib_1.__makeTemplateObject(["\n  box-sizing: border-box;\n  border: 2px dashed #cfd4db;\n  border-image-source: url('", "');\n  border-image-slice: 2;\n  border-image-repeat: round;\n  border-radius: 3px;\n  ", "\n"], ["\n  box-sizing: border-box;\n  border: 2px dashed #cfd4db;\n  border-image-source: url('", "');\n  border-image-slice: 2;\n  border-image-repeat: round;\n  border-radius: 3px;\n  ",
+    "\n"])), icons_1.borderIcon, function (_a) {
+    var isEmpty = _a.isEmpty;
+    return isEmpty ? 'height: calc(100% - 4px);' : 'height: 211px;';
+});
+exports.RecentUploadsTitle = styled_components_1.default.div(templateObject_8 || (templateObject_8 = tslib_1.__makeTemplateObject(["\n  padding: 25px 10px 5px 0;\n  font-size: 20px;\n  color: #071d43;\n"], ["\n  padding: 25px 10px 5px 0;\n  font-size: 20px;\n  color: #071d43;\n"])));
+exports.CardsWrapper = styled_components_1.default.div(templateObject_9 || (templateObject_9 = tslib_1.__makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n"])));
+exports.CardWrapper = styled_components_1.default.div(templateObject_10 || (templateObject_10 = tslib_1.__makeTemplateObject(["\n  margin: 6px 0;\n  margin-right: 12px;\n  outline: none;\n\n  /* Cards are displayed in rows of 4, line up last card with edge of dropzone border */\n  &:nth-child(4n) {\n    margin-right: 0;\n  }\n"], ["\n  margin: 6px 0;\n  margin-right: 12px;\n  outline: none;\n\n  /* Cards are displayed in rows of 4, line up last card with edge of dropzone border */\n  &:nth-child(4n) {\n    margin-right: 0;\n  }\n"])));
+exports.Wrapper = styled_components_1.default.div(templateObject_11 || (templateObject_11 = tslib_1.__makeTemplateObject(["\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  padding: 24px 24px 2px 24px;\n"], ["\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  padding: 24px 24px 2px 24px;\n"])));
+exports.LoadingNextPageWrapper = styled_components_1.default.div(templateObject_12 || (templateObject_12 = tslib_1.__makeTemplateObject(["\n  height: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 10px;\n"], ["\n  height: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 10px;\n"])));
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12;
+//# sourceMappingURL=styled.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"resetView.js","sourceRoot":"","sources":["../../../../src/popup/actions/resetView.tsx"],"names":[],"mappings":";;AAEa,QAAA,UAAU,GAAG,YAAY,CAAC;AAMvC,SAAgB,iBAAiB,CAAC,MAAc;IAC9C,OAAO,MAAM,CAAC,IAAI,KAAK,kBAAU,CAAC;AACpC,CAAC;AAFD,8CAEC;AAED,SAAgB,SAAS;IACvB,OAAO;QACL,IAAI,EAAE,kBAAU;KACjB,CAAC;AACJ,CAAC;AAJD,8BAIC"}

@@ -1,0 +1,11 @@
+import { Transaction, EditorState } from 'prosemirror-state';
+import { CardAppearance } from '../types';
+import { Command } from '../../../types';
+import { Schema, Node } from 'prosemirror-model';
+export declare function shouldReplace(node: Node, compareLinkText?: boolean, compareToUrl?: string): boolean;
+export declare function insertCard(tr: Transaction, cardAdf: Node, schema: Schema): Transaction<any>;
+export declare const replaceQueuedUrlWithCard: (url: string, cardData: any) => Command;
+export declare const queueCardsFromChangedTr: (state: EditorState<any>, tr: Transaction<any>, source: import("../../analytics").INPUT_METHOD.AUTO_DETECT | import("../../analytics").INPUT_METHOD.CLIPBOARD | import("../../analytics").INPUT_METHOD.FORMATTING | import("../../analytics").INPUT_METHOD.MANUAL | import("../../analytics").INPUT_METHOD.TYPEAHEAD, normalizeLinkText?: boolean) => Transaction<any>;
+export declare const changeSelectedCardToLink: (text?: string | undefined, href?: string | undefined) => Command;
+export declare const changeSelectedCardToText: (text: string) => Command;
+export declare const setSelectedCardAppearance: (appearance: CardAppearance) => Command;

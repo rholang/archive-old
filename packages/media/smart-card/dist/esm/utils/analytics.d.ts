@@ -1,0 +1,22 @@
+import { CreateUIAnalyticsEvent } from '@atlaskit/analytics-next';
+import { AnalyticsPayload } from './types';
+export declare const ANALYTICS_CHANNEL = "media";
+export declare const MESSAGE_WINDOW_CLOSED = "The auth window was closed";
+export declare const KEY_WINDOW_CLOSED = "authWindowClosed";
+export declare const KEY_SENSITIVE_DATA = "potentialSensitiveData";
+export declare const context: {
+    componentName: string;
+    packageName: any;
+    packageVersion: any;
+};
+export declare const fireSmartLinkEvent: (payload: AnalyticsPayload, createAnalyticsEvent?: CreateUIAnalyticsEvent | undefined) => void;
+export declare const resolvedEvent: (definitionId?: string | undefined) => AnalyticsPayload;
+export declare const unresolvedEvent: (status: string, definitionId?: string | undefined) => AnalyticsPayload;
+export declare const connectSucceededEvent: (definitionId?: string | undefined) => AnalyticsPayload;
+export declare const connectFailedEvent: (definitionId?: string | undefined, reason?: string | undefined) => AnalyticsPayload;
+export declare const trackAppAccountConnected: (definitionId?: string | undefined) => AnalyticsPayload;
+export declare const uiAuthEvent: (display: import("../index.js").CardAppearance, definitionId?: string | undefined) => AnalyticsPayload;
+export declare const uiAuthAlternateAccountEvent: (display: import("../index.js").CardAppearance, definitionId?: string | undefined) => AnalyticsPayload;
+export declare const uiCardClickedEvent: (display: import("../index.js").CardAppearance, definitionId?: string | undefined) => AnalyticsPayload;
+export declare const uiClosedAuthEvent: (display: import("../index.js").CardAppearance, definitionId?: string | undefined) => AnalyticsPayload;
+export declare const screenAuthPopupEvent: (definitionId?: string | undefined) => AnalyticsPayload;

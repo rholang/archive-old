@@ -1,0 +1,248 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Core = tslib_1.__importStar(require("./core/binaries/mediaEditor"));
+var resourceManager_1 = require("./resourceManager");
+var bitmapExporter_1 = require("./core/bitmapExporter");
+var bitmapProvider_1 = require("./core/bitmaps/bitmapProvider");
+var browserTypesetter_1 = require("./core/typesetter/browserTypesetter");
+var contextHolder_1 = require("./core/contextHolder");
+var timerFactory_1 = require("./core/timerFactory");
+var util_1 = require("../util");
+var colorPopup_1 = require("../react/editorView/toolbar/popups/colorPopup");
+var defaultFormat = 'image/png';
+var maxColorChannel = 255;
+var Engine = /** @class */ (function () {
+    function Engine(config) {
+        this.config = config;
+        this.resourceManager = new resourceManager_1.ResourceManager();
+        try {
+            this.addComponentsToResourceManager();
+            this.createNativeCore();
+            this.subscribeToComponentsSignals();
+        }
+        catch (error) {
+            this.resourceManager.releaseAll();
+            throw error;
+        }
+    }
+    Engine.prototype.unload = function () {
+        this.resourceManager.releaseAll();
+    };
+    Engine.prototype.getBase64Image = function (format) {
+        try {
+            if (!this.ve.exportImage()) {
+                return { isExported: false, error: this.ve.failureReason };
+            }
+            else {
+                var image = this.bitmapExporter.getBase64Image(format || defaultFormat);
+                var dimensions = this.bitmapExporter.getDimensions();
+                return { isExported: true, content: image, dimensions: dimensions };
+            }
+        }
+        catch (error) {
+            return { isExported: false, error: error.message };
+        }
+    };
+    Engine.prototype.addComponentsToResourceManager = function () {
+        var _this = this;
+        var _a = this.config, di = _a.drawingArea, ip = _a.imageProvider, mi = _a.mouseInput, tb = _a.toolbar, ki = _a.keyboardInput, ir = _a.imageReceiver, sd = _a.shapeDeleter;
+        [di, ip, mi, tb, ki, ir, sd].forEach(function (component) {
+            return _this.resourceManager.add(component);
+        });
+    };
+    Engine.prototype.subscribeToComponentsSignals = function () {
+        var _this = this;
+        var _a = this.config, drawingArea = _a.drawingArea, mouseInput = _a.mouseInput, toolbar = _a.toolbar, keyboardInput = _a.keyboardInput, shapeDeleter = _a.shapeDeleter, undoerRedoer = _a.undoerRedoer;
+        drawingArea.resize.listen(function (size) {
+            _this.veCall('resize', function (ve) { return ve.resize(size); });
+        });
+        mouseInput.click.listen(function (pos) {
+            return _this.veCall('click', function (ve) { return ve.clickOnce(pos); });
+        });
+        mouseInput.dragStart.listen(function (pos) {
+            return _this.veCall('drag start', function (ve) { return ve.dragStart(pos); });
+        });
+        mouseInput.dragMove.listen(function (pos) {
+            return _this.veCall('drag move', function (ve) { return ve.dragMove(pos); });
+        });
+        mouseInput.dragEnd.listen(function (pos) {
+            return _this.veCall('drag end', function (ve) { return ve.dragEnd(pos); });
+        });
+        mouseInput.dragLost.listen(function () {
+            return _this.veCall('drag lost', function (ve) { return ve.dragLost(); });
+        });
+        toolbar.addShadowChanged.listen(function () {
+            // TODO Inform the core about this change
+            // https://jira.atlassian.com/browse/FIL-3997
+        });
+        toolbar.colorChanged.listen(function (color) {
+            return _this.veCall('update color', function (ve) { return ve.setColor(util_1.hexToRgb(color)); });
+        });
+        toolbar.lineWidthChanged.listen(function (lineWidth) {
+            return _this.veCall('update line width', function (ve) { return ve.setLineWidth(lineWidth); });
+        });
+        toolbar.toolChanged.listen(function (tool) {
+            return _this.veCall('update tool', function (ve) { return ve.setTool(_this.toVeTool(tool)); });
+        });
+        keyboardInput.characterPressed.listen(function (code) {
+            return _this.veCall('add character', function (ve) { return ve.addCharacter(code); });
+        });
+        keyboardInput.inputCommand.listen(function (command) {
+            return _this.veCall('input command', function (ve) {
+                var textCommand = _this.toTextCommand(command);
+                return ve.textCommand(textCommand);
+            });
+        });
+        shapeDeleter.deleteShape.listen(function () {
+            return _this.veCall('delete shape', function (ve) { return ve.deleteShape(); });
+        });
+        undoerRedoer.undo.listen(function () {
+            _this.veCall('undo', function (ve) { return ve.undo(); });
+        });
+        undoerRedoer.redo.listen(function () {
+            _this.veCall('redo', function (ve) { return ve.redo(); });
+        });
+    };
+    Engine.prototype.createNativeCore = function () {
+        this.module = Core.createModule();
+        this.initModule();
+        this.createVeEngine();
+    };
+    Engine.prototype.initModule = function () {
+        var _this = this;
+        var _a = this.config, drawingArea = _a.drawingArea, toolbar = _a.toolbar, keyboardInput = _a.keyboardInput, imageReceiver = _a.imageReceiver, shapeDeleter = _a.shapeDeleter, undoerRedoer = _a.undoerRedoer;
+        var contextHolder = new contextHolder_1.ContextHolder(drawingArea);
+        this.resourceManager.add(contextHolder);
+        contextHolder.contextLost.listen(function () {
+            _this.veCall('context lost notification', function (ve) { return ve.contextLost(); });
+        });
+        contextHolder.contextRestored.listen(function (outputSize) {
+            _this.veCall('context restored notification', function (ve) {
+                return ve.contextRestored(outputSize);
+            });
+        });
+        var gl = contextHolder.gl;
+        this.module.setContext(gl);
+        var bitmapProvider = new bitmapProvider_1.BitmapProvider(this.config.imageProvider, gl);
+        this.resourceManager.add(bitmapProvider);
+        this.module.bitmapProvider = bitmapProvider;
+        this.module.handleShapeParametersChanged = function (red, green, blue, lineWidth, addShadow) {
+            toolbar.updateByCore({
+                color: util_1.rgbToHex({ red: red, green: green, blue: blue }),
+                lineWidth: lineWidth,
+                addShadow: addShadow,
+            });
+        };
+        this.module.handleTextInputStarted = function () {
+            keyboardInput.startInput();
+        };
+        this.module.handleTextInputEnded = function () {
+            keyboardInput.endInput();
+        };
+        var typesetter = new browserTypesetter_1.BrowserTypesetter(tslib_1.__assign({ 
+            // TODO: Media migration - TypeScript error - startInput not expected
+            gl: gl, module: this.module }, keyboardInput));
+        this.resourceManager.add(typesetter);
+        this.module.browserTypesetter = typesetter;
+        var timerFactory = new timerFactory_1.TimerFactory(function (id) { return _this.passTimerTick(id); });
+        this.resourceManager.add(timerFactory);
+        this.module.timerFactory = timerFactory;
+        this.bitmapExporter = new bitmapExporter_1.BitmapExporter(imageReceiver.supplementaryCanvas, this.module);
+        this.module.bitmapExporter = this.bitmapExporter;
+        this.module.handleScrollChanged = function () { };
+        this.module.handleUndoRedoStateChanged = function () { };
+        this.module.handleDeleteShapeStateChanged = function (canDelete) {
+            if (canDelete) {
+                shapeDeleter.deleteEnabled();
+            }
+            else {
+                shapeDeleter.deleteDisabled();
+            }
+        };
+        this.module.handleUndoRedoStateChanged = function (canUndo, canRedo) {
+            if (canUndo) {
+                undoerRedoer.undoEnabled();
+            }
+            else {
+                undoerRedoer.undoDisabled();
+            }
+            if (canRedo) {
+                undoerRedoer.redoEnabled();
+            }
+            else {
+                undoerRedoer.redoDisabled();
+            }
+        };
+    };
+    Engine.prototype.createVeEngine = function () {
+        var _this = this;
+        var _a = this.config, shapeParameters = _a.shapeParameters, drawingArea = _a.drawingArea, imageProvider = _a.imageProvider;
+        var backImage = imageProvider.backImage, backImageUuid = imageProvider.backImageUuid;
+        var color = typeof shapeParameters.color === 'string'
+            ? shapeParameters.color
+            : colorPopup_1.DEFAULT_COLOR;
+        var initialParameters = {
+            shapeColor: util_1.hexToRgb(color),
+            lineWidth: shapeParameters.lineWidth,
+            addShadow: shapeParameters.addShadow,
+            tool: this.toVeTool(this.config.initialTool),
+            windowSize: drawingArea.outputSize,
+            backgroundColor: tslib_1.__assign({ alpha: maxColorChannel }, drawingArea.backgroundColor),
+            backBitmapUuid: backImageUuid,
+            backBitmapSize: { width: backImage.width, height: backImage.height },
+            baseTextDirection: this.toTextDirection(this.config.textDirection),
+        };
+        this.ve = new this.module.VeEngine();
+        this.resourceManager.addCustom(function () {
+            _this.ve.delete();
+        });
+        if (!this.ve.create(initialParameters)) {
+            throw new Error("The engine was not created. Error: " + this.ve.failureReason);
+        }
+        this.veCall('render', function (ve) { return ve.render(); });
+    };
+    Engine.prototype.veCall = function (description, method) {
+        if (!method(this.ve)) {
+            this.config.onCoreError("Could not perform '" + description + "'. Reason: '" + this.ve.failureReason + "'");
+        }
+    };
+    Engine.prototype.toVeTool = function (tool) {
+        var _a = this.module.VeTool, Arrow = _a.Arrow, Blur = _a.Blur, Line = _a.Line, Brush = _a.Brush, Oval = _a.Oval, Rectangle = _a.Rectangle, Text = _a.Text;
+        var nativeTools = {
+            arrow: Arrow,
+            blur: Blur,
+            line: Line,
+            brush: Brush,
+            oval: Oval,
+            rectangle: Rectangle,
+            text: Text,
+            default: Arrow,
+        };
+        return nativeTools[tool] || nativeTools['default'];
+    };
+    Engine.prototype.toTextCommand = function (inputCommand) {
+        var _a = this.module.VeTextInputCommand, CompleteInput = _a.CompleteInput, NewLine = _a.NewLine, Backspace = _a.Backspace, Delete = _a.Delete, MoveCursorLeft = _a.MoveCursorLeft, MoveCursorRight = _a.MoveCursorRight, MoveCursorUp = _a.MoveCursorUp, MoveCursorDown = _a.MoveCursorDown;
+        var commands = {
+            complete: CompleteInput,
+            newline: NewLine,
+            backspace: Backspace,
+            delete: Delete,
+            left: MoveCursorLeft,
+            right: MoveCursorRight,
+            up: MoveCursorUp,
+            down: MoveCursorDown,
+        };
+        return commands[inputCommand];
+    };
+    Engine.prototype.toTextDirection = function (direction) {
+        var _a = this.module.VeTextDirection, RightToLeft = _a.RightToLeft, LeftToRight = _a.LeftToRight;
+        return direction === 'rtl' ? RightToLeft : LeftToRight;
+    };
+    Engine.prototype.passTimerTick = function (id) {
+        this.veCall('pass timer tick', function (ve) { return ve.timerTick(id); });
+    };
+    return Engine;
+}());
+exports.Engine = Engine;
+//# sourceMappingURL=engine.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"extension-handler.js","sourceRoot":"","sources":["../../../src/utils/extension-handler.ts"],"names":[],"mappings":";;AAEA,SAAgB,oBAAoB,CAClC,gBAAoD;IAEpD,IAAI,OAAO,gBAAgB,KAAK,QAAQ,EAAE;QACxC,OAAO,gBAAgB,CAAC,MAAM,CAAC;KAChC;SAAM;QACL,OAAO,gBAAgB,CAAC;KACzB;AACH,CAAC;AARD,oDAQC"}

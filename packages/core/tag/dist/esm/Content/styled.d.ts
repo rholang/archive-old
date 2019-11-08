@@ -1,0 +1,4 @@
+/// <reference types="react" />
+export declare const Text: import("styled-components").StyledComponentClass<import("react").ClassAttributes<HTMLSpanElement> & import("react").HTMLAttributes<HTMLSpanElement> & Partial<import(".").Props>, any, import("react").ClassAttributes<HTMLSpanElement> & import("react").HTMLAttributes<HTMLSpanElement> & Partial<import(".").Props>>;
+export declare const linkStyles: import("styled-components").FlattenInterpolation<import("styled-components").ThemedStyledProps<Partial<import(".").Props>, any>>[];
+export declare const Link: import("styled-components").StyledComponentClass<import("react").ClassAttributes<HTMLAnchorElement> & import("react").AnchorHTMLAttributes<HTMLAnchorElement> & Partial<import(".").Props>, any, import("react").ClassAttributes<HTMLAnchorElement> & import("react").AnchorHTMLAttributes<HTMLAnchorElement> & Partial<import(".").Props>>;

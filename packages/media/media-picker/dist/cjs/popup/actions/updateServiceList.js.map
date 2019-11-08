@@ -1,0 +1,1 @@
+{"version":3,"file":"updateServiceList.js","sourceRoot":"","sources":["../../../../src/popup/actions/updateServiceList.tsx"],"names":[],"mappings":";;AAEa,QAAA,mBAAmB,GAAG,qBAAqB,CAAC;AAOzD,SAAgB,iBAAiB,CAC/B,QAA2C;IAE3C,OAAO;QACL,IAAI,EAAE,2BAAmB;QACzB,QAAQ,UAAA;KACT,CAAC;AACJ,CAAC;AAPD,8CAOC"}

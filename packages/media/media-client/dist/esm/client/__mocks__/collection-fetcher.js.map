@@ -1,0 +1,1 @@
+{"version":3,"file":"collection-fetcher.js","sourceRoot":"","sources":["../../../../src/client/__mocks__/collection-fetcher.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,IAAM,eAAe,GAAG,EAAE,CAAC;AAElC;IACE;QAEO,aAAQ,GAAG,IAAI,CAAC,EAAE,EAAE,CAAC;QACrB,eAAU,GAAG,IAAI,CAAC,EAAE,EAAE,CAAC;QACvB,iBAAY,GAAG,IAAI,CAAC,EAAE,EAAE,CAAC;IAJjB,CAAC;IAKlB,wBAAC;AAAD,CAAC,AAND,IAMC"}

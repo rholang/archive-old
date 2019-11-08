@@ -1,0 +1,16 @@
+import { JsonLd } from '../../client/types';
+import { CardBaseActionCreator } from './types';
+import { CardStore } from '../types';
+import { CardType } from '../store/types';
+import { Store } from 'redux';
+import { ServerError } from '../../client/types';
+export declare const cardAction: CardBaseActionCreator<JsonLd>;
+export declare const getByDefinitionId: (definitionId: string | undefined, store: CardStore) => string[];
+export declare const getUrl: (store: Store<CardStore>, url: string) => import("../types").CardState;
+export declare const getDefinitionId: (details?: JsonLd | undefined) => string | undefined;
+export declare const getServices: (details?: JsonLd | undefined) => import("../../client/types").JsonLdAuth[];
+export declare const hasResolved: (details?: JsonLd | undefined) => boolean | undefined;
+export declare const isAccessible: ({ meta: { access } }: JsonLd) => boolean;
+export declare const isVisible: ({ meta: { visibility } }: JsonLd) => boolean;
+export declare const getStatus: ({ meta }: JsonLd) => CardType;
+export declare const getError: (obj: JsonLd | ServerError) => "InternalServerError" | "ResolveBadRequestError" | "ResolveUnsupportedError" | "ResolveAuthError" | undefined;

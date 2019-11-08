@@ -9,7 +9,6 @@ import Below from './Below';
 import Cards from './Cards';
 import Frontend from './Frontend';
 import NewsBanner from './NewsBanner';
-import Footer from './Footer';
 
 const Intro = styled.div`
   color: ${colors.N900};
@@ -65,6 +64,10 @@ const Style = () => (
 `}</style>
 );
 
+const Test = styled(Background)`
+  background: blue;
+`;
+
 export default class HomePage extends React.Component {
   render() {
     return (
@@ -75,9 +78,7 @@ export default class HomePage extends React.Component {
         <Style />
         <Background />
         <Frontend />
-
         <Below>
-          <Mission />
           <NewsBanner />
           <Title data-testid="title">Atlaskit</Title>
           <Intro>
@@ -85,6 +86,7 @@ export default class HomePage extends React.Component {
             Atlassian&nbsp;Design&nbsp;Guidelines.
           </Intro>
           <Cards />
+          <Mission />
           <IconsCopyright>
             <p>Icons made by &nbsp; </p>
             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">

@@ -1,0 +1,1 @@
+{"version":3,"file":"updatePopupUrls.js","sourceRoot":"","sources":["../../../../src/popup/actions/updatePopupUrls.tsx"],"names":[],"mappings":";;AAGa,QAAA,iBAAiB,GAAG,mBAAmB,CAAC;AAOxC,QAAA,eAAe,GAAG,UAAC,IAAe;IAC7C,OAAO;QACL,IAAI,EAAE,yBAAiB;QACvB,IAAI,MAAA;KACL,CAAC;AACJ,CAAC,CAAC;AAEF,SAAgB,uBAAuB,CACrC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,yBAAiB,CAAC;AAC3C,CAAC;AAJD,0DAIC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"navigation.js","sourceRoot":"","sources":["../../../../src/utils/performance/navigation.ts"],"names":[],"mappings":";;AAAA,+EAA2E;AAE3E,SAAgB,kBAAkB;IAChC,IAAI,CAAC,wDAAyB,EAAE,EAAE;QAChC,OAAO;KACR;IAED,IAAM,GAAG,GAAG,WAAW,CAAC,gBAAgB,CACtC,YAAY,CACb,CAAC,CAAC,CAAgC,CAAC;IAEpC,IAAI,GAAG,EAAE;QACP,OAAO,GAAG,CAAC,WAAW,CAAC;KACxB;IAED,OAAO;AACT,CAAC;AAdD,gDAcC"}

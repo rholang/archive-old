@@ -1,0 +1,1 @@
+{"version":3,"file":"tableRow.js","sourceRoot":"","sources":["../../../../src/validator/specs/tableRow.ts"],"names":[],"mappings":";;AAAA,kBAAe;IACb,KAAK,EAAE;QACL,IAAI,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE,MAAM,EAAE,CAAC,UAAU,CAAC,EAAE;QAC5C,OAAO,EAAE,EAAE,IAAI,EAAE,OAAO,EAAE,KAAK,EAAE,CAAC,CAAC,WAAW,EAAE,aAAa,CAAC,CAAC,EAAE;KAClE;CACF,CAAC"}

@@ -29,11 +29,11 @@ const defaultNavGroups = [
         title: 'Tutorials',
         icon: <OverviewIcon label="Tutorials" />,
       },
-      {
+      /* {
         to: '/packages',
         title: 'Packages',
         icon: <ComponentIcon label="Packages icon" />,
-      },
+      },*/
 
       // {
       //   to: '/patterns',
@@ -46,15 +46,47 @@ const defaultNavGroups = [
     title: 'Resources',
     items: [
       {
-        to: 'https://bitbucket.org/atlassian/atlaskit-mk-2',
-        title: 'Repository',
+        to: 'https://github.com/rchain/',
+        title: 'Official Rchain Repository',
         icon: <BitbucketIcon label="Repository" />,
         external: true,
       },
       {
-        to: 'https://atlassian.design/',
-        title: 'Design guidelines',
-        icon: <DashboardIcon label="Design guidelines icon" />,
+        to: 'https://github.com/rchain-community',
+        title: 'Rchain Community Repository',
+        icon: <BitbucketIcon label="Repository" />,
+        external: true,
+      },
+      {
+        to: 'https://github.com/tgrospic/rnode-client-js',
+        title: 'RNode Client',
+        icon: <BitbucketIcon label="Repository" />,
+        external: true,
+      },
+
+      {
+        to: 'https://developer.rchain.coop/',
+        title: 'Developer Site',
+        icon: <DashboardIcon label="Rholang Cloud" />,
+        external: true,
+      },
+      {
+        to:
+          'https://rchain.atlassian.net/wiki/spaces/DOC/pages/3014657/Reading+List',
+        title: 'Blockchain 101',
+        icon: <DashboardIcon label="Rholang Cloud" />,
+        external: true,
+      },
+      {
+        to: 'http://rchain.cloud',
+        title: 'Rholang Cloud',
+        icon: <DashboardIcon label="Rholang Cloud" />,
+        external: true,
+      },
+      {
+        to: 'https://myrchainwallet.com',
+        title: 'My Rchain Wallet',
+        icon: <DashboardIcon label="Rholang Cloud" />,
         external: true,
       },
     ],

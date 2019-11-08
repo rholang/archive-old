@@ -1,0 +1,63 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var create_schema_1 = require("./create-schema");
+var nodes = [
+    'doc',
+    'paragraph',
+    'blockquote',
+    'codeBlock',
+    'panel',
+    'hardBreak',
+    'orderedList',
+    'bulletList',
+    'heading',
+    'mediaGroup',
+    'mediaSingle',
+    'media',
+    'confluenceUnsupportedBlock',
+    'confluenceJiraIssue',
+    'extension',
+    'inlineExtension',
+    'bodiedExtension',
+    'listItem',
+    'mention',
+    'text',
+    'confluenceUnsupportedInline',
+    'media',
+    'rule',
+    'table',
+    'tableCell',
+    'tableHeader',
+    'tableRow',
+    'emoji',
+    'taskList',
+    'taskItem',
+    'date',
+    'placeholder',
+    'decisionList',
+    'decisionItem',
+    'layoutSection',
+    'layoutColumn',
+    'inlineCard',
+    'unsupportedBlock',
+    'unsupportedInline',
+];
+var marks = [
+    'link',
+    'em',
+    'strong',
+    'strike',
+    'subsup',
+    'underline',
+    'mentionQuery',
+    'code',
+    'textColor',
+    'confluenceInlineComment',
+    'annotation',
+];
+exports.confluenceSchema = create_schema_1.createSchema({ nodes: nodes, marks: marks });
+exports.confluenceSchemaWithMediaSingle = create_schema_1.createSchema({
+    nodes: nodes.concat('mediaSingle'),
+    marks: marks,
+});
+//# sourceMappingURL=confluence-schema.js.map

@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var styled_components_1 = tslib_1.__importDefault(require("styled-components"));
+var media_ui_1 = require("@atlaskit/media-ui");
+var components_1 = require("@atlaskit/theme/components");
+var colors_1 = require("@atlaskit/theme/colors");
+var styles_1 = require("../../styles");
+var getSelectedBorderStyle_1 = require("../../styles/getSelectedBorderStyle");
+var getShadowAttribute = function (props) {
+    var disableOverlay = props.disableOverlay;
+    return disableOverlay ? '' : styles_1.cardShadow;
+};
+var getBackgroundColor = function (props) {
+    var mediaType = props.mediaType;
+    return "background: " + (mediaType === 'image'
+        ? 'transparent'
+        : components_1.themed({ light: colors_1.N20, dark: colors_1.DN50 })(props)) + ";";
+};
+exports.Wrapper = styled_components_1.default(styles_1.Root)(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n\n  line-height: normal;\n  position: relative;\n\n  ", "\n\n  ", " .wrapper {\n    ", ";\n    display: block;\n    height: inherit;\n    position: relative;\n\n    .img-wrapper {\n      position: relative;\n      width: inherit;\n      height: inherit;\n      display: block;\n      overflow: hidden;\n      ", "\n    }\n  }\n"], ["\n  ", "\n  ", "\n  ", "\n\n  line-height: normal;\n  position: relative;\n\n  ", "\n\n  ", " .wrapper {\n    ", ";\n    display: block;\n    height: inherit;\n    position: relative;\n\n    .img-wrapper {\n      position: relative;\n      width: inherit;\n      height: inherit;\n      display: block;\n      overflow: hidden;\n      ", "\n    }\n  }\n"])), getShadowAttribute, media_ui_1.borderRadius, getBackgroundColor, getSelectedBorderStyle_1.getSelectedBorderStyle, media_ui_1.size(), media_ui_1.borderRadius, media_ui_1.borderRadius);
+exports.PlayIconWrapper = styled_components_1.default.div(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n\n  /* we want to override default icon size and hover state */\n  &:hover > * {\n    width: 64px;\n    height: 64px;\n  }\n\n  > * {\n    background: rgba(23, 43, 77, 0.7);\n    width: 56px;\n    height: 56px;\n    border-radius: 100%;\n    padding: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: all 0.1s;\n  }\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n\n  /* we want to override default icon size and hover state */\n  &:hover > * {\n    width: 64px;\n    height: 64px;\n  }\n\n  > * {\n    background: rgba(23, 43, 77, 0.7);\n    width: 56px;\n    height: 56px;\n    border-radius: 100%;\n    padding: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: all 0.1s;\n  }\n"])));
+var bodyHeight = 26;
+exports.ProgressBarWrapper = styled_components_1.default.div(templateObject_3 || (templateObject_3 = tslib_1.__makeTemplateObject(["\n  position: relative;\n  height: inherit;\n"], ["\n  position: relative;\n  height: inherit;\n"])));
+exports.Overlay = styled_components_1.default.div(templateObject_4 || (templateObject_4 = tslib_1.__makeTemplateObject(["\n  ", " ", " border-radius: inherit;\n  background-color: rgba(9, 30, 66, 0.5);\n"], ["\n  ", " ", " border-radius: inherit;\n  background-color: rgba(9, 30, 66, 0.5);\n"])), media_ui_1.absolute(), media_ui_1.size());
+exports.Title = styled_components_1.default.div(templateObject_5 || (templateObject_5 = tslib_1.__makeTemplateObject(["\n  ", " width: 100%;\n  padding: 8px;\n  color: ", ";\n  font-size: 12px;\n  line-height: 18px;\n  word-wrap: break-word;\n"], ["\n  ", " width: 100%;\n  padding: 8px;\n  color: ", ";\n  font-size: 12px;\n  line-height: 18px;\n  word-wrap: break-word;\n"])), media_ui_1.absolute(), colors_1.N0);
+exports.Body = styled_components_1.default.div(templateObject_6 || (templateObject_6 = tslib_1.__makeTemplateObject(["\n  display: flex;\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  padding: 8px;\n  color: ", ";\n"], ["\n  display: flex;\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  padding: 8px;\n  color: ", ";\n"])), colors_1.N0);
+exports.ProgressWrapper = styled_components_1.default.div(templateObject_7 || (templateObject_7 = tslib_1.__makeTemplateObject(["\n  flex-grow: 1;\n\n  /*\n    force the height to always be 20px (the height of the cancel icon),\n    so that the height of the progress bar doesn't jump when cards with\n    and without a cancel icon are rendered side-by-side.\n  */\n  height: ", "px;\n\n  /*\n    vertically center the progress bar within the 20px, keeping the progress bar full width\n  */\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n"], ["\n  flex-grow: 1;\n\n  /*\n    force the height to always be 20px (the height of the cancel icon),\n    so that the height of the progress bar doesn't jump when cards with\n    and without a cancel icon are rendered side-by-side.\n  */\n  height: ", "px;\n\n  /*\n    vertically center the progress bar within the 20px, keeping the progress bar full width\n  */\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n"])), bodyHeight);
+exports.CardActionsWrapper = styled_components_1.default.div(templateObject_8 || (templateObject_8 = tslib_1.__makeTemplateObject(["\n  margin-left: 4px;\n  /*\n    button must appear above overlay\n   */\n  z-index: 2;\n"], ["\n  margin-left: 4px;\n  /*\n    button must appear above overlay\n   */\n  z-index: 2;\n"])));
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+//# sourceMappingURL=styled.js.map

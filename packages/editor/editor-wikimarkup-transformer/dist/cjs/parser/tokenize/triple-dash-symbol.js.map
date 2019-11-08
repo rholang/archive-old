@@ -1,0 +1,1 @@
+{"version":3,"file":"triple-dash-symbol.js","sourceRoot":"","sources":["../../../../src/parser/tokenize/triple-dash-symbol.ts"],"names":[],"mappings":";;;AACA,2DAA6D;AAE7D,IAAM,KAAK,GAAc;IACvB,IAAI,EAAE,MAAM;IACZ,IAAI,EAAE,QAAQ;IACd,MAAM,EAAE,CAAC;CACV,CAAC;AACF,IAAM,QAAQ,yCACT,KAAK,KACR,IAAI,EAAE,KAAK,GACZ,CAAC;AAEW,QAAA,gBAAgB,GAAG,0CAAqB,CAAC,KAAK,EAAE,QAAQ,CAAC,CAAC"}

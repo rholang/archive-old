@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    props: {
+        type: { type: 'enum', values: ['text'] },
+        text: { type: 'string', minLength: 1 },
+        marks: { type: 'array', items: [], optional: true },
+    },
+};
+//# sourceMappingURL=text.js.map

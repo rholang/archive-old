@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
-import ModalDialogVideo from './ModalDialogVideo';
-import { FullWith } from './Frontend';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import rocket from '../../assets/Rocket.png';
 import { colors } from '@atlaskit/theme';
@@ -12,7 +10,7 @@ import {
 } from '../../constants';
 import debounce from 'lodash.debounce';
 import * as R from 'ramda';
-import { Fragment } from 'prosemirror-model';
+import { ThemeProvider } from 'styled-components';
 
 export const fonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
@@ -43,11 +41,32 @@ export const MissionContainer = styled.div`
   flex-direction: column;
 `;
 
+const theme = {
+  flexboxgrid: {
+    // Defaults
+    gridSize: 12, // columns
+    gutterWidth: 1, // rem
+    outerMargin: 2, // rem
+    mediaQuery: 'only screen',
+    container: {
+      sm: 46, // rem
+      md: 58, // rem
+      lg: 58, // rem
+    },
+    breakpoints: {
+      xs: 0, // em
+      sm: 48, // em
+      md: 64, // em
+      lg: 75, // em
+    },
+  },
+};
+
 const misionItems = [
   {
     title: 'Documentation1',
     text:
-      'Since 2016, Decred has striven to solve blockchain governance. Our innovative consensus voting model empowers stakeholders and allows for the seamless transition from one set of rules to another. Decentralized decision-making and self-funding have enabled us to build a robust, evolving digital currency, free from third party influence.',
+      'imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
   },
   {
     image: rocket,
@@ -62,12 +81,12 @@ const misionItems = [
   {
     title: 'Documentation4',
     text:
-      'Since 2016, Decred has striven to solve blockchain governance. Our innovative consensus voting model empowers stakeholders and allows for the seamless transition from one set of rules to another. Decentralized decision-making and self-funding have enabled us to build a robust, evolving digital currency, free from third party influence.',
+      'imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
   },
   {
     title: 'Documentation5',
     text:
-      'Since 2016, Decred has striven to solve blockchain governance. Our innovative consensus voting model empowers stakeholders and allows for the seamless transition from one set of rules to another. Decentralized decision-making and self-funding have enabled us to build a robust, evolving digital currency, free from third party influence.',
+      'imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
   },
   {
     image: rocket,
@@ -82,7 +101,7 @@ const misionItems = [
   {
     title: 'Documentation8',
     text:
-      'Since 2016, Decred has striven to solve blockchain governance. Our innovative consensus voting model empowers stakeholders and allows for the seamless transition from one set of rules to another. Decentralized decision-making and self-funding have enabled us to build a robust, evolving digital currency, free from third party influence.',
+      'imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
   },
 ];
 
@@ -171,30 +190,32 @@ export default class Mission extends React.Component {
     const columnsPairs = this.pairItems(columns);
 
     return (
-      <Grid>
-        {columnsPairs.map(([first, second, third, fourth]) => {
-          return (
-            <div>
-              <Row>
-                <Col xs={12} sm={8} md={8} lg={9}>
-                  <Row center="xs">{first}</Row>
-                </Col>
-                <Col xs={12} sm={4} md={4} lg={3}>
-                  <Row center="xs">{second}</Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12} sm={4} md={4} lg={3}>
-                  <Row center="xs">{third}</Row>
-                </Col>
-                <Col xs={12} sm={8} md={8} lg={9}>
-                  <Row center="xs">{fourth}</Row>
-                </Col>
-              </Row>
-            </div>
-          );
-        })}
-      </Grid>
+      <ThemeProvider theme={theme}>
+        <Grid>
+          {columnsPairs.map(([first, second, third, fourth]) => {
+            return (
+              <div>
+                <Row>
+                  <Col xs={12} sm={8} md={8} lg={9}>
+                    <Row center="xs">{first}</Row>
+                  </Col>
+                  <Col xs={12} sm={4} md={4} lg={3}>
+                    <Row center="xs">{second}</Row>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12} sm={4} md={4} lg={3}>
+                    <Row center="xs">{third}</Row>
+                  </Col>
+                  <Col xs={12} sm={8} md={8} lg={9}>
+                    <Row center="xs">{fourth}</Row>
+                  </Col>
+                </Row>
+              </div>
+            );
+          })}
+        </Grid>
+      </ThemeProvider>
     );
   }
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"analytics-client-mock.js","sourceRoot":"","sources":["../../src/analytics-client-mock.ts"],"names":[],"mappings":"AAUA,MAAM,CAAC,IAAM,eAAe,GAAG,UAC7B,qBAAwD;IAAxD,sCAAA,EAAA,wBAA+C,IAAI,CAAC,EAAE,EAAE;IAExD,OAAO;QACL,WAAW,EAAE,qBAAqB;QAClC,oBAAoB,EAAE,qBAAqB;QAC3C,cAAc,EAAE,qBAAqB;QACrC,eAAe,EAAE,qBAAqB;KACvC,CAAC;AACJ,CAAC,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"startApp.js","sourceRoot":"","sources":["../../../../src/popup/actions/startApp.ts"],"names":[],"mappings":";;AAIa,QAAA,SAAS,GAAG,WAAW,CAAC;AAWrC,SAAgB,gBAAgB,CAAC,MAAc;IAC7C,OAAO,MAAM,CAAC,IAAI,KAAK,iBAAS,CAAC;AACnC,CAAC;AAFD,4CAEC;AAED,SAAgB,QAAQ,CAAC,OAA8B;IACrD,OAAO;QACL,IAAI,EAAE,iBAAS;QACf,OAAO,SAAA;KACR,CAAC;AACJ,CAAC;AALD,4BAKC"}

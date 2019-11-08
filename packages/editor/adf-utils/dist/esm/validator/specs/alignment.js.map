@@ -1,0 +1,1 @@
+{"version":3,"file":"alignment.js","sourceRoot":"","sources":["../../../../src/validator/specs/alignment.ts"],"names":[],"mappings":"AAAA,eAAe;IACb,KAAK,EAAE;QACL,IAAI,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE,MAAM,EAAE,CAAC,WAAW,CAAC,EAAE;QAC7C,KAAK,EAAE,EAAE,KAAK,EAAE,EAAE,KAAK,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE,MAAM,EAAE,CAAC,QAAQ,EAAE,KAAK,CAAC,EAAE,EAAE,EAAE;KACzE;CACF,CAAC"}

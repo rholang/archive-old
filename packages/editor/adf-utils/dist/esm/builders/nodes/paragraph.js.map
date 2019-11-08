@@ -1,0 +1,1 @@
+{"version":3,"file":"paragraph.js","sourceRoot":"","sources":["../../../../src/builders/nodes/paragraph.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,eAAe,EAAE,MAAM,4BAA4B,CAAC;AAE7D,MAAM,CAAC,IAAM,SAAS,GAAG;IACvB,iBAAkC;SAAlC,UAAkC,EAAlC,qBAAkC,EAAlC,IAAkC;QAAlC,4BAAkC;;IACV,OAAA,CAAC;QACzB,IAAI,EAAE,WAAW;QACjB,OAAO,EAAE,eAAe,CAAC,OAAO,CAAC;KAClC,CAAC;AAHwB,CAGxB,CAAC"}

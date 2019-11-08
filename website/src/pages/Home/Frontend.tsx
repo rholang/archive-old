@@ -48,7 +48,6 @@ const firstViewLeft = css`
   justify-content: center;
   align-items: center;
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-    width: 50%;
   }
 `;
 
@@ -81,8 +80,7 @@ const firstViewRight = css`
   flex: 2;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-    position: relative;
-    margin-left: 0;
+    display: none;
   }
 `;
 

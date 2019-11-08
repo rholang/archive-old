@@ -1,0 +1,9 @@
+export declare const focusRingColor: any;
+export declare const tagHeightUnitless: number;
+export declare const tagHeight: string;
+export declare const buttonWidthUnitless: number;
+export declare const buttonWidth: string;
+export declare const maxWidthUnitless: number;
+export declare const maxWidth: string;
+export declare const maxTextWidthUnitless: number;
+export declare const maxTextWidth: string;

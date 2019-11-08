@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var styled_components_1 = tslib_1.__importDefault(require("styled-components"));
+var colorSampleOutlineColor = 'rgba(255, 255, 255, 0.5)';
+exports.ToolbarButton = styled_components_1.default.div(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n  cursor: pointer;\n  position: relative; /* for the child OptionsAreaBase which uses absolute positioning */\n  min-width: 32px;\n  height: 32px;\n  border-radius: 4px;\n  margin-left: 4px;\n  margin-right: 4px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"], ["\n  cursor: pointer;\n  position: relative; /* for the child OptionsAreaBase which uses absolute positioning */\n  min-width: 32px;\n  height: 32px;\n  border-radius: 4px;\n  margin-left: 4px;\n  margin-right: 4px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
+exports.ColorSample = styled_components_1.default.div(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n  width: 18px;\n  height: 18px;\n  margin: 4px;\n  border-radius: 3px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: ", ";\n  box-sizing: border-box;\n"], ["\n  width: 18px;\n  height: 18px;\n  margin: 4px;\n  border-radius: 3px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: ", ";\n  box-sizing: border-box;\n"])), colorSampleOutlineColor);
+exports.DropdownLeftIconWrapper = styled_components_1.default.div(templateObject_3 || (templateObject_3 = tslib_1.__makeTemplateObject(["\n  margin-right: -6px;\n  margin-left: -8px;\n"], ["\n  margin-right: -6px;\n  margin-left: -8px;\n"])));
+exports.DropdownRightIconWrapper = styled_components_1.default.div(templateObject_4 || (templateObject_4 = tslib_1.__makeTemplateObject(["\n  margin-right: -10px;\n  margin-left: -8px;\n"], ["\n  margin-right: -10px;\n  margin-left: -8px;\n"])));
+exports.ButtonIconWrapper = styled_components_1.default.div(templateObject_5 || (templateObject_5 = tslib_1.__makeTemplateObject(["\n  margin-right: -2px;\n  margin-left: -2px;\n"], ["\n  margin-right: -2px;\n  margin-left: -2px;\n"])));
+exports.ShapeTitle = styled_components_1.default.span(templateObject_6 || (templateObject_6 = tslib_1.__makeTemplateObject(["\n  text-transform: capitalize;\n"], ["\n  text-transform: capitalize;\n"])));
+exports.GroupItem = styled_components_1.default.div(templateObject_7 || (templateObject_7 = tslib_1.__makeTemplateObject(["\n  flex: 1 0 auto;\n  margin: 0 4px;\n"], ["\n  flex: 1 0 auto;\n  margin: 0 4px;\n"])));
+exports.Group = styled_components_1.default.div(templateObject_8 || (templateObject_8 = tslib_1.__makeTemplateObject(["\n  display: inline-flex;\n  margin: 0 -4px;\n"], ["\n  display: inline-flex;\n  margin: 0 -4px;\n"])));
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+//# sourceMappingURL=styles.js.map

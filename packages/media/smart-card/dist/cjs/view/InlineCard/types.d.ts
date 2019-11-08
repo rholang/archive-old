@@ -1,0 +1,13 @@
+import { EventHandler, MouseEvent, KeyboardEvent } from 'react';
+import { CardState } from '../../state/types';
+export declare type InlineCardProps = {
+    url: string;
+    cardState: CardState;
+    handleAuthorize: (() => void) | undefined;
+    handleFrameClick: EventHandler<MouseEvent | KeyboardEvent>;
+    isSelected?: boolean;
+    onResolve?: (data: {
+        url?: string;
+        title?: string;
+    }) => void;
+};

@@ -1,0 +1,8 @@
+import { __makeTemplateObject } from "tslib";
+import styled from 'styled-components';
+// TODO Extract common part from these:
+export var LineWidthPopupContainer = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  right: 270px;\n  padding: 9px;\n  margin: -28px -20px; // Compensation for default big padding that inline dialog comes with\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  right: 270px;\n  padding: 9px;\n  margin: -28px -20px; // Compensation for default big padding that inline dialog comes with\n"])));
+export var ColorPopupContentWrapper = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  width: 144px;\n  padding: 8px;\n  margin: -16px -24px; // Compensation for default big padding that inline dialog comes with\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  width: 144px;\n  padding: 8px;\n  margin: -16px -24px; // Compensation for default big padding that inline dialog comes with\n"])));
+export var ShapePopupContentWrapper = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  width: 128px;\n  padding: 8px;\n  margin: -20px -32px; // Compensation for default big padding that inline dialog comes with\n  > * {\n    text-align: left;\n    border-radius: 0;\n  }\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  width: 128px;\n  padding: 8px;\n  margin: -20px -32px; // Compensation for default big padding that inline dialog comes with\n  > * {\n    text-align: left;\n    border-radius: 0;\n  }\n"])));
+var templateObject_1, templateObject_2, templateObject_3;
+//# sourceMappingURL=popupStyles.js.map

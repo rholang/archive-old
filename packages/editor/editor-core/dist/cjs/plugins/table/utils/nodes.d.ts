@@ -1,0 +1,12 @@
+import { Node as PmNode } from 'prosemirror-model';
+import { EditorState } from 'prosemirror-state';
+export declare const isIsolating: (node: PmNode<any>) => boolean;
+export declare const containsHeaderColumn: (state: EditorState<any>, table: PmNode<any>) => boolean;
+export declare const containsHeaderRow: (state: EditorState<any>, table: PmNode<any>) => boolean;
+export declare const checkIfHeaderColumnEnabled: (state: EditorState<any>) => boolean;
+export declare const checkIfHeaderRowEnabled: (state: EditorState<any>) => boolean;
+export declare const checkIfNumberColumnEnabled: (state: EditorState<any>) => boolean;
+export declare const isLayoutSupported: (state: EditorState<any>) => boolean;
+export declare const getTableWidth: (node: PmNode<any>) => number;
+export declare const tablesHaveDifferentColumnWidths: (currentTable: PmNode<any>, previousTable: PmNode<any>) => boolean;
+export declare const tablesHaveDifferentNoOfColumns: (currentTable: PmNode<any>, previousTable: PmNode<any>) => boolean;

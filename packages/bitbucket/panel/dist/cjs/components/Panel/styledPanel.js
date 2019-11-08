@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var theme_1 = require("@atlaskit/theme");
+var react_focus_within_1 = require("react-focus-within");
+var styled_components_1 = tslib_1.__importStar(require("styled-components"));
+var transition = styled_components_1.css(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n  transition: all 200ms ease-in-out;\n"], ["\n  transition: all 200ms ease-in-out;\n"])));
+exports.PanelWrapper = styled_components_1.default.div(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n  margin: 0 auto ", "px;\n"], ["\n  margin: 0 auto ", "px;\n"])), theme_1.gridSize() * 2);
+exports.ButtonWrapper = styled_components_1.default.div(templateObject_3 || (templateObject_3 = tslib_1.__makeTemplateObject(["\n  left: 0;\n  line-height: 0;\n  opacity: ", ";\n  position: absolute;\n  ", ";\n\n  /* IE 11 needs these vertical positioning rules - the flexbox\n  behavior for absolute-positioned children is not up to spec.\n  https://googlechrome.github.io/samples/css-flexbox-abspos/ */\n  top: 50%;\n  transform: translateY(-50%);\n\n  button {\n    pointer-events: none;\n  }\n"], ["\n  left: 0;\n  line-height: 0;\n  opacity: ", ";\n  position: absolute;\n  ", ";\n\n  /* IE 11 needs these vertical positioning rules - the flexbox\n  behavior for absolute-positioned children is not up to spec.\n  https://googlechrome.github.io/samples/css-flexbox-abspos/ */\n  top: 50%;\n  transform: translateY(-50%);\n\n  button {\n    pointer-events: none;\n  }\n"])), function (_a) {
+    var isHidden = _a.isHidden;
+    return (isHidden ? 0 : 1);
+}, transition);
+exports.PanelHeader = react_focus_within_1.withFocusWithin(styled_components_1.default.div(templateObject_4 || (templateObject_4 = tslib_1.__makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: ", "px;\n  display: flex;\n  left: -", "px;\n  margin-bottom: ", "px;\n  margin-top: ", "px;\n  padding: 2px 0 2px ", "px;\n  position: relative;\n  ", ";\n  width: 100%;\n\n  ", " {\n    opacity: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n    cursor: pointer;\n\n    ", " {\n      opacity: 1;\n    }\n  }\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: ", "px;\n  display: flex;\n  left: -", "px;\n  margin-bottom: ", "px;\n  margin-top: ", "px;\n  padding: 2px 0 2px ", "px;\n  position: relative;\n  ", ";\n  width: 100%;\n\n  ", " {\n    opacity: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n    cursor: pointer;\n\n    ", " {\n      opacity: 1;\n    }\n  }\n"])), function (props) { return props.isFocused && theme_1.colors.N20; }, theme_1.borderRadius, theme_1.gridSize() * 3, theme_1.gridSize(), theme_1.gridSize() * 2, theme_1.gridSize() * 3, transition, exports.ButtonWrapper, function (props) { return props.isFocused && 1; }, theme_1.colors.N20, exports.ButtonWrapper));
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+//# sourceMappingURL=styledPanel.js.map

@@ -1,0 +1,19 @@
+import { ComponentType, MouseEvent } from 'react';
+export declare type ProductHomeProps = {
+    /** The product icon. Expected to be an Icon from the Atlaskit Logo package. Visible on smaller screen sizes */
+    icon: ComponentType<{
+        size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | undefined;
+    }>;
+    /** The product logo, visible on larger screen sizes */
+    logo: ComponentType<{}>;
+    /** Optional onClick handler */
+    onClick?: (event: MouseEvent<HTMLElement>) => void;
+};
+export declare type CustomProductHomeProps = {
+    iconAlt: string;
+    iconUrl: string;
+    logoAlt: string;
+    logoUrl: string;
+    /** Optional onClick handler */
+    onClick?: (event: MouseEvent<HTMLElement>) => void;
+};

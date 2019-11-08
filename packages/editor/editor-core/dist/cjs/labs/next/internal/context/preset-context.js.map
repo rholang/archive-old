@@ -1,0 +1,1 @@
+{"version":3,"file":"preset-context.js","sourceRoot":"","sources":["../../../../../../src/labs/next/internal/context/preset-context.ts"],"names":[],"mappings":";;;AAAA,mDAA+B;AAG/B,IAAM,aAAa,GAAG,KAAK,CAAC,aAAa,CAAsB,EAAE,CAAC,CAAC;AACnE,IAAM,cAAc,GAAG,aAAa,CAAC,QAAQ,CAAC;AAGrC,wCAAc;AAFvB,IAAM,gBAAgB,GAAG,cAAM,OAAA,KAAK,CAAC,UAAU,CAAC,aAAa,CAAC,EAA/B,CAA+B,CAAC;AAEtC,4CAAgB"}

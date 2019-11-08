@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    props: {
+        type: { type: 'enum', values: ['mention'] },
+        attrs: {
+            props: {
+                id: { type: 'string' },
+                text: { type: 'string', optional: true },
+                userType: {
+                    type: 'enum',
+                    values: ['DEFAULT', 'SPECIAL', 'APP'],
+                    optional: true,
+                },
+                accessLevel: { type: 'string', optional: true },
+            },
+        },
+    },
+};
+//# sourceMappingURL=mention.js.map

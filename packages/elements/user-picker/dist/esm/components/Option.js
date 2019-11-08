@@ -1,0 +1,27 @@
+import { __assign } from "tslib";
+import { components } from '@atlaskit/select';
+import * as React from 'react';
+import { EmailOption } from './EmailOption';
+import { TeamOption } from './TeamOption';
+import { UserOption } from './UserOption';
+import { GroupOption } from './GroupOption';
+import { isEmail, isTeam, isUser, isGroup } from './utils';
+import { isValidEmail } from './emailValidation';
+var dataOption = function (_a) {
+    var data = _a.data.data, isSelected = _a.isSelected, status = _a.status, selectProps = _a.selectProps;
+    if (isUser(data)) {
+        return React.createElement(UserOption, { user: data, status: status, isSelected: isSelected });
+    }
+    if (isEmail(data)) {
+        return (React.createElement(EmailOption, { email: data, emailValidity: isValidEmail(data.id), isSelected: isSelected, label: selectProps.emailLabel }));
+    }
+    if (isTeam(data)) {
+        return React.createElement(TeamOption, { team: data, isSelected: isSelected });
+    }
+    if (isGroup(data)) {
+        return React.createElement(GroupOption, { group: data, isSelected: isSelected });
+    }
+    return null;
+};
+export var Option = function (props) { return (React.createElement(components.Option, __assign({}, props), dataOption(props))); };
+//# sourceMappingURL=Option.js.map

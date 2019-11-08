@@ -1,0 +1,1 @@
+{"version":3,"file":"getIdentifierCollection.js","sourceRoot":"","sources":["../../../../src/newgen/utils/getIdentifierCollection.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAc,MAAM,wBAAwB,CAAC;AAEtE,MAAM,CAAC,IAAM,uBAAuB,GAAG,UACrC,UAAsB,EACtB,qBAA6B;IAE7B,OAAA,gBAAgB,CAAC,UAAU,CAAC;QAC1B,CAAC,CAAC,UAAU,CAAC,cAAc,IAAI,qBAAqB;QACpD,CAAC,CAAC,SAAS;AAFb,CAEa,CAAC"}

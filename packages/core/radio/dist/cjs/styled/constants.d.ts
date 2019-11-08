@@ -1,0 +1,10 @@
+export declare const borderWidth = 1;
+export declare const borderWidthFocus = 2;
+export declare const fullHeight: number;
+export declare const fullWidth: number;
+export declare const height: number;
+export declare const width: number;
+export declare const maxIconWidth: number;
+export declare const iconHorizontalPadding: number;
+export declare const innerWidth: number;
+export declare const innerHeight: number;

@@ -1,0 +1,14 @@
+import { Slice } from 'prosemirror-model';
+import { Command } from '../../types';
+import { InputMethodInsertMedia } from '../analytics';
+import { CardOptions } from '../card';
+import { Schema } from 'prosemirror-model';
+export declare function handleMention(slice: Slice, schema: Schema): Slice;
+export declare function handlePasteIntoTaskAndDecision(slice: Slice): Command;
+export declare function handlePasteAsPlainText(slice: Slice, _event: ClipboardEvent): Command;
+export declare function handlePastePreservingMarks(slice: Slice): Command;
+export declare function handleMacroAutoConvert(text: string, slice: Slice, cardsOptions?: CardOptions): Command;
+export declare function handleCodeBlock(text: string): Command;
+export declare function handleMediaSingle(inputMethod: InputMethodInsertMedia): (slice: Slice<any>) => Command;
+export declare function handleMarkdown(markdownSlice: Slice): Command;
+export declare function handleRichText(slice: Slice): Command;

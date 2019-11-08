@@ -1,0 +1,1 @@
+{"version":3,"file":"bulletList.js","sourceRoot":"","sources":["../../../../src/validator/specs/bulletList.ts"],"names":[],"mappings":"AAAA,eAAe;IACb,KAAK,EAAE;QACL,IAAI,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE,MAAM,EAAE,CAAC,YAAY,CAAC,EAAE;QAC9C,OAAO,EAAE,EAAE,IAAI,EAAE,OAAO,EAAE,KAAK,EAAE,CAAC,UAAU,CAAC,EAAE,QAAQ,EAAE,CAAC,EAAE;KAC7D;CACF,CAAC"}

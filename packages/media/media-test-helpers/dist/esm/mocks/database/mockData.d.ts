@@ -1,0 +1,10 @@
+export declare const getHackerNoun: () => string;
+export declare const imageFileTypes: string[];
+export declare const textFileTypes: string[];
+export declare const getTextFileType: () => string;
+export declare const getFakeFileName: (ext?: string) => string;
+export declare const fakeImage = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSIzMjAiIGhlaWdodD0iMjQwIj4gPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iZ3JleSIvPiAgPHRleHQgeD0iMCIgeT0iMjAiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0id2hpdGUiPjMyMHgyNDA8L3RleHQ+IDwvc3ZnPg==";
+export declare const getDateWithOffset: (offset: number) => Date;
+export declare const getPastDate: () => Date;
+export declare const getFutureDate: () => Date;
+export declare const mockDataUri: (width: string, height: string) => string;

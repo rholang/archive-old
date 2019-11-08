@@ -1,0 +1,1 @@
+{"version":3,"file":"startAuth.js","sourceRoot":"","sources":["../../../../src/popup/actions/startAuth.tsx"],"names":[],"mappings":";;AAGa,QAAA,UAAU,GAAG,YAAY,CAAC;AAOvC,SAAgB,iBAAiB,CAAC,MAAc;IAC9C,OAAO,MAAM,CAAC,IAAI,KAAK,kBAAU,CAAC;AACpC,CAAC;AAFD,8CAEC;AAED,SAAgB,SAAS,CAAC,WAAwB;IAChD,OAAO;QACL,IAAI,EAAE,kBAAU;QAChB,WAAW,aAAA;KACZ,CAAC;AACJ,CAAC;AALD,8BAKC"}

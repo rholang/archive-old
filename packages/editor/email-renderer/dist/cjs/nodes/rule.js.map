@@ -1,0 +1,1 @@
+{"version":3,"file":"rule.js","sourceRoot":"","sources":["../../../src/nodes/rule.ts"],"names":[],"mappings":";;AAAA,mDAA2C;AAC3C,4CAA0C;AAC1C,uCAAiD;AAEpC,QAAA,MAAM,GAAG,QACnB,sBAAe,CAAC,MAAM,CAAC,wDAEG,gBAAG,WAE/B,CAAC;AAEF,SAAwB,IAAI;IAC1B,OAAO,sBAAS,CAAC,IAAI,EAAE,EAAE,KAAK,EAAE,sBAAe,CAAC,MAAM,CAAC,EAAE,CAAC,CAAC;AAC7D,CAAC;AAFD,uBAEC"}

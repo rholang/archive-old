@@ -1,0 +1,1 @@
+{"version":3,"file":"list-item.js","sourceRoot":"","sources":["../../../../src/schema/nodes/list-item.ts"],"names":[],"mappings":";;AAyBa,QAAA,QAAQ,GAAa;IAChC,OAAO,EACL,yGAAyG;IAC3G,QAAQ,EAAE,IAAI;IACd,QAAQ,EAAE,CAAC,EAAE,GAAG,EAAE,IAAI,EAAE,CAAC;IACzB,KAAK;QACH,OAAO,CAAC,IAAI,EAAE,CAAC,CAAC,CAAC;IACnB,CAAC;CACF,CAAC"}

@@ -1,0 +1,7 @@
+import { __makeTemplateObject } from "tslib";
+import { colors, gridSize, typography } from '@atlaskit/theme';
+import evaluateInner from './utils/evaluate-inner';
+var tableBorderWdth = 2;
+export default evaluateInner(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  table {\n    border-collapse: collapse;\n    width: 100%;\n  }\n\n  thead,\n  tbody,\n  tfoot {\n    border-bottom: ", "px solid ", ";\n  }\n\n  td,\n  th {\n    border: 1px solid #ddd;\n    border-collapse: collapse;\n    text-align: left;\n    padding: ", "px ", "px;\n    text-align: left;\n\n  }\n\n  th {\n    vertical-align: top;\n  }\n\n\n\n\n  caption {\n    ", "\n    margin-bottom: ", "px;\n    text-align: left;\n  }\n"], ["\n  table {\n    border-collapse: collapse;\n    width: 100%;\n  }\n\n  thead,\n  tbody,\n  tfoot {\n    border-bottom: ", "px solid ", ";\n  }\n\n  td,\n  th {\n    border: 1px solid #ddd;\n    border-collapse: collapse;\n    text-align: left;\n    padding: ", "px ", "px;\n    text-align: left;\n\n  }\n\n  th {\n    vertical-align: top;\n  }\n\n\n\n\n  caption {\n    ", "\n    margin-bottom: ", "px;\n    text-align: left;\n  }\n"])), tableBorderWdth, colors.N40, gridSize(), gridSize(), typography.h600(), gridSize());
+var templateObject_1;
+//# sourceMappingURL=tables.js.map
