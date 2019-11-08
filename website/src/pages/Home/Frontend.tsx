@@ -2,6 +2,8 @@ import { DESKTOP_BREAKPOINT_MIN, MOBILE_BREAKPOINT_MAX } from '../../constants';
 import styled, { css } from 'styled-components';
 import React from 'react';
 import ModalDialogVideo from './ModalDialogVideo';
+import rhoLogo from '../../assets/home/RholangLogo.png';
+import network from '../../assets/home/network.svg';
 
 const fronta = css`
   position: absolute;
@@ -42,33 +44,22 @@ const container960 = css`
 
 const firstViewLeft = css`
   position: relative;
-  flex: 2;
+  flex: 6;
   display: flex;
-  transition: opacity 100ms linear;
   justify-content: center;
-  align-items: center;
-  @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-  }
-`;
-
-const logo = css`
-  height: 80px;
-  background-image: url(../images/logo.svg);
-  background-position: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
+  transition: opacity 100ms linear;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
   }
 `;
 
 const descriptionFont38 = css`
-  line-height: 42px;
+  margin-top: 30px;
+  margin-left: 5px;
+  max-width: 300px;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
-    width: 300px;
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 15px;
   }
 `;
 
@@ -77,7 +68,7 @@ const firstViewRight = css`
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  flex: 2;
+  flex: 6;
 
   @media (max-width: ${MOBILE_BREAKPOINT_MAX}px) {
     display: none;
@@ -98,9 +89,7 @@ export const Container960 = styled.div`
 export const FirstViewLeft = styled.div`
   ${firstViewLeft}
 `;
-export const Logo = styled.div`
-  ${logo}
-`;
+
 export const Descritption = styled.div`
   ${descriptionFont38}
 `;
@@ -114,16 +103,18 @@ export default () => {
       <FullWith>
         <Container960>
           <FirstViewLeft>
-            <Logo />
-            <Descritption>
-              Rholang is a massive scalable blockchain language
-            </Descritption>
+            <div>
+              <img width="200px" src={rhoLogo} alt="Logo" />
+              <Descritption>
+                Rholang is a massive scalable blockchain language with
+                unprecedented speed and reliability. Build on latest research
+                from the reflective high order calculus.
+              </Descritption>
+            </div>
           </FirstViewLeft>
           <ModalDialogVideo />
           <FirstViewRight>
-            <Descritption>
-              Rholang is a massive scalable blockchain language
-            </Descritption>
+            <img width="200px" src={network} alt="Logo" />
           </FirstViewRight>
         </Container960>
       </FullWith>

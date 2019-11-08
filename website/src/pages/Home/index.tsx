@@ -82,8 +82,7 @@ export default class HomePage extends React.Component {
           <NewsBanner />
           <Title data-testid="title">Rholang</Title>
           <Intro>
-            Atlassian&#39;s official UI library, built according to the
-            Atlassian&nbsp;Design&nbsp;Guidelines.
+            A language for distributed computing and blockchain 3.0.
           </Intro>
           <Cards />
           <Mission />

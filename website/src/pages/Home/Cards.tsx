@@ -4,15 +4,17 @@ import { Link } from '../../components/WrappedLink';
 import { gridSize, colors, math } from '@atlaskit/theme';
 import debounce from 'lodash.debounce';
 
-import { AtlassianIcon } from '@atlaskit/logo';
+import { AtlassianIcon, BitbucketIcon } from '@atlaskit/logo';
 import PackagesIcon from '@atlaskit/icon/glyph/component';
+import PageFilledIcon from '@atlaskit/icon/glyph/page-filled';
 import BlogIcon from '@atlaskit/icon/glyph/component';
 import MediaDocIcon from '@atlaskit/icon/glyph/media-services/document';
 import CodeIcon from '@atlaskit/icon/glyph/code';
-
-import rocket from '../../assets/Rocket.png';
-import platform from '../../assets/Platform.png';
-import multiTool from '../../assets/multiTool.png';
+import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
+import VidCameraOnIcon from '@atlaskit/icon/glyph/vid-camera-on';
+import BitbucketReposIcon from '@atlaskit/icon/glyph/bitbucket/repos';
+import FeedbackIcon from '@atlaskit/icon/glyph/feedback';
+import MediaServicesDocumentIcon from '@atlaskit/icon/glyph/media-services/document';
 
 import documentation from '../../assets/home/documentation.svg';
 import tutorial from '../../assets/home/tutorial.svg';
@@ -170,7 +172,16 @@ class Card extends React.Component<CardProps> {
 const cards = [
   {
     to: '/content/guide',
-    icon: () => <CardIcon color={colors.R400} />,
+    icon: () => (
+      <CardIcon color={colors.R400}>
+        <PageFilledIcon
+          label="Documentation"
+          primaryColor={colors.N0}
+          secondaryColor={colors.Y400}
+          size="small"
+        />
+      </CardIcon>
+    ),
     image: documentation,
     title: 'Documentation',
     text: 'Everything you need to get up and running.',
@@ -181,7 +192,7 @@ const cards = [
     image: tutorial,
     icon: () => (
       <CardIcon color={colors.Y400}>
-        <PackagesIcon
+        <MediaDocIcon
           label="Tutorials"
           primaryColor={colors.N0}
           secondaryColor={colors.Y400}
@@ -198,12 +209,11 @@ const cards = [
     image: developer,
     icon: () => (
       <CardIcon color={colors.B400}>
-        <AtlassianIcon
+        <FeedbackIcon
           label="Development updates"
-          iconColor={colors.N0}
-          iconGradientStart={colors.B400}
-          iconGradientStop={colors.N0}
-          size="xsmall"
+          primaryColor={colors.N0}
+          secondaryColor={colors.Y400}
+          size="small"
         />
       </CardIcon>
     ),
@@ -232,7 +242,7 @@ const cards = [
     title: 'Rchain Github Repository',
     icon: () => (
       <CardIcon color={colors.Y400}>
-        <CodeIcon
+        <BitbucketReposIcon
           label="Rchain Repository"
           primaryColor={colors.N0}
           secondaryColor={colors.Y400}
@@ -264,7 +274,7 @@ const cards = [
     title: 'Discord Community',
     icon: () => (
       <CardIcon color={colors.N0}>
-        <BlogIcon
+        <PeopleGroupIcon
           label="Rchain Developer Blog"
           primaryColor={colors.P400}
           size="medium"
@@ -281,7 +291,7 @@ const cards = [
     title: 'Youtube Development Updates',
     icon: () => (
       <CardIcon color={colors.N0}>
-        <BlogIcon
+        <VidCameraOnIcon
           label="Youtube Development Updates"
           primaryColor={colors.P400}
           size="medium"

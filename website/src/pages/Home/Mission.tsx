@@ -72,7 +72,7 @@ const misionItems = [
   {
     title: "The language you've been waiting for ",
     text:
-      'Rholang is build on the latest research on concurrent languages. Up to now all functional languages are build on the lambda calculus. With rholang we build a new lanugage on top of the reflective high order calculus (rho-calculus). This leads to a full concurrent language, with a very simple an safe way for developer to write concurrent code. Rholang is a new calculus from research led by Greg Meredith inspired from the pi-calculus.',
+      'Rholang is build on the latest research on concurrent languages. Up to now all functional languages are build on the lambda calculus. With Rholang we build a new lanugage on top of the reflective high order calculus (rho-calculus). This leads to a full concurrent language, with a very simple an safe way for developer to write concurrent code. Rholang is a new calculus from research led by Greg Meredith inspired from the pi-calculus.',
   },
   {
     image: launch,
@@ -84,12 +84,13 @@ const misionItems = [
   },
   {
     title: 'A new consensus layer',
-    text: 'Pos formal verified',
+    text:
+      'Most blockchains are running serial in a chain, with that thoughput is very limited. Rchain is using DAGs (directed acyclic graphs) that have a tree like structure and scale massive. Further Rchain uses proof of stake from research led by Greg Meredith, Kent Shikama and Vlad Zamfir. The research solves current problems in Pos algorithms. Additionaly Rholang is fully verified and the whole Rchain project code is written in scala. With that Rholang is currently the only language, where the DAO Bug with Ethereum would have not happened.',
   },
   {
     title: 'A large community',
     text:
-      'The community for rholang is rchain. Rchain is founded as a cooperative with the democrativ thinking in mind - one member one vote. With more than 1500 registed members, rchain elects new board seats and functions as a decentralized cooperation.',
+      'The community for Rholang is the Rchain community. Rchain is founded as a cooperative with the democrativ thinking in mind - one member - one vote. With more than 1500 registed members, Rchain elects new board seats and functions as a decentralized cooperation.',
   },
   {
     image: group,
@@ -102,7 +103,7 @@ const misionItems = [
   {
     title: 'Build for dApp developers',
     text:
-      'Rholang developer ecosysem is growing. With a new typesafe api, Many example dApps like .... s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
+      'The Rholang developer ecosysem is growing. With a new typesafe api, Many example dApps like .... s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
   },
 ];
 
