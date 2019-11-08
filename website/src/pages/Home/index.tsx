@@ -80,7 +80,7 @@ export default class HomePage extends React.Component {
         <Frontend />
         <Below>
           <NewsBanner />
-          <Title data-testid="title">Atlaskit</Title>
+          <Title data-testid="title">Rholang</Title>
           <Intro>
             Atlassian&#39;s official UI library, built according to the
             Atlassian&nbsp;Design&nbsp;Guidelines.

@@ -14,6 +14,10 @@ import rocket from '../../assets/Rocket.png';
 import platform from '../../assets/Platform.png';
 import multiTool from '../../assets/multiTool.png';
 
+import documentation from '../../assets/home/documentation.svg';
+import tutorial from '../../assets/home/tutorial.svg';
+import developer from '../../assets/home/developer.svg';
+
 import {
   MOBILE_BREAKPOINT_MAX,
   TABLET_BREAKPOINT_MIN,
@@ -124,7 +128,7 @@ const Img = ({ src, alt = '' }: { src: string; alt?: string }) => (
     alt={alt}
     style={{
       margin: '0 auto 10px auto',
-      height: '200px',
+      height: '150px',
       display: 'block',
     }}
     src={src}
@@ -167,14 +171,14 @@ const cards = [
   {
     to: '/content/guide',
     icon: () => <CardIcon color={colors.R400} />,
-    image: rocket,
+    image: documentation,
     title: 'Documentation',
     text: 'Everything you need to get up and running.',
   },
   {
     to: '/content/tutorials',
     title: 'Tutorials',
-    image: platform,
+    image: tutorial,
     icon: () => (
       <CardIcon color={colors.Y400}>
         <PackagesIcon
@@ -191,7 +195,7 @@ const cards = [
     href: 'https://rchain.atlassian.net/wiki/spaces/CORE/overview',
     to: '',
     title: 'Development updates',
-    image: multiTool,
+    image: developer,
     icon: () => (
       <CardIcon color={colors.B400}>
         <AtlassianIcon

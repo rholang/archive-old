@@ -12,6 +12,12 @@ import debounce from 'lodash.debounce';
 import * as R from 'ramda';
 import { ThemeProvider } from 'styled-components';
 
+import dag from '../../assets/home/graph.svg';
+import blockchain from '../../assets/home/blockchain.svg';
+import group from '../../assets/home/group.svg';
+import nodes from '../../assets/home/nodes.svg';
+import launch from '../../assets/home/launch.svg';
+
 export const fonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
@@ -64,51 +70,46 @@ const theme = {
 
 const misionItems = [
   {
-    title: 'Documentation1',
+    title: "The language you've been waiting for ",
     text:
-      'imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
+      'Rholang is build on the latest research on concurrent languages. Up to now all functional languages are build on the lambda calculus. With rholang we build a new lanugage on top of the reflective high order calculus (rho-calculus). This leads to a full concurrent language, with a very simple an safe way for developer to write concurrent code. Rholang is a new calculus from research led by Greg Meredith inspired from the pi-calculus.',
   },
   {
-    image: rocket,
-    title: 'Documentation2',
-    text: 'Everything you need to get up and running.',
+    image: launch,
+    title: 'The language you ve been waiting for ',
   },
   {
-    image: rocket,
-    title: 'Documentation3',
-    text: 'Everything you need to get up and running.',
+    image: nodes,
+    title: 'A new consensus layer',
   },
   {
-    title: 'Documentation4',
+    title: 'A new consensus layer',
+    text: 'Pos formal verified',
+  },
+  {
+    title: 'A large community',
     text:
-      'imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
+      'The community for rholang is rchain. Rchain is founded as a cooperative with the democrativ thinking in mind - one member one vote. With more than 1500 registed members, rchain elects new board seats and functions as a decentralized cooperation.',
   },
   {
-    title: 'Documentation5',
+    image: group,
+    title: 'A large community',
+  },
+  {
+    image: blockchain,
+    title: 'Build for dApp developers',
+  },
+  {
+    title: 'Build for dApp developers',
     text:
-      'imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
-  },
-  {
-    image: rocket,
-    title: 'Documentation6',
-    text: 'Everything you need to get up and running.',
-  },
-  {
-    image: rocket,
-    title: 'Documentation7',
-    text: 'Everything you need to get up and running.',
-  },
-  {
-    title: 'Documentation8',
-    text:
-      'imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
+      'Rholang developer ecosysem is growing. With a new typesafe api, Many example dApps like .... s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
   },
 ];
 
 export type MissionProps = {
   image?: string;
   title: string;
-  text: string;
+  text?: string;
 };
 class MissionItem extends React.Component<MissionProps> {
   render() {
@@ -116,7 +117,7 @@ class MissionItem extends React.Component<MissionProps> {
 
     return image ? (
       <MissionContainer>
-        <img width="200px" src={image} alt="Logo" />;
+        <img width="150px" src={image} alt="Logo" />;
       </MissionContainer>
     ) : (
       <MissionContainer>
