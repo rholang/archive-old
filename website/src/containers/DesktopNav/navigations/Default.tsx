@@ -63,6 +63,12 @@ const defaultNavGroups = [
         icon: <BitbucketIcon label="Repository" />,
         external: true,
       },
+      {
+        to: 'https://github.com/fabcotech/rchain-toolkit',
+        title: 'RChain Toolkit',
+        icon: <BitbucketIcon label="Repository" />,
+        external: true,
+      },
 
       {
         to: 'https://developer.rchain.coop/',

@@ -71,7 +71,8 @@
     "start:people-and-teams": "              yarn run website:start **/packages/people-and-teams/**",
     "start:search": "                        yarn run website:start **/packages/search/**",
     "start:trello": "                        yarn run website:start **/packages/trello/**",
-    "start:teamwork-ecosystem": "            yarn run website:start **/packages/teamwork-ecosystem/**"
+    "start:teamwork-ecosystem": "            yarn run website:start **/packages/teamwork-ecosystem/**",
+    "deploy": "                              cd website && yarn depl:netlify"
   },
   "bolt": {
     "version": "^0.24.3",

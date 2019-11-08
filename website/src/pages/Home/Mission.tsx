@@ -103,7 +103,7 @@ const misionItems = [
   {
     title: 'Build for dApp developers',
     text:
-      'The Rholang developer ecosysem is growing. With a new typesafe api, Many example dApps like .... s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu',
+      'The Rholang developer ecosystem is growing. With a new typesafe api, dApps can be written for Rchain. Many dApps like RChain-Status, Dappy, MyRchainWallet, nth-caller-game, RSign, RCat and many more are developed by the community. Tutorials and an upgraded RNode API makes it easy for new developer to come onboard.',
   },
 ];
 
