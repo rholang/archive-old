@@ -38,6 +38,7 @@
     "netlify-cli": "^2.8.3",
     "node-fetch": "^2.2.0",
     "ramda": "^0.26.1",
+    "react-flexview": "^4.0.4",
     "react-quicklink-component": "^0.0.5",
     "react-styled-flexboxgrid": "^3.1.0",
     "react-video-play": "^2.0.3",

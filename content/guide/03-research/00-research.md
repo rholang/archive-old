@@ -7,8 +7,6 @@ description: Everything you need to know to get up and running with Atlaskit
 
 Much of the innovations that RChain brings to the world of blockchain and driven by fundamental breakthroughs in distributed systems programming, with the development of the Rho-calculus. Below, find an overview of the most relevant papers and sources underpinning the RChain technology.
 
-::: tip Learn More
-
 See [Intro to Design of Computational Calculi 4.1: Injecting Names
 into Rho-Calculus][intro] and more in the [Learn][] category of our
 blog.
@@ -16,13 +14,9 @@ blog.
 [intro]: https://www.rchain.coop/blog/intro-to-design-of-computational-calculi-4-1-injecting-names-into-rho-calculus/
 [learn]: https://www.rchain.coop/blog/category/developer/learn/
 
-:::
-
 ## Rho-calculus
 
-::: warning Rho-calculus
 the RChain execution model is derived from the syntax and semantics of rho-calculus. The rho-calculus is a variant of the π-calculus that was introduced in 2004 to provide the first model of concurrent computation with reflection. “Rho” stands for reflective, higher-order.
-:::
 
 Those unfamiliar with the π-calculus are strongly encouraged to explore it. The π-calculus is the first formal system to successfully model networks where nodes may regularly join and drop from the network. It assumes fine-grained concurrency and process communication i.e. two processes may be introduced by a third process. The rho-calculus extension inherits all of those features and adds reflection.
 

@@ -9,6 +9,7 @@ import Below from './Below';
 import Cards from './Cards';
 import Frontend from './Frontend';
 import NewsBanner from './NewsBanner';
+import Footer from './Footer';
 
 const Intro = styled.div`
   color: ${colors.N900};
@@ -28,15 +29,6 @@ const Intro = styled.div`
       color: ${colors.N0};
     }
   }
-`;
-
-const IconsCopyright = styled.div`
-  color: ${colors.N900};
-  font-size: 14px;
-  justify-content: center;
-  display: flex;
-  margin-top: 70px;
-  font-family: 'Charlie_Display_Regular', ${fonts}; /* stylelint-disable-line */
 `;
 
 const HomePageWrapper = styled.div`
@@ -86,12 +78,7 @@ export default class HomePage extends React.Component {
           </Intro>
           <Cards />
           <Mission />
-          <IconsCopyright>
-            <p>Icons made by &nbsp; </p>
-            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
-              Freepik
-            </a>{' '}
-          </IconsCopyright>
+          <Footer />
         </Below>
       </HomePageWrapper>
     );

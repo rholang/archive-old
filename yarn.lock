@@ -16364,6 +16364,13 @@ react-flexa@^0.9.1:
     lodash "^4.17.4"
     prop-types "^15.5.10"
 
+react-flexview@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/react-flexview/-/react-flexview-4.0.4.tgz#71dd3b7d1385c680720694becc80666260f6d5da"
+  integrity sha512-vclPtC4EjNnagEuC3KSXyr8YPtNE0gwxqO8CtJ4IsWe+eVtzetm6d0eNQ2cL+Ws7b/FazlieyoPGBGlBPvuTpw==
+  dependencies:
+    prop-types "^15.5.6"
+
 react-focus-lock@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-1.19.1.tgz#2f3429793edaefe2d077121f973ce5a3c7a0651a"
