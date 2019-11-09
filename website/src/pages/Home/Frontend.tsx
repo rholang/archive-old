@@ -104,7 +104,7 @@ export default () => {
         <Container960>
           <FirstViewLeft>
             <div>
-              <img width="200px" src={rhoLogo} alt="Logo" />
+              <img width="230px" src={rhoLogo} alt="Logo" />
               <Descritption>
                 Rholang is a massive scalable blockchain language with
                 unprecedented speed and reliability. Build on latest research
