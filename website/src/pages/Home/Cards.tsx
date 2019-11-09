@@ -58,7 +58,7 @@ export const CardsWrapper = styled.div`
   display: flex;
   align-items: start;
   max-width: 980px;
-  justify-content: start;
+  justify-content: center;
   margin: 0 auto;
   box-sizing: border-box;
   flex-wrap: wrap;
