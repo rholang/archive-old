@@ -2,7 +2,7 @@ import { DESKTOP_BREAKPOINT_MIN, MOBILE_BREAKPOINT_MAX } from '../../constants';
 import styled, { css } from 'styled-components';
 import React from 'react';
 import ModalDialogVideo from './ModalDialogVideo';
-import rhoLogo from '../../assets/home/RholangLogo.png';
+import rhoLogo from '../../assets/home/RholangLogo.svg';
 import network from '../../assets/home/network.svg';
 
 const fronta = css`
