@@ -1,8 +1,12 @@
-# Atlaskit
-This is the repository of the 
+# Rholang
+This is the repository of the website [https://rholang.github.io/](https://rholang.github.io/). 
 
 # Pre-requisites
-
+- Linux OS (due to some linux specific commands)
+- install globally
+  - yarn
+  - bolt
+    - yarn config set prefix ~/.yarn
 
 # Contributing
 
