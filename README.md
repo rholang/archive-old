@@ -20,28 +20,58 @@ This is the repository of the website [https://rholang.github.io/](https://rhola
 
 
 # Deploy
-
 - Deploy to Netlify
   - change .env.example to .env -> set credentials
   - yarn depl:netlify
 - Deploy to Github (gh-pages)
-  cd into /website/ -> yarn depl:gh-pages
+  - your github repository needs to branches: source and master
+  - cd into /website/ -> yarn depl:gh-pages
   
 # Tutorials
+If you want to be more advanced and contribute to this project, than the following details are helpfull.
 
 ## Bolt usage
 Bolt is like yarn workspaces and links the dependencies into each package under node_modules.
 
+### Add npm package
+- if you want e.g. a npm package to install under /website/ 
+  - cd into /website/
+  - bolt add -D webpack 
+    - install webpack package under devDependencies
+
+### Upgrade all npm packages from whole workspace to specific version
+- bolt ws upgrade webpack@4.41.2
+
+### Remove all npm packages from whole workspace
+- bolt ws remove webpack
+
 
 ## Folder structure
+- /build/webpack-config/config/index.js
+  - file for configure webpack (file-loaders ...)
+  
+- /content
+   - all markdown files belong here
+
+- /website
+  - landing page and whole website from rholang is here
+
+## Rebuild all packages
+- Normally most needed packages have a prebuild /dist folder
+- If you want to manually rebuild them:
+  - terminal: yarn build
 
 ## Errors solutions
 
+Error: $ babel src -d dist/cjs --root-mode upward { TypeError: /home/t/bak2/atlaskit-mk-2/packages/core/navigation-next/src/components/connected/SortableGroup/index.js: Property expression of JSXExpressionContainer expected node to be of a type ["Expression","JSXEmptyExpression"] 
+Solution: remove yarn.lock and replace it with that from this repository
 
+Error: White page after yarn start:home
+Solution: remove .cache-loader folder from /node_modules or look in chrome dev tools console
 
 # Contributing
 
-This community driven project should be bring all the awesome ressources for Rholang and Rchain together. Feel free to make a push request
+This community driven project should bring all the awesome resources for Rholang and Rchain together. Feel free to make a push request.
 
 # License
 
