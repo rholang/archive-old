@@ -7,16 +7,41 @@ This is the repository of the website [https://rholang.github.io/](https://rhola
   - yarn
   - bolt
     - yarn config set prefix ~/.yarn
+    - yarn global add bolt
+    - open file /home/<name>/.bashrc -> insert into: export PATH="$PATH:` yarn global bin`"
+    - restart pc -> bolt is globally available
+
+# Quick install
+- fork this repository and open with vscode (cd into /rholang.github.io/)
+- terminal: bolt
+  - executes yarn automatically and links project dependencies (uses yarn like workspaces)
+- yarn start:home
+  - website is locally available
+
+
+# Deploy
+
+- Deploy to Netlify
+  - change .env.example to .env -> set credentials
+  - yarn depl:netlify
+- Deploy to Github (gh-pages)
+  cd into /website/ -> yarn depl:gh-pages
+  
+# Tutorials
+
+## Bolt usage
+Bolt is like yarn workspaces and links the dependencies into each package under node_modules.
+
+
+## Folder structure
+
+## Errors solutions
+
+
 
 # Contributing
 
-Contribution is currently **only** available for Atlassian employees.
-
-We’re temporarily unable to grant contributor access to external developers.
-
-For **Atlassians**, if you want to make a request, suggest an improvement or raise a bug about Atlaskit, [read the contribution guide on our website][contributing_site] to get started, and our [CONTRIBUTING.md][contributing_repo] for more details.
-
-
+This community driven project should be bring all the awesome ressources for Rholang and Rchain together. Feel free to make a push request
 
 # License
 
