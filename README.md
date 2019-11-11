@@ -1,93 +1,77 @@
-# Atlaskit
+# Rholang
+This is the repository of the website [https://rholang.github.io/](https://rholang.github.io/). 
 
-[![node v8.4.0+](https://img.shields.io/badge/node-v8.4.0%2B-brightgreen.svg)](https://nodejs.org/en/)
-[![bolt v0.20.6+](https://img.shields.io/badge/bolt-v0.20.6%2B-brightgreen.svg)](http://boltpkg.com/)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://ecosystem.atlassian.net/servicedesk/customer/portal/24)
+# Pre-requisites
+- Linux OS (due to some linux specific commands)
+- install globally
+  - yarn
+  - bolt
+    - yarn config set prefix ~/.yarn
+    - yarn global add bolt
+    - open file /home/<name>/.bashrc -> insert into: export PATH="$PATH:` yarn global bin`"
+    - restart pc -> bolt is globally available
 
-Atlaskit is the technical implementation of the [Atlassian Design Guidelines][adg]. It is a collection of reusable components that can be downloaded independently into your projects. Each component is also independently versioned and published to npm.
+# Quick install
+- fork this repository and open with vscode (cd into /rholang.github.io/)
+- terminal: bolt
+  - executes yarn automatically and links project dependencies (uses yarn like workspaces)
+- yarn start:home
+  - website is locally available
 
-The full list of components can be found in the [Atlaskit Registry][atlaskitregistry].
 
-**This project is bound by a [Code of Conduct][codeofconduct].**
+# Deploy
+- Deploy to Netlify
+  - change .env.example to .env -> set credentials
+  - yarn depl:netlify
+- Deploy to Github (gh-pages)
+  - your github repository needs to branches: source and master
+  - cd into /website/ -> yarn depl:gh-pages
+  
+# Tutorials
+If you want to be more advanced and contribute to this project, than the following details are helpfull.
 
-# Installation and usage
+## Bolt usage
+Bolt is like yarn workspaces and links the dependencies into each package under node_modules.
 
-Atlaskit components and utilities are available as discrete npm packages.
+### Add npm package
+- if you want e.g. a npm package to install under /website/ 
+  - cd into /website/
+  - bolt add -D webpack 
+    - install webpack package under devDependencies
 
-The `@atlassiansox/analytics-web-client` package is a peer dependency as it is a private package and so must be installed alongside the tool.
+### Upgrade all npm packages from whole workspace to specific version
+- bolt ws upgrade webpack@4.41.2
 
-#### Pre-requisites
+### Remove all npm packages from whole workspace
+- bolt ws remove webpack
 
-It's strongly advised to use the Atlaskit CSS reset in your whole project, or some Atlaskit components
-may diverge in appearance:
 
-```javascript
-import '@atlaskit/css-reset';
-```
+## Folder structure
+- /build/webpack-config/config/index.js
+  - file for configure webpack (file-loaders ...)
+  
+- /content
+   - all markdown files belong here
 
-In general, you should avoid directly styling base elements (ex. p, h1, h2) and uses classes instead.
+- /website
+  - landing page and whole website from rholang is here
 
-#### Example for React projects
+## Rebuild all packages
+- Normally most needed packages have a prebuild /dist folder
+- If you want to manually rebuild them:
+  - terminal: yarn build
 
-Atlaskit components are built for React. Here's an example of using the Avatar component:
+## Errors solutions
 
-1. First, you specify a component into your project as a dependency using npm: `npm install @atlaskit/avatar`
-2. Then you can use it in your React projects like this:
+Error: $ babel src -d dist/cjs --root-mode upward { TypeError: /home/t/bak2/atlaskit-mk-2/packages/core/navigation-next/src/components/connected/SortableGroup/index.js: Property expression of JSXExpressionContainer expected node to be of a type ["Expression","JSXEmptyExpression"] 
+Solution: remove yarn.lock and replace it with that from this repository
 
-```javascript
-import React from 'react';
-import Avatar from '@atlaskit/avatar';
-
-export default (
-  <Avatar
-    src="https://design.atlassian.com/images/avatars/project-128.png"
-    presence="online"
-    size="large"
-  />
-);
-```
-
-Check out the [Atlaskit Registry][atlaskitregistry] to learn more.
-
-#### Example for non-React projects
-
-There is a subset of components available as styles called the Reduced UI pack.
-To use:
-
-1. You include these into your the HTML projects.
-
-```html
-<link rel="stylesheet" href="//unpkg.com/@atlaskit/css-reset@latest" />
-<link rel="stylesheet" href="//unpkg.com/@atlaskit/reduced-ui-pack@latest" />
-```
-
-2. Then you can style HTML with
-
-`<button class="ak-button ak-button__appearance-primary">Submit</button>`
-
-Check out the [Reduced UI pack](http://go.atlassian.com/reduced-ui-pack) for more examples and details.
-
-#### Upgrading components
-
-When upgrading an Atlaskit component, all changelogs can be found in the [Atlaskit Registry][atlaskitregistry].
-
-# Documentation
-
-A comprehensive list of components and detailed usage of each can be found in the [Atlaskit Registry][atlaskitregistry], which contains both guides on contributing to atlaskit, as well as documentation for each package.
-
-You can also find how each component is meant to be used from a design perspective on the [Atlassian Design Guidelines][adg] website.
+Error: White page after yarn start:home
+Solution: remove .cache-loader folder from /node_modules or look in chrome dev tools console
 
 # Contributing
 
-Contribution is currently **only** available for Atlassian employees.
-
-We’re temporarily unable to grant contributor access to external developers.
-
-For **Atlassians**, if you want to make a request, suggest an improvement or raise a bug about Atlaskit, [read the contribution guide on our website][contributing_site] to get started, and our [CONTRIBUTING.md][contributing_repo] for more details.
-
-### Reporting issues
-
-Our [CONTRIBUTING.md][contributing_repo] includes links for where to raise issues in Atlaskit.
+This community driven project should bring all the awesome resources for Rholang and Rchain together. Feel free to make a push request.
 
 # License
 
