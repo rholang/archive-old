@@ -2,10 +2,13 @@
 title: Design patterns
 description: Everything you need to know to get up and running with Atlaskit
 ---
+
 # Design patterns
+
 Here you find some patterns you will often use to solve same Tasks.
 
 ## Mutable state
+
 ```javascript{numberLines: true}
   new MakeCell in {
     // Makes a single cell in which you can store values
@@ -44,33 +47,33 @@ Here you find some patterns you will often use to solve same Tasks.
     }
   }
 ```
-1.) We create a new channel MakeCell and then use it on lineas the name of an internal contract.  No process other than the code inside this lexical scope can invoke it.
+
+1.) We create a new channel MakeCell and then use it on lineas the name of an internal contract. No process other than the code inside this lexical scope can invoke it.
 
 3.) The `MakeCell` contract takes three arguments. The first argument is the initial value to be stored in the cell. The second and third arguments are channels over which the cell will receive requests to get and set the value. Note that we want the first argument to be a process and the second and third to be names, but names are always received over channels so we need to make the first argument a pattern beginning with `@` to indicate that the name we receive as the first argument is a quoted process and it is that process which we want to bind to the variable.
 
-4.) To store the value, we create a new channel.  This channel will have at most one message on it containing the current value of the cell.  
+4.) To store the value, we create a new channel. This channel will have at most one message on it containing the current value of the cell.
 
-5.) Before this line, there are no messages on the `valueStore` channel.  After we send the initial value, it is the only value on that channel.
+5.) Before this line, there are no messages on the `valueStore` channel. After we send the initial value, it is the only value on that channel.
 
-6.) We set up a contract to listen on the `get` channel.  Each time a message is sent on `get`, the body of the contract will be executed
+6.) We set up a contract to listen on the `get` channel. Each time a message is sent on `get`, the body of the contract will be executed
 
-7.) We block until we get one message from the `valueStore` channel.  Because there is at most one message ever waiting on `valueStore`, reading the message behaves much like acquiring a lock.
+7.) We block until we get one message from the `valueStore` channel. Because there is at most one message ever waiting on `valueStore`, reading the message behaves much like acquiring a lock.
 
 8.) We send the current value on `valueStore` again, allowing other messages to be processed (i.e. releasing the lock), and we send the current value back to the client on the `ack` channel.
 
 11.) Concurrently with the `get` contract, we run a contract listening on `set`.
 
-12.) We block until there's a message on `valueStore`, then read it.  We throw away the message that we read.
+12.) We block until there's a message on `valueStore`, then read it. We throw away the message that we read.
 
 13.) We send the new value to store on `valueStore` and signal that the operation is complete.
 
-18-36) The usage code demonstrates creating a cell, assigning the initial value 123, getting that value, setting the value to 456, then getting that value.  
+18-36) The usage code demonstrates creating a cell, assigning the initial value 123, getting that value, setting the value to 456, then getting that value.
 
 Note the deep layers of callback. Rholang was designed to make concurrent computations natural to express; as a consequence, data dependencies implicit in sequencing in other languages must be made explicit.
 
-
-
 ## Coat check
+
 ```javascript{numberLines: true}
   new MakeCoatCheck in {
     contract MakeCoatCheck(ret) = {
@@ -106,7 +109,7 @@ Note the deep layers of callback. Rholang was designed to make concurrent comput
       for (ticket <- ret) {
         contract get(return) = { cc!("get", *ticket, *return) } |
         contract set(@value, return) = { cc!("set", *ticket, value, *return) } |
-        
+
         get!(*ret) | for(@r <- ret) {
           //r is equal to 0
           set!(1, *ret) | for(_ <- ret) {
@@ -121,7 +124,8 @@ Note the deep layers of callback. Rholang was designed to make concurrent comput
     }
   }
 ```
-2.) One design pattern, used in the MakeCell contract above, is to receive from the caller a channel for each different piece of functionality that a process provides.  An object-oriented programmer might say that MakeCell requires the caller to provide a channel for each method. MakeCoatCheck uses a more object-oriented approach, as we'll see.
+
+2.) One design pattern, used in the MakeCell contract above, is to receive from the caller a channel for each different piece of functionality that a process provides. An object-oriented programmer might say that MakeCell requires the caller to provide a channel for each method. MakeCoatCheck uses a more object-oriented approach, as we'll see.
 
 3.) We create a `port` channel for interacting with the coat check as well as a `table` name which will be used in storing/retrieving values in the coat check.
 
@@ -132,6 +136,7 @@ Note the deep layers of callback. Rholang was designed to make concurrent comput
 8.) We take advantage of being able to quote any process to make a name in order to create a unique name for each value to be stored at. The process `*ticket | *table` is produced by the concurrent composition of the processes produced by unquoting the names `ticket` and `table`. That process can then be quoted to form a unique name that is then used to store the value by sending it on the name.
 
 ## Dining philosophers and deadlock
+
 ```javascript
   new philosopher1, philosopher2, north, south, knife, spoon in {
     north!(*knife) |
@@ -148,9 +153,11 @@ Note the deep layers of callback. Rholang was designed to make concurrent comput
     } }
   }
 ```
-The dining philosophers problem has two philosophers that share only one set of silverware.  Philosopher1 sits on the east side of the table while Philosopher2 sits on the west. Each needs both a knife and a spoon in order to eat.  Each one refuses to relinquish a utensil until he has used both to take a bite.  If both philosophers reach first for the utensil at their right, both will starve: Philosopher1 gets the knife, Philosopher2 gets the spoon, and neither ever lets go.
+
+The dining philosophers problem has two philosophers that share only one set of silverware. Philosopher1 sits on the east side of the table while Philosopher2 sits on the west. Each needs both a knife and a spoon in order to eat. Each one refuses to relinquish a utensil until he has used both to take a bite. If both philosophers reach first for the utensil at their right, both will starve: Philosopher1 gets the knife, Philosopher2 gets the spoon, and neither ever lets go.
 
 Here's how to solve the problem:
+
 ```javascript{numberLines: true}
   new philosopher1, philosopher2, north, south, knife, spoon in {
     north!(*knife) |
@@ -167,6 +174,7 @@ Here's how to solve the problem:
     }
   }
 ```
+
 4, 9) The join operator, denoted with a semicolon `;`, declares that the continuation should only proceed if there is a message available on each of the channels simultaneously, preventing the deadlock above.
 
 ## Crypto channels
@@ -184,8 +192,8 @@ Hashing functions are exposed as channels which expect two arguments:
 - byte array to hash
 - return channel for sending back the hash represented as byte array
 
-
 ### Example usage:
+
 ```javascript
 new x, y, stdout(`rho:io:stdout`) in {
     x!(@"name"!("Joe") | @"age"!(40)) |  // (1)
@@ -201,7 +209,6 @@ new x, y, stdout(`rho:io:stdout`) in {
 }
 ```
 
-
 ### Verify
 
 1. Let's hash a rholang program and print out it in base16. In rholang:
@@ -214,8 +221,11 @@ new x, y, stdout(`rho:io:stdout`) in {
 }
 ```
 
-  This will print the hash of our program `(1)` :
-  `a6da46a1dc7ed715d4cd6472a736249a4d11142d160dbef9f20ae493de908c4e`
+This will print the hash of our program `(1)` :
+
+```
+`a6da46a1dc7ed715d4cd6472a736249a4d11142d160dbef9f20ae493de908c4e`
+```
 
 2. We need a pair of keys; let's generate some with `Ed25519`, available in the project. In the scala console, we enter the following:
 
@@ -240,14 +250,15 @@ val base16Repr = Base16.encode(signature)
 
 4.  Now we can pass the signature and public key to our rholang program to verify it using the available crypto functions.
 
-  The `ed25519Verify` channel expects four arguments as follows:
+The `ed25519Verify` channel expects four arguments as follows:
 
-  - data to verify. In our case, this will be the keccak256 hash of our rholang program. The hash is represented in base16, so we need to call `hexToBytes` on it to turn the string into byte array
-  - signature. Again, we have hexadecimal string, so we need to turn it into a byte array with `hexToBytes`.
-  - public key. This is the public key corresponding to the private one used to issue the signature.
-  - channel on which the result of verification will be returned.
+- data to verify. In our case, this will be the keccak256 hash of our rholang program. The hash is represented in base16, so we need to call `hexToBytes` on it to turn the string into byte array
+- signature. Again, we have hexadecimal string, so we need to turn it into a byte array with `hexToBytes`.
+- public key. This is the public key corresponding to the private one used to issue the signature.
+- channel on which the result of verification will be returned.
 
-  So, in rholang we run:
+So, in rholang we run:
+
 ```javascript
 new x, stdout(`rho:io:stdout`) in {
   @"ed25519Verify"!("a6da46a1dc7ed715d4cd6472a736249a4d11142d160dbef9f20ae493de908c4e".hexToBytes(), "d0a909078ce8b8706a641b07a0d4fe2108064813ce42009f108f89c2a3f4864aa1a510d6dfccad3b62cd610db0bfe82bcecb08d813997fa7df14972f56017e0b".hexToBytes(),"288755c48c3951f89c5f0ffe885088dc0970fd935bc12adfdd81f81bb63d6219".hexToBytes(), *x) |
@@ -255,49 +266,56 @@ new x, stdout(`rho:io:stdout`) in {
 }
 
 ```
-  and we should see:
+
+and we should see:
+
 ```javascript
 @{true}
 ```
 
-  which means that our signed hash is verified.
+which means that our signed hash is verified.
 
-  If we, for example, pass in a corrupted hash, changing the initial 'a' to a 'b':
- ```javascript
-  new x, stdout(`rho:io:stdout`) in {
-      @"ed25519Verify"!("b6da46a1dc7ed615d4cd6472a736249a4d11142d160dbef9f20ae493de908c4e".hexToBytes(), "d0a909078ce8b8706a641b07a0d4fe2108064813ce42009f108f89c2a3f4864aa1a510d6dfccad3b62cd610db0bfe82bcecb08d813997fa7df14972f56017e0b".hexToBytes(),"288755c48c3951f89c5f0ffe885088dc0970fd935bc12adfdd81f81bb63d6219".hexToBytes(), *x) |
-      for (@v <- x) { stdout!(v) }
-  }
+If we, for example, pass in a corrupted hash, changing the initial 'a' to a 'b':
+
+```javascript
+ new x, stdout(`rho:io:stdout`) in {
+     @"ed25519Verify"!("b6da46a1dc7ed615d4cd6472a736249a4d11142d160dbef9f20ae493de908c4e".hexToBytes(), "d0a909078ce8b8706a641b07a0d4fe2108064813ce42009f108f89c2a3f4864aa1a510d6dfccad3b62cd610db0bfe82bcecb08d813997fa7df14972f56017e0b".hexToBytes(),"288755c48c3951f89c5f0ffe885088dc0970fd935bc12adfdd81f81bb63d6219".hexToBytes(), *x) |
+     for (@v <- x) { stdout!(v) }
+ }
 ```
 
-  we will get:
+we will get:
+
 ```javascript
 @{false}
 ```
 
 ## Secure design patterns
 
-In this section we describe several design patterns.  These patterns are adapted from Marc Stiegler's [_A PictureBook of Secure Cooperation_](http://erights.org/talks/efun/SecurityPictureBook.pdf).
+In this section we describe several design patterns. These patterns are adapted from Marc Stiegler's [_A PictureBook of Secure Cooperation_](http://erights.org/talks/efun/SecurityPictureBook.pdf).
 
 ### Facets
 
-In the MakeCell contract, the client provides two channels, one for getting the value and one for setting it.  If the client then passes only the `get` channel to another process, that process effectively has a read-only view of the cell.  
+In the MakeCell contract, the client provides two channels, one for getting the value and one for setting it. If the client then passes only the `get` channel to another process, that process effectively has a read-only view of the cell.
 
-Channels like `get` and `set` are called "facets" of the process.  They encapsulate the authority to perform the action.  If the `set` channel is a public channel like `@"Foo"`, then anyone who can learn or even guess the string `"Foo"` has the authority to set the cell's value.  On the other hand, if the `set` channel was created with the `new` operator, then there's no way for any other process to construct the `set` channel; it must be passed to a process directly in order for the process to use it.  
+Channels like `get` and `set` are called "facets" of the process. They encapsulate the authority to perform the action. If the `set` channel is a public channel like `@"Foo"`, then anyone who can learn or even guess the string `"Foo"` has the authority to set the cell's value. On the other hand, if the `set` channel was created with the `new` operator, then there's no way for any other process to construct the `set` channel; it must be passed to a process directly in order for the process to use it.
 
 Note that possession of `get` and `set` is also authority to intercept messages sent to the cell:
+
 ```javascript
 for (@ret <- get) { P } |
 for (@ret <- get) { Q } |
 get!(*ack)
 ```
-This term has two processes listening on the channel `get` and a single message sent over `get`.  Only one of the two processes will be able to receive the message.
 
-By receiving channels from the client for getting and setting, the MakeCell contract is leaving the decisions about how public those channels are to the client.  The MakeCoatCheck contract, on the other hand, constructs its own channels and exposes methods the client, so it is in a position to enforce privacy guarantees.
+This term has two processes listening on the channel `get` and a single message sent over `get`. Only one of the two processes will be able to receive the message.
+
+By receiving channels from the client for getting and setting, the MakeCell contract is leaving the decisions about how public those channels are to the client. The MakeCoatCheck contract, on the other hand, constructs its own channels and exposes methods the client, so it is in a position to enforce privacy guarantees.
 
 ### Attenuating forwarders
 
-In the MakeCoatCheck contract, there's only one channel and messages are dispatched internally.  To get the same effect as a read-only facet, we can create a forwarder process that simply ignores any messages it doesn't want to forward.  The contract below only forwards the "get" method.
+In the MakeCoatCheck contract, there's only one channel and messages are dispatched internally. To get the same effect as a read-only facet, we can create a forwarder process that simply ignores any messages it doesn't want to forward. The contract below only forwards the "get" method.
+
 ```javascript
 new MakeGetForwarder in {
   contract MakeGetForwarder(target, ret) = {
@@ -310,9 +328,11 @@ new MakeGetForwarder in {
   }
 }
 ```
+
 ### Revocation
 
 We can implement revocation by creating a forwarder with a kill switch.
+
 ```javascript{numberLines: true}
   new MakeRevokableForwarder in {
     contract MakeRevokableForwarder(target, ret) = {
@@ -332,19 +352,21 @@ We can implement revocation by creating a forwarder with a kill switch.
     }
   }
 ```
+
 3.) We create a port to listen for method calls and a channel `forwardFlag` to store whether to forward messages.
 
 4.) We return the channel on which clients send requests and the channel on which to send the kill signal.
 
 5.) We set the initial state of `forwardFlag` to true.
 
-6-11) We read in an arbitrary message, get and replace the value of the flag.  If the flag is true, we forward the message to `target`.
+6-11) We read in an arbitrary message, get and replace the value of the flag. If the flag is true, we forward the message to `target`.
 
-12-14) If a message is ever sent on the `kill` channel, we set `forwardFlag` to false.  The forwarder process then stops forwarding messages.
+12-14) If a message is ever sent on the `kill` channel, we set `forwardFlag` to false. The forwarder process then stops forwarding messages.
 
 ### Composition
 
 By combining an attenuating forwarder with a revokable forwarder, we get both features:
+
 ```javascript
 new ret in {
   MakeGetForwarder(target, ret) |
@@ -361,9 +383,11 @@ new ret in {
   }
 }
 ```
+
 ### Logging forwarder
 
 A logging forwarder can record all messages sent on a channel by echoing them to a second channel.
+
 ```javascript
 contract MakeLoggingForwarder(target, logger, ret) = {
   new port in {
@@ -375,11 +399,13 @@ contract MakeLoggingForwarder(target, logger, ret) = {
   }
 }
 ```
+
 ### Accountability
 
-Suppose Alice has a channel and would like to log Bob's access to it.  Bob would like to delegate the use of that channel to Carol and log her access.  Each party is free to construct their own logging forwarder around the channel they have received.  Alice will hold Bob responsible for whatever Carol does.
+Suppose Alice has a channel and would like to log Bob's access to it. Bob would like to delegate the use of that channel to Carol and log her access. Each party is free to construct their own logging forwarder around the channel they have received. Alice will hold Bob responsible for whatever Carol does.
 
 ### Sealing and unsealing
+
 ```javascript
 contract MakeSealerUnsealer(ret) =  {
   new sealer, unsealer, ccRet in {
@@ -397,20 +423,22 @@ contract MakeSealerUnsealer(ret) =  {
 }
 ```
 
-A sealer/unsealer pair gives the same functionality as public keys, but without cryptography. It's merely an attenuation of the coat check described above.  This design pattern can be used to sign something on a user's behalf.  In the Rholang blockchain tutorial, we'll see that a sealer/unsealer pair even works as a signing/verification pair of keys on the blockchain because there are no secrets to store, only unforgeable names to be kept inaccessible.
+A sealer/unsealer pair gives the same functionality as public keys, but without cryptography. It's merely an attenuation of the coat check described above. This design pattern can be used to sign something on a user's behalf. In the Rholang blockchain tutorial, we'll see that a sealer/unsealer pair even works as a signing/verification pair of keys on the blockchain because there are no secrets to store, only unforgeable names to be kept inaccessible.
 
 ### Beware of sending attenuators
 
-A basic principle to keep in mind with RChain processes is one that is similar to more traditional web applications: whatever code you send to another party can be disassembled.  Ever since the late 1990s when buying things over the web became possible, [there have been e-commerce platforms](https://blog.detectify.com/2016/11/17/7-most-common-e-commerce-security-mistakes/) where the platform relied on the users' browsers to send the correct price of the item back to it.  The authors didn't think about the user opening the developer tools and changing the price before it got sent back.  The right way to build an e-commerce platform is to store the prices on the server and check them there.
+A basic principle to keep in mind with RChain processes is one that is similar to more traditional web applications: whatever code you send to another party can be disassembled. Ever since the late 1990s when buying things over the web became possible, [there have been e-commerce platforms](https://blog.detectify.com/2016/11/17/7-most-common-e-commerce-security-mistakes/) where the platform relied on the users' browsers to send the correct price of the item back to it. The authors didn't think about the user opening the developer tools and changing the price before it got sent back. The right way to build an e-commerce platform is to store the prices on the server and check them there.
 
 Suppose that Bob is willing to run some code for Alice; he has a contract that says something like, "Get a process from this channel and run it."
+
 ```javascript
 for (p <- x) { *p }
 ```
-This is just like a web browser being willing to run the JavaScript code it gets from a website.  If Alice sends Bob an attenuating forwarder, Bob can use the pattern matching productions in Rholang to take apart the process and get access to the underlying resource.  Instead, like in the e-commerce example, Alice should only send code that forwards requests to her own processes and do the attenuation there.
+
+This is just like a web browser being willing to run the JavaScript code it gets from a website. If Alice sends Bob an attenuating forwarder, Bob can use the pattern matching productions in Rholang to take apart the process and get access to the underlying resource. Instead, like in the e-commerce example, Alice should only send code that forwards requests to her own processes and do the attenuation there.
 
 ## Conclusion
 
-Rholang is a language designed for use on a blockchain, but we have not mentioned anything about nodes, namespaces, wallets, Rev and phlogiston, network structure, or Casper.  A forthcoming document will address all these issues and more.
+Rholang is a language designed for use on a blockchain, but we have not mentioned anything about nodes, namespaces, wallets, Rev and phlogiston, network structure, or Casper. A forthcoming document will address all these issues and more.
 
 We hope that the foregoing examples spark a desire to write more code and demonstrate the ease of expressing concurrent designs.
