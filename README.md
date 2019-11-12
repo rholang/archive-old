@@ -22,7 +22,7 @@ This is the repository of the website [https://rholang.github.io/](https://rhola
 # Deploy
 - Deploy to Netlify
   - change .env.example to .env -> set credentials
-  - yarn depl:netlify
+  - yarn depl
 - Deploy to Github (gh-pages)
   - your github repository needs to branches: source and master
   - cd into /website/ -> yarn depl:gh-pages
