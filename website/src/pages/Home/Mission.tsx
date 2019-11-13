@@ -72,7 +72,7 @@ const misionItems = [
   {
     title: "The language you've been waiting for ",
     text:
-      'Rholang is build on the latest research on concurrent languages. Up to now all functional languages are build on the lambda calculus. With Rholang we built a new language on top of the reflective high order calculus (rho-calculus). This leads to a full concurrent language, with a very simple an safe way for developer to write concurrent code. Rholang is a new calculus from research led by Greg Meredith inspired from the pi-calculus.',
+      'Rholang is build on the latest research on concurrent languages. Up to now all functional languages are build on the lambda calculus. With Rholang we built a new language on top of the reflective high order calculus (rho-calculus). This leads to a full concurrent language, with a very simple an safe way for developers to write concurrent code. Rholang is a new calculus from research led by Greg Meredith inspired from the pi-calculus.',
   },
   {
     image: launch,

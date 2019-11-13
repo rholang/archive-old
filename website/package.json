@@ -15,7 +15,7 @@
     "start": "node ./node_modules/@atlaskit/webpack-config/bin/dev.js ",
     "build": "rm -rf dist && node --max-old-space-size=6192 ./node_modules/@atlaskit/webpack-config/bin/build.js ",
     "build:home": "rm -rf dist && node --max-old-space-size=6192 ./node_modules/@atlaskit/webpack-config/bin/build.js **/packages/home/**",
-    "build:report": "yarn build --report",
+    "build:report": "yarn build:home --report",
     "build:no-minimize": "yarn build:home --no-minimize",
     "build:copy": "cp dist/index.html dist/404.html && cp -R public/* dist/",
     "deploy:staging": "STAGING=true node ./scripts/retry.publishing.website.js",
