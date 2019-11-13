@@ -6,4 +6,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: http://rholang.netlify.com/sitemap.xml
+Sitemap: https://rholang.github.io/sitemap.xml

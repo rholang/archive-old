@@ -8,7 +8,7 @@ export default () => {
       name: '1080p',
       source: [
         {
-          source: 'https://rholang.netlify.com/home/rchain-video.mp4',
+          source: 'https://rholang.github.io//home/rchain-video.mp4',
           type: VideoSourceType.video_mp4,
         },
       ],
