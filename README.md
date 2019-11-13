@@ -3,7 +3,7 @@ This is the repository of the website [https://rholang.github.io/](https://rhola
 
 # Pre-requisites
 - Linux OS (due to some linux specific commands)
-- min 8 GB RAM
+- min. 8 GB RAM
 - install globally
   - yarn
   - bolt
