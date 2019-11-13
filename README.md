@@ -3,29 +3,34 @@ This is the repository of the website [https://rholang.github.io/](https://rhola
 
 # Pre-requisites
 - Linux OS (due to some linux specific commands)
+- min 8 GB RAM
 - install globally
   - yarn
   - bolt
-    - yarn config set prefix ~/.yarn
-    - yarn global add bolt
+    - $ yarn config set prefix ~/.yarn
+    - $ yarn global add bolt
     - open file /home/<name>/.bashrc -> insert into: export PATH="$PATH:` yarn global bin`"
     - restart pc -> bolt is globally available
+- Verify that you have enough available watchers in your system. If this value is too low, the file watcher in Webpack won't recognize the changes
+  - $ cat /proc/sys/fs/inotify/max_user_watches
+  - $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+  - $ sudo sysctl -p
 
 # Quick install
 - fork this repository and open with vscode (cd into /rholang.github.io/)
-- terminal: bolt
+- $ bolt
   - executes yarn automatically and links project dependencies (uses yarn like workspaces)
-- yarn start:home
+- $ yarn start:home
   - website is locally available
 
 
 # Deploy
 - Deploy to Netlify
   - change .env.example to .env -> set credentials
-  - yarn depl
+  - $ yarn depl
 - Deploy to Github (gh-pages)
   - your github repository needs to branches: source and master
-  - cd into /website/ -> yarn depl:gh-pages
+  - cd into /website/ -> $ yarn depl:gh-pages
   
 # Tutorials
 If you want to be more advanced and contribute to this project, than the following details are helpfull.
@@ -36,14 +41,14 @@ Bolt is like yarn workspaces and links the dependencies into each package under 
 ### Add npm package
 - if you want e.g. a npm package to install under /website/ 
   - cd into /website/
-  - bolt add -D webpack 
+  - $ bolt add -D webpack 
     - install webpack package under devDependencies
 
 ### Upgrade all npm packages from whole workspace to specific version
-- bolt ws upgrade webpack@4.41.2
+- $ bolt ws upgrade webpack@4.41.2
 
 ### Remove all npm packages from whole workspace
-- bolt ws remove webpack
+- $ bolt ws remove webpack
 
 
 ## Folder structure
