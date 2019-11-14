@@ -85,7 +85,7 @@ const misionItems = [
   {
     title: 'A new consensus layer',
     text:
-      'Most blockchains are running serial like a chain, with that, thoughput is very limited. Rchain is using DAGs (directed acyclic graphs) that have a tree like structure and scale massively. Further Rchain uses proof of stake from research led by Greg Meredith, Kent Shikama, Christian Williams and Vlad Zamfir. The research solves current problems in Pos algorithms. Additionaly Rholang code is fully verified and the whole Rchain project code is written in scala. With that Rholang is currently the only language, where the DAO Bug with Ethereum would have not happened.',
+      'Most blockchains are running serial like a chain, with that, throughput is very limited. Rchain is using DAGs (directed acyclic graphs) that have a tree like structure and scale massively. Further Rchain uses proof of stake from research led by Greg Meredith, Kent Shikama, Christian Williams and Vlad Zamfir. The research solves current problems in Pos algorithms. Additionaly Rholang code is fully verified and the whole Rchain project code is written in scala. With that Rholang is currently the only language, where the DAO Bug with Ethereum would have not happened.',
   },
   {
     title: 'A large community',
