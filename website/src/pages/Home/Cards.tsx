@@ -298,7 +298,7 @@ const cards = [
         />
       </CardIcon>
     ),
-    text: 'Watch every wednesday the development updates from Rchain',
+    text: 'Watch every Wednesday the development updates from Rchain',
   },
   {
     href: 'http://revdefine.io/',
