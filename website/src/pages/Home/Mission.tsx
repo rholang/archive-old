@@ -85,7 +85,7 @@ const misionItems = [
   {
     title: 'A new consensus layer',
     text:
-      'Most blockchains are running serial like a chain, with that, throughput is very limited. Rchain is using DAGs (directed acyclic graphs) that have a tree like structure and scale massively. Further Rchain uses proof of stake from research led by Greg Meredith, Kent Shikama, Christian Williams and Vlad Zamfir. The research solves current problems in Pos (Proove of stake) algorithms. Additional Rholang code is fully verified and the whole Rchain project code is written in Scala. With that Rholang is currently the only language, where the DAO Bug with Ethereum would have not happened.',
+      'Most blockchains are running serial like a chain, with that, throughput is very limited. Rchain is using DAGs (directed acyclic graphs) that have a tree like structure and scale massively. Further Rchain uses proof of stake from research led by Greg Meredith, Kent Shikama, Christian Williams and Vlad Zamfir. The research solves current problems in Pos (Proof of stake) algorithms. Additional Rholang code is fully verified and the whole Rchain project code is written in Scala. With that Rholang is currently the only language, where the DAO Bug with Ethereum would have not happened.',
   },
   {
     title: 'A large community',
@@ -103,7 +103,7 @@ const misionItems = [
   {
     title: 'Build for dApp developers',
     text:
-      'The Rholang developer ecosystem is growing. With a new typesafe api, dApps can be written for Rchain. Many dApps like RChain-Status, Dappy, MyRchainWallet, nth-caller-game, RSign, RCat and many more are developed by the community. Tutorials and an upgraded RNode API makes it easy for new developer to come onboard.',
+      'The Rholang developer ecosystem is growing. With a new type-safe api, dApps can be written for Rchain. Many dApps like RChain-Status, Dappy, MyRchainWallet, nth-caller-game, RSign, RCat and many more are developed by the community. Tutorials and an upgraded RNode API makes it easy for new developer to come onboard.',
   },
 ];
 
