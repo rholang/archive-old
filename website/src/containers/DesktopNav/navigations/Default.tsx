@@ -95,6 +95,12 @@ const defaultNavGroups = [
         icon: <DashboardIcon label="Rholang Cloud" />,
         external: true,
       },
+      {
+        to: 'http://revdefine.io/',
+        title: 'Rchain Block Explorer',
+        icon: <DashboardIcon label="Rholang Cloud" />,
+        external: true,
+      },
     ],
   },
 ];
