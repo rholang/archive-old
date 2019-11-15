@@ -4,13 +4,35 @@ import GlobalTheme from '@atlaskit/theme';
 import Page from '@atlaskit/page';
 import { RouteProps } from 'react-router';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
+import Loadable from 'react-loadable';
 import { DESKTOP_BREAKPOINT_MIN } from '../constants';
-import FullscreenExamples from '../pages/Examples';
-import { modalRoutes, pageRoutes } from '../routes';
-import ErrorBoundary from '../components/ErrorBoundary';
-import DesktopNav from './DesktopNav';
-import MobileNav from './MobileNav';
+import { pageRoutes } from '../routes';
+
+const FullscreenExamples = Loadable({
+  loader: () => import('../pages/Examples'),
+  loading() {
+    return <div>Loading...</div>;
+  },
+});
+
+const ErrorBoundary = Loadable({
+  loader: () => import('../components/ErrorBoundary'),
+  loading() {
+    return <div>Loading...</div>;
+  },
+});
+const DesktopNav = Loadable({
+  loader: () => import('./DesktopNav'),
+  loading() {
+    return <div>Loading...</div>;
+  },
+});
+const MobileNav = Loadable({
+  loader: () => import('./MobileNav'),
+  loading() {
+    return <div>Loading...</div>;
+  },
+});
 
 export default () => {
   return (
@@ -37,10 +59,6 @@ export default () => {
                           <Route {...routeProps} key={index} />
                         ))}
                       </Switch>
-
-                      {modalRoutes.map((modal, index) => (
-                        <Route {...modal} key={index} />
-                      ))}
                     </ErrorBoundary>
                   </Page>
                 )}

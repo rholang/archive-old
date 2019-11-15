@@ -74,7 +74,7 @@ export default class HomePage extends React.Component {
           <NewsBanner />
           <Title data-testid="title">Rholang</Title>
           <Intro>
-            A language for distributed computing and blockchain 3.0.
+            A language for distributed computing and blockchain 4.0
           </Intro>
           <Cards />
           <Mission />

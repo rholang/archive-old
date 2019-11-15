@@ -1,24 +1,23 @@
 import React from 'react';
 import { Redirect, RouteComponentProps } from 'react-router';
-import { ModalTransition } from '@atlaskit/modal-dialog';
-
 import Home from './pages/Home';
-import Package from './pages/Package';
-import Pattern from './pages/Pattern';
-import Document from './pages/Document';
-import FourOhFour from './pages/FourOhFour';
-import PackagesList from './pages/PackagesList';
-import PatternsInfo from './pages/PatternsInfo';
-import PackageDocument from './pages/PackageDocument';
-import ChangeLogExplorer from './pages/ChangeLogExplorer';
-import ChangelogModal, {
-  Props as ChangelogModalProps,
-} from './pages/Package/ChangelogModal';
-import ExamplesModal, {
-  Props as ExamplesModalProps,
-} from './pages/Package/ExamplesModal';
 
+const ModalTransition = React.lazy(() => import('@atlaskit/modal-dialog'));
+const Package = React.lazy(() => import('./pages/Package'));
+const Pattern = React.lazy(() => import('./pages/Pattern'));
+const Document = React.lazy(() => import('./pages/Document'));
+const FourOhFour = React.lazy(() => import('./pages/FourOhFour'));
+const PackagesList = React.lazy(() => import('./pages/PackagesList'));
+const PatternsInfo = React.lazy(() => import('./pages/PatternsInfo'));
+const PackageDocument = React.lazy(() => import('./pages/PackageDocument'));
+const ChangeLogExplorer = React.lazy(() => import('./pages/ChangeLogExplorer'));
+const ChangelogModal = React.lazy(() =>
+  import('./pages/Package/ChangelogModal'),
+);
+import { Props as ChangelogModalProps } from './pages/Package/ChangelogModal';
+import { Props as ExamplesModalProps } from './pages/Package/ExamplesModal';
 
+const ExamplesModal = React.lazy(() => import('./pages/Package/ExamplesModal'));
 
 const home = [
   {
@@ -27,7 +26,6 @@ const home = [
     component: Home,
   },
 ];
-
 
 //const staticDocs = [...routesBuilderDocs]
 const staticDocs = [
@@ -38,7 +36,8 @@ const staticDocs = [
   {
     path: '/content/',
     component: Document,
-  }]
+  },
+];
 /**
  * We do not support patterns on the current website
  * This exist as part of the migration from old build
