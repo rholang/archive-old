@@ -55,12 +55,12 @@
     "@atlaskit/textfield": "^3.1.2",
     "enzyme": "^3.7.0",
     "fetch-mock": "^7.3.3",
-    "react": "^16.8.0",
+    "react": "16.12.0",
     "react-intl": "^2.6.0"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
     "react-intl": "^2.6.0",
     "styled-components": "^3.2.6"
   }

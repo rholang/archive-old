@@ -39,7 +39,7 @@
     "tslib": "^1.9.3"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "16.12.0"
   },
   "scripts": {
     "watch": "tsc --watch --noEmit --project './tsconfig.json'"
@@ -62,7 +62,7 @@
     "@types/react-beautiful-dnd": "^11.0.1",
     "enzyme": "^3.7.0",
     "react-beautiful-dnd": "^10.0.2",
-    "react-dom": "^16.8.0",
+    "react-dom": "16.12.0",
     "react-lorem-component": "^0.12.2",
     "wait-for-expect": "^1.2.0"
   },

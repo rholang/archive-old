@@ -38,10 +38,10 @@
     "@atlaskit/dropdown-menu": "^8.1.4",
     "@atlaskit/logo": "^12.2.1",
     "jest-emotion": "^10.0.10",
-    "react": "^16.8.0",
+    "react": "16.12.0",
     "react-intl": "^2.6.0"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "16.12.0"
   }
 }

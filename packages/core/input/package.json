@@ -21,8 +21,8 @@
     "keycode": "^2.1.7"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "@atlaskit/section-message": "^4.1.1",
     "@atlaskit/ssr": "^0.1.1",
     "enzyme": "^3.7.0",
-    "react-dom": "^16.8.0"
+    "react-dom": "16.12.0"
   },
   "keywords": [
     "atlaskit",

@@ -25,6 +25,6 @@
     "@atlaskit/docs": "^8.1.8",
     "@atlaskit/notification-indicator": "^7.0.10",
     "fetch-mock": "^7.3.3",
-    "react": "^16.8.0"
+    "react": "16.12.0"
   }
 }

@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Route, matchPath } from 'react-router-dom';
-
+import { Route, matchPath, withRouter } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
 import { AkContainerNavigationNested as NestedNav } from '@atlaskit/navigation';
-
+import { History, Location } from 'history';
 import DefaultNav from './navigations/Default';
 import PackagesNav from './navigations/Packages';
 import DocsNav from './navigations/Docs';
@@ -12,7 +11,7 @@ import PatternsNav from './navigations/Patterns';
 import { Directory } from '../../types';
 import * as fs from '../../utils/fs';
 
-export type GroupsProps = {
+export type GroupsProps = RouteComponentProps & {
   content: Directory;
   patterns: Directory;
   packages: Directory;
@@ -28,25 +27,18 @@ export type GroupsContext = {
   router: { route: Route };
 };
 
-export default class Groups extends React.Component<GroupsProps, GroupsState> {
-  static contextTypes = {
-    router: PropTypes.object,
-  };
-
+class Groups extends React.Component<GroupsProps, GroupsState> {
   state: GroupsState = {
     parentRoute: null,
     stack: [[]],
   };
 
-  UNSAFE_componentWillMount() {
-    this.resolveRoutes(this.context.router.route.location.pathname);
+  componentDidMount() {
+    this.resolveRoutes(this.props.location.pathname);
   }
 
-  UNSAFE_componentWillReceiveProps(
-    nextProps: GroupsProps,
-    nextContext: GroupsContext,
-  ) {
-    this.resolveRoutes((nextContext.router.route as any).location.pathname);
+  UNSAFE_componentWillReceiveProps(props: any) {
+    this.resolveRoutes(props.location.pathname);
   }
 
   resolveRoutes(pathname: string) {
@@ -103,8 +95,9 @@ export default class Groups extends React.Component<GroupsProps, GroupsState> {
   }
 
   render() {
-    console.log('desktiopnav');
-    const { stack } = this.state;
+    const { stack, parentRoute } = this.state;
     return <NestedNav stack={stack} />;
   }
 }
+
+export default withRouter(Groups);

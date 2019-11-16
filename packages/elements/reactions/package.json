@@ -27,8 +27,8 @@
     "typestyle": "^1.4.4"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
     "react-intl": "^2.6.0"
   },
   "author": "Atlassian Pty Ltd",
@@ -51,7 +51,7 @@
     "es6-promise": "^4.0.5",
     "fetch-mock": "^7.3.3",
     "jest-fetch-mock": "^2.1.2",
-    "react": "^16.8.0",
+    "react": "16.12.0",
     "react-intl": "^2.6.0"
   },
   "repository": {

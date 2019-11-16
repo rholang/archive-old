@@ -6,11 +6,10 @@ import { RouteProps } from 'react-router';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { DESKTOP_BREAKPOINT_MIN } from '../constants';
-import FullscreenExamples from '../pages/Examples';
-import { modalRoutes, pageRoutes } from '../routes';
+import { pageRoutes } from '../routes';
 import ErrorBoundary from '../components/ErrorBoundary';
-import DesktopNav from './DesktopNav';
-import MobileNav from './MobileNav';
+const DesktopNav = React.lazy(() => import('./DesktopNav'));
+const MobileNav = React.lazy(() => import('./MobileNav'));
 
 export default () => {
   return (
@@ -18,34 +17,28 @@ export default () => {
       <BrowserRouter>
         <Media query={`(min-width: ${DESKTOP_BREAKPOINT_MIN}px)`}>
           {(isDesktop: boolean) => (
-            <Switch>
-              <Route
-                path="/examples/:groupId?/:pkgId?/:exampleId*"
-                component={FullscreenExamples}
-              />
-              <Route
-                render={appRouteDetails => (
-                  <Page
-                    navigation={
-                      isDesktop ? <DesktopNav {...appRouteDetails} /> : false
-                    }
-                  >
-                    {!isDesktop && <MobileNav {...appRouteDetails} />}
-                    <ErrorBoundary>
-                      <Switch>
-                        {pageRoutes.map((routeProps: RouteProps, index) => (
-                          <Route {...routeProps} key={index} />
-                        ))}
-                      </Switch>
-
-                      {modalRoutes.map((modal, index) => (
-                        <Route {...modal} key={index} />
-                      ))}
-                    </ErrorBoundary>
-                  </Page>
-                )}
-              />
-            </Switch>
+            <React.Suspense fallback={<></>}>
+              <Switch>
+                <Route
+                  render={appRouteDetails => (
+                    <Page
+                      navigation={
+                        isDesktop ? <DesktopNav {...appRouteDetails} /> : false
+                      }
+                    >
+                      {!isDesktop && <MobileNav {...appRouteDetails} />}
+                      <ErrorBoundary>
+                        <Switch>
+                          {pageRoutes.map((routeProps: RouteProps, index) => (
+                            <Route {...routeProps} key={index} />
+                          ))}
+                        </Switch>
+                      </ErrorBoundary>
+                    </Page>
+                  )}
+                />
+              </Switch>
+            </React.Suspense>
           )}
         </Media>
       </BrowserRouter>

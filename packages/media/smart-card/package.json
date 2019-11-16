@@ -34,7 +34,7 @@
     "redux": "^3.7.2"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
+    "react": "16.12.0",
     "react-intl": "^2.6.0",
     "styled-components": "^3.2.6"
   },
@@ -54,7 +54,7 @@
     "@types/fetch-mock": "^6.0.3",
     "@types/lodash.clonedeep": "^4.5.6",
     "@types/lorem-ipsum": "^1.0.2",
-    "@types/react": "^16.8.0",
+    "@types/react": "16.9.11",
     "@types/react-loadable": "^5.4.1",
     "@types/redux": "^3.6.0",
     "abortcontroller-polyfill": "^1.1.9",
@@ -62,7 +62,7 @@
     "enzyme": "^3.7.0",
     "fetch-mock": "^7.3.3",
     "lorem-ipsum": "^1.0.6",
-    "react": "^16.8.0",
+    "react": "16.12.0",
     "react-ace": "^6.1.0",
     "react-intl": "^2.6.0",
     "react-test-renderer": "^16.8.0",
