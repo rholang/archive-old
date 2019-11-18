@@ -19,7 +19,6 @@ import { Link } from '../../components/WrappedLink';
 import HeaderIcon from '../../components/HeaderIcon';
 import { CONTAINER_HEADERS_CONFIG } from '../DesktopNav/constants';
 import { toClass } from 'recompose';
-import { Link as BaseLink } from 'react-router-dom';
 
 export function Nav({
   location,
@@ -89,7 +88,6 @@ export function Nav({
           isOpen={groupDrawerOpen}
           closeDrawer={() => {
             setGroupDrawerOpen(false);
-            closeNav();
           }}
           pathname={location.pathname}
         />,

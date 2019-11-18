@@ -47,18 +47,9 @@ const Style = () => (
     background-color: ${colors.B500};
   }
 
-  div {
-    max-width: 100%;
-
-  }
-
 
 `}</style>
 );
-
-const Test = styled(Background)`
-  background: blue;
-`;
 
 export default class HomePage extends React.Component {
   render() {
@@ -73,9 +64,7 @@ export default class HomePage extends React.Component {
         <Below>
           <NewsBanner />
           <Title data-testid="title">Rholang</Title>
-          <Intro>
-            A language for distributed computing and blockchain 3.0.
-          </Intro>
+          <Intro>A language for distributed computing and blockchain 4.0</Intro>
           <Cards />
           <Mission />
           <Footer />
