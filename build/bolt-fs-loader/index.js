@@ -34,7 +34,7 @@ function createLoaderOutput(
     export default ${printDir(dir)};
   `;
 
-  let sitemapList = getSitemap(dir);
+  const sitemapList = getSitemap(dir);
   sitemapCreator(sitemapList);
 
   if (debug) {
@@ -77,7 +77,7 @@ function sitemapCreator(sitemapList) {
 
   sitemapList.map(item =>
     sitemap.write({
-      url: `${item}`,
+      url: `#/${item}`,
       changefreq: 'daily',
       priority: 0.3,
       links: [{ lang: 'en', url: `https://rholang.github.io/#/${item}` }],
@@ -87,7 +87,7 @@ function sitemapCreator(sitemapList) {
 
   streamToPromise(sitemap)
     .then(sm =>
-      fs.writeFile(process.cwd() + '/public/sitemap.xml', sm, function(err) {
+      fs.writeFile(`${process.cwd()}/public/sitemap.xml`, sm, function(err) {
         if (err) {
           console.log(err);
         }
@@ -111,7 +111,7 @@ module.exports = async function boltFsLoader() {
 
   // Separate option for exclude is necessary since webpack treats ! as a sign of a loader
   // which blocks us from using it inside import statement
-  let patterns = []
+  const patterns = []
     .concat(opts.include)
     .concat((opts.exclude || []).map(p => `!${p}`));
   const files /*: Array<string> */ = await globby(patterns, {
