@@ -3,7 +3,7 @@ import Media from 'react-media';
 import GlobalTheme from '@atlaskit/theme';
 import Page from '@atlaskit/page';
 import { RouteProps } from 'react-router';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Switch, Route } from 'react-router-dom';
 
 import { DESKTOP_BREAKPOINT_MIN } from '../constants';
 import { pageRoutes } from '../routes';
@@ -14,7 +14,7 @@ const MobileNav = React.lazy(() => import('./MobileNav'));
 export default () => {
   return (
     <GlobalTheme.Provider value={() => ({ mode: 'light' })}>
-      <BrowserRouter>
+      <HashRouter>
         <Media query={`(min-width: ${DESKTOP_BREAKPOINT_MIN}px)`}>
           {(isDesktop: boolean) => (
             <React.Suspense fallback={<></>}>
@@ -41,7 +41,7 @@ export default () => {
             </React.Suspense>
           )}
         </Media>
-      </BrowserRouter>
+      </HashRouter>
     </GlobalTheme.Provider>
   );
 };

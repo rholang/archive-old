@@ -72,7 +72,7 @@ function addWebpackDependencies(
 
 function sitemapCreator(sitemapList) {
   const sitemap = new SitemapStream({
-    hostname: 'https://rholang.github.io/',
+    hostname: 'https://rholang.github.io/#/',
   });
 
   sitemapList.map(item =>
@@ -80,7 +80,7 @@ function sitemapCreator(sitemapList) {
       url: `${item}`,
       changefreq: 'daily',
       priority: 0.3,
-      links: [{ lang: 'en', url: `https://rholang.github.io/${item}` }],
+      links: [{ lang: 'en', url: `https://rholang.github.io/#/${item}` }],
     }),
   );
   sitemap.end();
