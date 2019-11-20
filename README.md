@@ -66,7 +66,7 @@ Bolt is like yarn workspaces and links the dependencies into each package under 
 - If you want to manually rebuild them:
   - terminal: yarn build
 
-## Errors solutions
+## Error solutions
 
 Error: $ babel src -d dist/cjs --root-mode upward { TypeError: /home/t/bak2/atlaskit-mk-2/packages/core/navigation-next/src/components/connected/SortableGroup/index.js: Property expression of JSXExpressionContainer expected node to be of a type ["Expression","JSXEmptyExpression"] 
 
