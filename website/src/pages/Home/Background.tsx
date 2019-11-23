@@ -21,58 +21,59 @@ export const bgGradient = css`
   position: relative;
   width: 100%;
   flex: 1;
-  background-image: -webkit-radial-gradient(
-      circle farthest-side at 50% 0%,
-      rgba(76, 115, 247, 0.55),
-      hsla(0, 0%, 100%, 0) 36%
-    ),
-    -webkit-radial-gradient(circle farthest-side at 53% 126%, rgba(
-            147,
-            210,
-            241,
-            0.5
-          )
-          21%, hsla(0, 0%, 100%, 0) 40%),
-    -webkit-radial-gradient(circle farthest-side at 103% 13%, #93d2f1, rgba(
-            50,
-            217,
-            166,
-            0.73
-          )
-          17%, rgba(45, 216, 163, 0.96) 26%, rgba(152, 230, 231, 0.2) 80%, hsla(0, 0%, 100%, 0)),
-    -webkit-radial-gradient(circle farthest-side at 4% 71%, #021a85 3%, rgba(
-            12,
-            59,
-            165,
-            0.7
-          )
-          47%, hsla(0, 0%, 100%, 0)),
-    -webkit-linear-gradient(301deg, #2971ff, #93d2f1);
-  background-image: radial-gradient(
-      circle farthest-side at 50% 0%,
-      rgba(76, 115, 247, 0.55),
-      hsla(0, 0%, 100%, 0) 36%
-    ),
-    radial-gradient(
-      circle farthest-side at 53% 126%,
-      rgba(147, 210, 241, 0.5) 21%,
-      hsla(0, 0%, 100%, 0) 40%
-    ),
-    radial-gradient(
-      circle farthest-side at 103% 13%,
-      #93d2f1,
-      rgba(50, 217, 166, 0.73) 17%,
-      rgba(45, 216, 163, 0.96) 26%,
-      rgba(152, 230, 231, 0.2) 80%,
-      hsla(0, 0%, 100%, 0)
-    ),
-    radial-gradient(
-      circle farthest-side at 4% 71%,
-      #021a85 3%,
-      rgba(12, 59, 165, 0.7) 47%,
-      hsla(0, 0%, 100%, 0)
-    ),
-    linear-gradient(149deg, #2971ff, #93d2f1);
+  background: 600% 500%/90% 90%
+      radial-gradient(
+        closest-side,
+        rgba(179, 66, 66, 0.7),
+        rgba(228, 79, 79, 0)
+      )
+      no-repeat,
+    600% 180%/90% 90%
+      radial-gradient(
+        closest-side,
+        rgba(228, 79, 79, 0.7),
+        rgba(228, 79, 79, 0)
+      )
+      no-repeat,
+    100% 150%/75% 50%
+      radial-gradient(
+        closest-side,
+        rgba(250, 250, 218, 0.2),
+        rgba(250, 250, 218, 0)
+      )
+      no-repeat,
+    -400% -100%/90% 80%
+      radial-gradient(
+        closest-side,
+        rgba(250, 250, 218, 0.3),
+        rgba(250, 250, 218, 0)
+      )
+      no-repeat,
+    -100% -250%/85% 80%
+      radial-gradient(
+        closest-side,
+        rgba(150, 26, 26, 0.8),
+        rgba(94, 225, 249, 0)
+      )
+      no-repeat,
+    -170% 100%/70% 60% radial-gradient(
+        closest-side,
+        rgba(94, 225, 249, 0.6),
+        rgba(94, 225, 249, 0)
+      ) no-repeat,
+    50% 50%/100% 100%
+      linear-gradient(
+        30deg,
+        #d4342c 10%,
+        rgba(110, 16, 206, 0) 70%,
+        hsla(0, 0%, 100%, 0) 90%
+      )
+      no-repeat,
+    linear-gradient(144deg, rgba(233, 235, 104, 0), rgba(233, 235, 104, 0.3))
+      no-repeat,
+    linear-gradient(90deg, rgba(104, 184, 235, 0.11), rgba(15, 216, 223, 0.11))
+      no-repeat,
+    #fff;
 `;
 
 export const bgGradientGhost = css`
@@ -95,7 +96,7 @@ export const bgIllustration = css`
   display: flex;
   flex: 1;
   align-items: center;
-  background-image: linear-gradient(rgb(16, 16, 16), rgb(9, 20, 64));
+  background-image: linear-gradient(rgb(16, 16, 16), rgb(16, 16, 16));
   background-position: 50% 50%, 0 0;
   background-size: 110%, auto;
   background-repeat: repeat, repeat;
