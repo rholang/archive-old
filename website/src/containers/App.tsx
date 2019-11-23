@@ -14,7 +14,7 @@ const MobileNav = React.lazy(() => import('./MobileNav'));
 export default () => {
   return (
     <GlobalTheme.Provider value={() => ({ mode: 'light' })}>
-      <HashRouter>
+      <BrowserRouter>
         <Media query={`(min-width: ${DESKTOP_BREAKPOINT_MIN}px)`}>
           {(isDesktop: boolean) => (
             <React.Suspense fallback={<></>}>
@@ -41,7 +41,7 @@ export default () => {
             </React.Suspense>
           )}
         </Media>
-      </HashRouter>
+      </BrowserRouter>
     </GlobalTheme.Provider>
   );
 };

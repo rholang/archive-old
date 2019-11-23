@@ -14,22 +14,12 @@ export const bg = css`
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 `;
 export const bgGradient = css`
   position: relative;
   width: 100%;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
   flex: 1;
   background-image: -webkit-radial-gradient(
       circle farthest-side at 50% 0%,
@@ -105,8 +95,7 @@ export const bgIllustration = css`
   display: flex;
   flex: 1;
   align-items: center;
-  background-image: -webkit-linear-gradient(270deg, #091440, #091440);
-  background-image: linear-gradient(180deg, #091440, #091440);
+  background-image: linear-gradient(rgb(16, 16, 16), rgb(9, 20, 64));
   background-position: 50% 50%, 0 0;
   background-size: 110%, auto;
   background-repeat: repeat, repeat;
