@@ -544,7 +544,7 @@
     "semver": "^5.4.1",
     "sentence-case": "^2.1.1",
     "shallow-equal": "^1.0.0",
-    "simple-git": "^1.115.0",
+    "simple-git": "^3.3.0",
     "sitemap": "^5.0.0",
     "sitemap-webpack-plugin": "^0.6.0",
     "snake-case": "^2.1.0",
